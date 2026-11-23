@@ -1397,11 +1397,12 @@
         </div>
       </a>
       <ul class="nav-links" id="topNavLinks">
-        <li><a href="#guias" class="active">Guías</a></li>
+        <li><a href="#videos" class="active" style="color: #38bdf8; font-weight: 700;">🎬 Video Explicativo</a></li>
+        <li><a href="#guias">Guías</a></li>
         <li><a href="#activos">Universo</a></li>
         <li><a href="#evaluador">Evaluador</a></li>
         <li><a href="#calculadora">Calculadora</a></li>
-        <li><a href="#videos">🎬 Videos y Biblioteca</a></li>
+        <li><a href="#descargas">Biblioteca</a></li>
         <li><a href="#resenas">Ejercicios</a></li>
         <li><a href="#marco-legal">Marco Legal</a></li>
       </ul>
@@ -1419,11 +1420,14 @@
 
       <!-- Hero Call to Action Buttons -->
       <div class="hero-cta-group" style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
-        <a href="#guias" class="btn-primary" style="padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; background: #2563eb; color: #fff; display: inline-flex; align-items: center; gap: 8px;">
-          📘 Explorar el Método Didáctico
+        <a href="#videos" class="btn-primary" style="padding: 12px 26px; border-radius: 8px; font-weight: 700; text-decoration: none; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 16px rgba(2,132,199,0.4); font-size: 15px;">
+          🎬 Ver Video Explicativo (Reproducir Aquí) ▶
         </a>
-        <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.3); display: inline-flex; align-items: center; gap: 8px;">
-          🤖 Abrir Copiloto en Telegram ↗
+        <a href="#guias" class="btn-secondary" style="padding: 12px 22px; border-radius: 8px; font-weight: 600; text-decoration: none; background: rgba(255,255,255,0.06); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); display: inline-flex; align-items: center; gap: 8px;">
+          📘 Guías y Calculadora
+        </a>
+        <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 12px 22px; border-radius: 8px; font-weight: 600; text-decoration: none; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.3); display: inline-flex; align-items: center; gap: 8px;">
+          🤖 Copiloto en Telegram ↗
         </a>
       </div>
     </section>
@@ -1966,110 +1970,7 @@
       </div>
     </section>
 
-    <!-- SECTION: SALA MULTIMEDIA Y VIDEOS EXPLICATIVOS -->
-    <section id="videos" class="page-section">
-      <div class="section-header">
-        <span class="section-tag">🎬 Sala Multimedia • Educación Interactiva</span>
-        <h2>Videos Explicativos: Aprende a tu Propio Ritmo</h2>
-        <p>Elige tu modalidad según tu etapa de vida. Aprende cómo funciona la plataforma, su objetivo de crecimiento y cómo usar tu copiloto en Telegram de forma amigable y dinámica.</p>
-      </div>
-
-      <!-- Selector de Modo de Video -->
-      <div style="display:flex; justify-content:center; gap:12px; margin-bottom:28px; flex-wrap:wrap;">
-        <button id="btnTabNinos" onclick="switchVideoTab('ninos')" style="background:#0284c7; color:#fff; border:none; padding:12px 24px; border-radius:10px; font-weight:700; font-size:15px; cursor:pointer; display:flex; align-items:center; gap:8px; box-shadow:0 4px 14px rgba(2,132,199,0.3); transition:all 0.2s;">
-          🧒 Modo Niños y Niñas (Aprende Jugando)
-        </button>
-        <button id="btnTabAdultos" onclick="switchVideoTab('adultos')" style="background:rgba(255,255,255,0.06); color:#94a3b8; border:1px solid rgba(255,255,255,0.1); padding:12px 24px; border-radius:10px; font-weight:700; font-size:15px; cursor:pointer; display:flex; align-items:center; gap:8px; transition:all 0.2s;">
-          🧑 Modo Jóvenes y Adultos (Estrategia y Uso del Bot)
-        </button>
-      </div>
-
-      <!-- Contenedor Video 1: Niños -->
-      <div id="videoContainerNinos" style="background:linear-gradient(145deg, rgba(30,41,59,0.85), rgba(15,23,42,0.95)); border:1px solid rgba(245,158,11,0.3); border-radius:16px; padding:24px; max-width:960px; margin:0 auto; box-shadow:0 12px 30px rgba(0,0,0,0.4);">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
-          <div>
-            <span style="background:rgba(245,158,11,0.2); color:#f59e0b; padding:4px 12px; border-radius:6px; font-size:12px; font-weight:700;">VIDEO INFANTIL · 1080p FULL HD</span>
-            <h3 style="margin:8px 0 0 0; color:#fff; font-size:1.35rem;">🪙 La Fábrica de Monedas y el Robot Guardián</h3>
-          </div>
-          <a href="video_explicativo_ninos.mp4" download="video_explicativo_ninos.mp4" style="background:#f59e0b; color:#0f172a; padding:8px 16px; border-radius:8px; text-decoration:none; font-weight:700; font-size:13px; display:inline-flex; align-items:center; gap:6px;">
-            ⬇️ Descargar MP4 (8.4 MB · 1080p Full HD)
-          </a>
-        </div>
-
-        <div style="position:relative; width:100%; border-radius:12px; overflow:hidden; background:#000; box-shadow:0 6px 20px rgba(0,0,0,0.5);">
-          <video id="playerNinos" controls preload="metadata" style="width:100%; height:auto; display:block; border-radius:12px;">
-            <source src="video_explicativo_ninos.mp4" type="video/mp4">
-            Tu navegador no soporta reproducción directa de video MP4.
-          </video>
-        </div>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin-top:20px;">
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(245,158,11,0.2); border-radius:10px; padding:14px;">
-            <div style="font-size:20px; margin-bottom:4px;">🍬</div>
-            <h5 style="margin:0 0 4px 0; color:#f59e0b; font-size:13px;">1. La Alcancía Encantada</h5>
-            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">El dinero guardado pierde valor porque las paletas suben de precio. ¡Hay que ponerlo a trabajar!</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(16,185,129,0.2); border-radius:10px; padding:14px;">
-            <div style="font-size:20px; margin-bottom:4px;">🌳</div>
-            <h5 style="margin:0 0 4px 0; color:#10b981; font-size:13px;">2. Semillas de Riqueza</h5>
-            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">Con $20 pesos te vuelves dueño de fábricas que te pagan 'rentas' cada tres meses como frutos.</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(56,189,248,0.2); border-radius:10px; padding:14px;">
-            <div style="font-size:20px; margin-bottom:4px;">🪙</div>
-            <h5 style="margin:0 0 4px 0; color:#38bdf8; font-size:13px;">3. Oro Digital (Satoshis)</h5>
-            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">Granitos de oro protegidos por matemáticas que viajan por internet y nadie te puede quitar.</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(168,85,247,0.2); border-radius:10px; padding:14px;">
-            <div style="font-size:20px; margin-bottom:4px;">🤖</div>
-            <h5 style="margin:0 0 4px 0; color:#c084fc; font-size:13px;">4. Robot Copiloto en Telegram</h5>
-            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">Tu asistente inteligente cuida tus tesoros y te enseña junto a tus papás a ahorrar con alegría.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contenedor Video 2: Adultos -->
-      <div id="videoContainerAdultos" style="display:none; background:linear-gradient(145deg, rgba(30,41,59,0.85), rgba(15,23,42,0.95)); border:1px solid rgba(56,189,248,0.3); border-radius:16px; padding:24px; max-width:960px; margin:0 auto; box-shadow:0 12px 30px rgba(0,0,0,0.4);">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
-          <div>
-            <span style="background:rgba(56,189,248,0.2); color:#38bdf8; padding:4px 12px; border-radius:6px; font-size:12px; font-weight:700;">VIDEO ESTRATÉGICO · 1080p FULL HD</span>
-            <h3 style="margin:8px 0 0 0; color:#fff; font-size:1.35rem;">⚖️ El Volante Patrimonial: Bitcoin + Bolsa en Acción</h3>
-          </div>
-          <a href="video_explicativo_adultos.mp4" download="video_explicativo_adultos.mp4" style="background:#0284c7; color:#fff; padding:8px 16px; border-radius:8px; text-decoration:none; font-weight:700; font-size:13px; display:inline-flex; align-items:center; gap:6px;">
-            ⬇️ Descargar MP4 (8.4 MB · 1080p Full HD)
-          </a>
-        </div>
-
-        <div style="position:relative; width:100%; border-radius:12px; overflow:hidden; background:#000; box-shadow:0 6px 20px rgba(0,0,0,0.5);">
-          <video id="playerAdultos" controls preload="metadata" style="width:100%; height:auto; display:block; border-radius:12px;">
-            <source src="video_explicativo_adultos.mp4" type="video/mp4">
-            Tu navegador no soporta reproducción directa de video MP4.
-          </video>
-        </div>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin-top:20px;">
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(239,68,68,0.2); border-radius:10px; padding:14px;">
-            <div style="font-size:20px; margin-bottom:4px;">🏦</div>
-            <h5 style="margin:0 0 4px 0; color:#f87171; font-size:13px;">1. El Dilema Tradicional</h5>
-            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">Comisiones de fondos bancarios del 2.5% anual que se comen más del 30% del rendimiento compuesto.</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(16,185,129,0.2); border-radius:10px; padding:14px;">
-            <div style="font-size:20px; margin-bottom:4px;">🏢</div>
-            <h5 style="margin:0 0 4px 0; color:#10b981; font-size:13px;">2. FIBRAs & ETFs Core</h5>
-            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">Distribución fiscal mixta en FIBRAs (Resultado Fiscal con retención provisional del 30% y Reembolso de Capital exento) e indexación pasiva al S&P 500 (IVVPESO con cobertura cambiaria o VOO al 0.03%).</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(245,158,11,0.2); border-radius:10px; padding:14px;">
-            <div style="font-size:20px; margin-bottom:4px;">📱</div>
-            <h5 style="margin:0 0 4px 0; color:#f59e0b; font-size:13px;">3. Copiloto en Telegram</h5>
-            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">Subes capturas de Bitso o Bursanet y recibes botones interactivos de compra/venta y simulación en tiempo real.</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(56,189,248,0.2); border-radius:10px; padding:14px;">
-            <div style="font-size:20px; margin-bottom:4px;">🛡️</div>
-            <h5 style="margin:0 0 4px 0; color:#38bdf8; font-size:13px;">4. Cero Llaves Privadas</h5>
-            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">Cuentas abiertas directamente a tu nombre en intermediarios supervisados (Actinver / Bitso). El software no capta ni intermedia fondos.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- SECTION 5: BIBLIOTECA DE DESCARGAS -->
     <section id="descargas" class="page-section">
@@ -2130,7 +2031,7 @@
             <h4>Video Explicativo: Niños y Niñas (Aprende Jugando)</h4>
             <p>Video animado Full HD (1080p). Explicación didáctica sobre el dinero, la alcancía frente a la inflación, satoshis y cómo el robot copiloto cuida los ahorros familiares.</p>
           </div>
-          <a href="./video_explicativo_ninos.mp4" download="video_explicativo_ninos.mp4" class="btn-download" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #38bdf8;">🎬 Descargar Video MP4 (8.4 MB · 1080p Full HD)</a>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;"><a href="#videos" onclick="switchVideoTab('ninos'); var v=document.getElementById('playerNinos'); if(v) v.play();" class="btn-download" style="background:#0284c7; color:#fff; border:none; text-decoration:none; font-weight:700;">▶️ Reproducir en Pantalla</a><a href="./video_explicativo_ninos.mp4" download="video_explicativo_ninos.mp4" class="btn-download" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #38bdf8;">⬇️ Descargar MP4 (8.4 MB)</a></div>
         </div>
         <div class="doc-item" style="border-left: 3px solid #818cf8;">
           <div>
