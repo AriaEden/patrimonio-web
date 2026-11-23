@@ -1343,13 +1343,41 @@
         grid-template-columns: repeat(2, 1fr) !important;
       }
     }
-</style>
+
+    /* Responsive Enhancements for Mobile & Anchors */
+    section[id], div[id] {
+      scroll-margin-top: 100px;
+    }
+    .eval-search-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 640px) {
+      .eval-search-bar {
+        flex-direction: column;
+      }
+      .eval-search-bar .eval-input,
+      .eval-search-bar .eval-btn {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+      .nav-links {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        padding-bottom: 6px;
+      }
+    }
+
+  </style>
   <!-- METADATOS OPEN GRAPH Y TWITTER CARD (PREVISUALIZACIÓN ELEGANTE) -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ariaeden.github.io/patrimonio-inteligente/">
+  <meta property="og:url" content="https://ariaeden.github.io/patrimonio-web/">
   <meta property="og:title" content="Patrimonio Inteligente | Educación y Modelación Financiera">
   <meta property="og:description" content="Aprende a invertir en FIBRAs, ETFs indexados (S&P 500) y Bitcoin con custodia propia y reducción de comisiones bancarias.">
-  <meta property="og:image" content="https://ariaeden.github.io/patrimonio-inteligente/og_image_patrimonio.png">
+  <meta property="og:image" content="https://ariaeden.github.io/patrimonio-web/og_image_patrimonio.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Patrimonio Inteligente | Estrategia Core + Satélite">
   <meta name="twitter:description" content="Inversión patrimonial con reglas institucionales, órdenes límite y copilotaje cuantitativo.">
@@ -1964,7 +1992,7 @@
             <h3 style="margin:8px 0 0 0; color:#fff; font-size:1.35rem;">🪙 La Fábrica de Monedas y el Robot Guardián</h3>
           </div>
           <a href="video_explicativo_ninos.mp4" download="video_explicativo_ninos.mp4" style="background:#f59e0b; color:#0f172a; padding:8px 16px; border-radius:8px; text-decoration:none; font-weight:700; font-size:13px; display:inline-flex; align-items:center; gap:6px;">
-            ⬇️ Descargar MP4 (1.8 MB)
+            ⬇️ Descargar MP4 (6.0 MB · 1080p HD)
           </a>
         </div>
 
@@ -2007,7 +2035,7 @@
             <h3 style="margin:8px 0 0 0; color:#fff; font-size:1.35rem;">⚖️ El Volante Patrimonial: Bitcoin + Bolsa en Acción</h3>
           </div>
           <a href="video_explicativo_adultos.mp4" download="video_explicativo_adultos.mp4" style="background:#0284c7; color:#fff; padding:8px 16px; border-radius:8px; text-decoration:none; font-weight:700; font-size:13px; display:inline-flex; align-items:center; gap:6px;">
-            ⬇️ Descargar MP4 (1.8 MB)
+            ⬇️ Descargar MP4 (6.0 MB · 1080p HD)
           </a>
         </div>
 
@@ -2059,7 +2087,7 @@
             <h4>Guía Práctica de Compra: Bitso y Bursanet</h4>
             <p>Manual visual paso a paso para colocar órdenes Límite Maker, distinguir ETFs, Acciones y FIBRAs, y evitar comisiones bancarias caras.</p>
           </div>
-          <a href="./GUIA_PASO_A_PASO_COMPRA_BITSO_Y_ACTINVER.pdf" target="_blank" class="btn-download">📄 Descargar PDF (794 KB)</a>
+          <a href="./GUIA_PASO_A_PASO_COMPRA_BITSO_Y_ACTINVER.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (794 KB)</a>
         </div>
 
         <div class="doc-item">
@@ -2068,7 +2096,7 @@
             <h4>Manual de Primera Vez por Edades</h4>
             <p>Adaptación pedagógica para Primaria, Secundaria, Preparatoria y Escuela para Padres. Cómo sembrar patrimonio desde temprana edad.</p>
           </div>
-          <a href="./MANUAL_DE_PRIMERA_VEZ_POR_EDADES.pdf" target="_blank" class="btn-download">📄 Descargar PDF (650 KB)</a>
+          <a href="./MANUAL_DE_PRIMERA_VEZ_POR_EDADES.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (650 KB)</a>
         </div>
 
         <div class="doc-item">
@@ -2077,7 +2105,7 @@
             <h4>Taller de Finanzas: Preparatoria y Adultos</h4>
             <p>Material de capacitación patrimonial para Consejos Técnicos Escolares (CTE), Escuela para Padres e inclusión financiera real.</p>
           </div>
-          <a href="./TALLER_FINANZAS_PREPA_ADULTOS_CTE_PADRES.pdf" target="_blank" class="btn-download">📄 Descargar PDF (520 KB)</a>
+          <a href="./TALLER_FINANZAS_PREPA_ADULTOS_CTE_PADRES.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (520 KB)</a>
         </div>
 
         <div class="doc-item">
@@ -2086,7 +2114,7 @@
             <h4>Ficha Infográfica: Bitcoin Para Todos</h4>
             <p>Explicación técnica y económica de los 21 millones de monedas finitas, emisión inmutable y tesis de valor frente a la inflación fiduciaria.</p>
           </div>
-          <a href="./FICHA_INFOGRAFICA_BITCOIN_PARA_TODOS.pdf" target="_blank" class="btn-download">📄 Descargar PDF (410 KB)</a>
+          <a href="./FICHA_INFOGRAFICA_BITCOIN_PARA_TODOS.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (410 KB)</a>
         </div>
         <div class="doc-item">
           <div>
@@ -2094,7 +2122,7 @@
             <h4>Chuleta Rápida de Comandos del Copiloto</h4>
             <p>Guía de referencia rápida con todos los comandos de Telegram (/estado, /precio, /evaluar, /lote, /volver_a_10) y ejemplos de uso.</p>
           </div>
-          <a href="javascript:void(0)" onclick="openModalComandos()" class="btn-download" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #10b981;">📱 Ver Chuleta Interactiva</a>
+          <button type="button" onclick="openModalComandos()" class="btn-download" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #10b981; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 600;">📱 Ver Chuleta Interactiva</button>
         </div>
         <div class="doc-item" style="border-left: 3px solid #38bdf8;">
           <div>
@@ -2102,7 +2130,7 @@
             <h4>Video Explicativo: Niños y Niñas (Aprende Jugando)</h4>
             <p>Video animado Full HD (1080p). Explicación didáctica sobre el dinero, la alcancía frente a la inflación, satoshis y cómo el robot copiloto cuida los ahorros familiares.</p>
           </div>
-          <a href="./video_explicativo_ninos.mp4" download="video_explicativo_ninos.mp4" class="btn-download" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #38bdf8;">🎬 Descargar Video MP4 (1.8 MB)</a>
+          <a href="./video_explicativo_ninos.mp4" download="video_explicativo_ninos.mp4" class="btn-download" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #38bdf8;">🎬 Descargar Video MP4 (6.0 MB · 1080p HD)</a>
         </div>
         <div class="doc-item" style="border-left: 3px solid #818cf8;">
           <div>
@@ -2110,7 +2138,7 @@
             <h4>Video Explicativo: Jóvenes y Adultos (Estrategia y Uso del Bot)</h4>
             <p>Video conceptual Full HD (1080p). Arquitectura de acumulación híbrida (Bitso + Bursanet), eliminación de comisiones bancarias del 2.5%, simulación de ventas y verificación con capturas en Telegram.</p>
           </div>
-          <a href="./video_explicativo_adultos.mp4" download="video_explicativo_adultos.mp4" class="btn-download" style="background: rgba(129, 140, 248, 0.2); border: 1px solid #818cf8; color: #818cf8;">🎬 Descargar Video MP4 (1.8 MB)</a>
+          <a href="./video_explicativo_adultos.mp4" download="video_explicativo_adultos.mp4" class="btn-download" style="background: rgba(129, 140, 248, 0.2); border: 1px solid #818cf8; color: #818cf8;">🎬 Descargar Video MP4 (6.0 MB · 1080p HD)</a>
         </div>
       </div>
     </section>
@@ -2168,7 +2196,7 @@
               </div>
               <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 10px 0;">
                 <p><strong>Situación Planteada:</strong> Una familia evalúa realizar aportaciones mensuales constantes hacia instrumentos que replican el índice S&P 500, comparando alternativas con cobertura cambiaria peso/dólar (IVVPESO de BlackRock, con precio de referencia oficial reportado al 20 de noviembre de 2026 de $139.53 MXN por título) frente a alternativas globales en dólares en el SIC (VOO, títulos de ~$10,000 MXN sin cobertura cambiaria).</p>
-                <p><strong>Aprendizaje Clave:</strong> La indexación pasiva reduce significativamente el riesgo no sistemático (el impacto de la quiebra o quiebra de una compañía individual al diluirse entre 500 emisoras), pero no elimina el riesgo sistemático de mercado (caídas generalizadas del índice durante recesiones globales).</p>
+                <p><strong>Aprendizaje Clave:</strong> La indexación pasiva reduce significativamente el riesgo no sistemático (el impacto de la quiebra de una compañía individual al diluirse entre 500 emisoras), pero no elimina el riesgo sistemático de mercado (caídas generalizadas del índice durante recesiones globales).</p>
                 <p style="font-size: 11.5px; color: #94a3b8; margin-top: 6px;"><em>Variables del modelo: Precio oficial BlackRock IVVPESO, horizonte temporal, efecto de la inflación y riesgo macroeconómico.</em></p>
               </div>
             </div>
@@ -2268,7 +2296,7 @@
             <p><strong>Titularidad 100% Personal:</strong> Toda operación, liquidación y custodia de recursos es ejecutada de manera soberana y directa por el usuario a través de sus propias cuentas reguladas abiertas a su nombre en las instituciones financieras autorizadas.</p>
           </div>
 
-          <div class="legal-card" style="border-left: 3px solid #10b981;">
+          <div class="legal-card" style="grid-column: 1 / -1; border-left: 3px solid #10b981;">
             <h5>5. Aviso de Privacidad Integral (LFPDPPP Arts. 15 y 16)</h5>
             <p><strong>I. Identidad y Domicilio del Responsable:</strong> La Titular, Propietaria y Desarrolladora de la iniciativa formativa independiente <em>Patrimonio Inteligente</em>, con domicilio para oír y recibir notificaciones y atender solicitudes en materia de datos personales ubicado en Ciudad de México, México (C.P. 01000), con canal de recepción digital en el correo electrónico <code>patrimonio.privacidad@gmail.com</code> y como canal preferente y automatizado de atención inmediata el bot de Telegram <code>@dabel_btc_copiloto_bot</code>, es la responsable del tratamiento y salvaguarda de los identificadores técnicos tratados.</p>
             <p><strong>II. Datos Personales Tratados:</strong> 
@@ -2784,13 +2812,14 @@
 
     // Función para aplicar escenarios de estrés y ciclos macroeconómicos
     function applyStressScenario(tasaAct, tasaBtc, label) {
-      if (currentCalcMode !== 'hibrido') {
-        setCalcMode('hibrido');
-      }
       const sAct = document.getElementById('sliderTasaActHybrid');
       const sBtc = document.getElementById('sliderTasaBtcHybrid');
+      const sActSolo = document.getElementById('sliderTasaActSolo');
+      const sBtcSolo = document.getElementById('sliderTasaBtcSolo');
       if (sAct) sAct.value = tasaAct;
       if (sBtc) sBtc.value = tasaBtc;
+      if (sActSolo) sActSolo.value = tasaAct;
+      if (sBtcSolo) sBtcSolo.value = tasaBtc;
 
       const note = document.getElementById('stressScenarioNote');
       if (note) {
@@ -3098,6 +3127,9 @@
       var m = document.getElementById('modalComandos');
       if (m) m.style.display = 'none';
     }
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModalComandos();
+    });
   
 
     // ========================================================
