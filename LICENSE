@@ -1,0 +1,53 @@
+PROPRIETARY LICENSE & FINANCIAL LIABILITY DISCLAIMER
+=============================================================================
+Copyright (c) 2026. Todos los derechos reservados.
+=============================================================================
+
+1. PROPIEDAD INTELECTUAL Y TÉRMINOS DE USO:
+Este software, sus algoritmos matemáticos de acumulación, detección de regímenes
+macroeconómicos, fórmulas de interés compuesto y lógica de rebalanceo bursátil
+constituyen una obra intelectual privada desarrollada para uso personal.
+
+Queda estrictamente prohibida su copia, modificación, distribución, sublicenciamiento,
+venta, explotación comercial o divulgación pública sin la autorización previa, expresa
+y por escrito del titular de los derechos de autor.
+
+El acceso o uso compartido autorizado a terceros (como amigos o colaboradores) se
+concede bajo licencia personal, privada, revocable y no exclusiva, exclusivamente para
+fines personales de automatización y sin fines comerciales.
+
+=============================================================================
+2. DESLINDE DE RESPONSABILIDAD FINANCIERA (DISCLAIMER):
+=============================================================================
+A) ESTE SOFTWARE SE PROPORCIONA "TAL CUAL" ("AS IS"), CON FINES ESTRICTAMENTE
+   INFORMATIVOS, EDUCATIVOS Y DE AUTOMATIZACIÓN DE OPERACIONES PERSONALES.
+
+B) NO CONSTITUYE ASESORÍA FINANCIERA:
+   Ni este programa, ni sus creadores, ni sus mantenedores son asesores financieros,
+   corredores de bolsa, entidades de crédito ni intermediarios financieros regulados.
+   Las alertas, cálculos y órdenes sugeridas generadas por el bot son estimaciones
+   algorítmicas basadas en datos de mercado históricos y públicos, y en ningún caso
+   representan una garantía de rentabilidad, una oferta de inversión ni una recomendación
+   legal, fiscal o bursátil vinculante.
+
+C) RIESGO INHERENTE DEL MERCADO:
+   El comercio de criptomonedas (Bitcoin) y activos bursátiles (acciones, ETFs, FIBRAs)
+   conlleva riesgos significativos de volatilidad y pérdida parcial o total del capital
+   invertido. El rendimiento pasado nunca garantiza rendimientos futuros.
+
+D) CUSTODIA Y DECISIÓN EXCLUSIVA DEL USUARIO:
+   El usuario es el único custodio y responsable de sus cuentas, fondos, claves de acceso
+   y de la decisión final de ejecutar o no cualquier orden de compra o venta en sus
+   respectivas plataformas (Bitso, Bursanet/Actinver, u otras).
+
+E) EXENCIÓN TOTAL DE DAÑOS:
+   Bajo ninguna circunstancia los autores o titulares del software serán legalmente
+   responsables por pérdidas financieras, lucro cesante, daños directos, indirectos,
+   incidentales, consecuenciales o fallas técnicas (incluyendo cortes de red, cambios
+   en APIs de terceros o interrupciones de servicios en la nube) derivadas del uso
+   o la imposibilidad de uso de este software.
+
+=============================================================================
+AL UTILIZAR ESTE SOFTWARE O CUALQUIERA DE SUS ALERTAS, EL USUARIO ACEPTA PLENA
+Y EXPRESAMENTE TODOS LOS TÉRMINOS DE ESTA LICENCIA Y DESLINDE DE RESPONSABILIDAD.
+=============================================================================
