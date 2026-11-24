@@ -2759,6 +2759,183 @@
       }
     }
 
+  
+
+    /* ========================================================
+       GLOSARIO FINANCIERO COTIDIANO (CAPÍTULO 7)
+       ======================================================== */
+    .glossary-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .glossary-search-box {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .glossary-search-input {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 14px 24px 14px 48px;
+      color: var(--text-main);
+      font-size: 15px;
+      outline: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .glossary-search-input:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+      background: rgba(15, 23, 42, 0.98);
+    }
+    .glossary-search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+    .glossary-filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .glossary-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      border-radius: 9999px;
+      padding: 7px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .glossary-pill:hover,
+    .glossary-pill.active {
+      background: rgba(37, 99, 235, 0.2);
+      border-color: var(--border-focus);
+      color: #38bdf8;
+    }
+    .glossary-count-bar {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 22px;
+      margin-top: 20px;
+    }
+    .glossary-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      backdrop-filter: blur(12px);
+    }
+    .glossary-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, 0.35);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .glossary-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .glossary-term-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.3;
+    }
+    .glossary-cat-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .cat-trading { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .cat-bolsa { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .cat-cripto { background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.3); }
+    .cat-patrimonio { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    
+    .glossary-alias {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #38bdf8;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+    .glossary-definition {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+    .glossary-example-box {
+      background: rgba(30, 41, 59, 0.6);
+      border-left: 3px solid #f59e0b;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .glossary-example-label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #fbbf24;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .glossary-example-text {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #e2e8f0;
+      margin: 0;
+    }
+    .glossary-copilot-box {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px dashed rgba(16, 185, 129, 0.35);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #a7f3d0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .glossary-copilot-box strong {
+      color: #34d399;
+    }
+
   </style>
 
   <!-- METADATOS OPEN GRAPH Y TWITTER CARD (PREVISUALIZACIÓN ELEGANTE) -->
@@ -2818,6 +2995,7 @@
         <li><a href="#calculadora">Calculadora</a></li>
         <li><a href="#descargas">Biblioteca</a></li>
         <li><a href="#resenas">Ejercicios</a></li>
+        <li><a href="#glosario" style="color: #f59e0b; font-weight: 700;">📖 Glosario Cotidiano</a></li>
         <li><a href="#marco-legal">Marco Legal</a></li>
       </ul>
 
@@ -4657,13 +4835,486 @@
 
 
 
-    <!-- SECTION 7: CUMPLIMIENTO REGULATORIO Y MARCO LEGAL -->
+
+    <!-- SECTION 6.5: GLOSARIO FINANCIERO COTIDIANO -->
+    <section id="glosario" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Capítulo 7 • Glosario Ciudadano y Analogías Cotidianas</span>
+          <h2>Glosario Financiero en Lenguaje Cotidiano</h2>
+          <p>Todos los conceptos de nuestra estrategia explicados sin tecnicismos difíciles, con ejemplos prácticos del día a día para que cualquier persona en casa los comprenda y domine al 100%.</p>
+        </div>
+
+        <div class="glossary-controls">
+          <div class="glossary-search-box">
+            <span class="glossary-search-icon">🔍</span>
+            <input type="text" id="glossarySearch" class="glossary-search-input" placeholder="Buscar término o ejemplo (ej. swing trading, aguacates, tanda, rendimientos)..." oninput="filterGlossary()">
+          </div>
+
+          <div class="glossary-filter-pills" id="glossaryPills">
+            <button class="glossary-pill active" onclick="setGlossaryCategory('all', this)">Todos (18)</button>
+            <button class="glossary-pill" onclick="setGlossaryCategory('trading', this)">📈 Trading y Estrategia</button>
+            <button class="glossary-pill" onclick="setGlossaryCategory('bolsa', this)">🏢 Bolsa y FIBRAs</button>
+            <button class="glossary-pill" onclick="setGlossaryCategory('patrimonio', this)">🛡️ Patrimonio y Retiro</button>
+            <button class="glossary-pill" onclick="setGlossaryCategory('cripto', this)">₿ Cripto y Bitcoin</button>
+          </div>
+
+          <div class="glossary-count-bar" id="glossaryCountBar">Mostrando 18 conceptos financieros con ejemplos de la vida real</div>
+        </div>
+
+        <div class="glossary-grid" id="glossaryGrid">
+
+          <!-- 1. Swing Trading -->
+          <div class="glossary-card" data-category="trading" data-keywords="swing trading oleadas comprar barato vender caro corto plazo vaivenes">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Swing Trading</h3>
+                <span class="glossary-cat-badge cat-trading">Trading y Estrategia</span>
+              </div>
+              <span class="glossary-alias">"Aprovechar la marea baja para comprar y la marea alta para vender"</span>
+              <p class="glossary-definition">
+                Es una estrategia donde compras un activo cuando su precio baja temporalmente por una racha de mercado y lo vendes días o semanas después cuando vuelve a subir. No estás pegado a la pantalla a cada minuto (day trading) ni esperas 30 años: capturas ganancias en movimientos intermedios.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🥑 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>Comprar aguacates o limones en el mercado:</strong> Si vas al tianguis y ves que por sobreoferta el kilo de aguacate bajó de $60 a $20 pesos, compras varias piezas. Dos semanas después, cuando escasea y en todos lados sube a $55, aprovechas para vender tu excedente a tus vecinos o consumirlos ahorrándote más de la mitad. Compraste en el piso de la ola y cosechaste en la cresta.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> El bot vigila el mercado por ti y te manda una alerta únicamente cuando el precio está en un "dip" (piso estadístico), avisándote cuándo vender con ganancia realizada.</div>
+            </div>
+          </div>
+
+          <!-- 2. DCA -->
+          <div class="glossary-card" data-category="patrimonio" data-keywords="dca dollar cost averaging compras periodicas tanda ahorro promediar">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">DCA (Dollar Cost Averaging)</h3>
+                <span class="glossary-cat-badge cat-patrimonio">Patrimonio y Retiro</span>
+              </div>
+              <span class="glossary-alias">"La compra periódica sin adivinar el futuro"</span>
+              <p class="glossary-definition">
+                Consiste en invertir una cantidad fija de dinero (por ejemplo, $200 o $500 pesos) cada semana o cada mes de manera constante, sin importar si el precio subió o bajó ese día. Esto te protege de cometer el error de invertir todo en el punto más caro.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🧺 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>La tanda familiar o el mandado semanal:</strong> Si compras un litro de leche cada lunes, habrá semanas que cueste $24 y otras $27 pesos. Al final del año, no te desgastaste persiguiendo ofertas a diario; pagaste el costo promedio exacto del mercado y llenaste tu despensa con total tranquilidad.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> El bot programa y vigila tus compras periódicas para que acumules títulos o satoshis quincena a quincena de forma automática y disciplinada.</div>
+            </div>
+          </div>
+
+          <!-- 3. CAGR -->
+          <div class="glossary-card" data-category="patrimonio" data-keywords="cagr tasa crecimiento anual compuesto interes bola nieve matematicas">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">CAGR (Crecimiento Anual Compuesto)</h3>
+                <span class="glossary-cat-badge cat-patrimonio">Patrimonio y Retiro</span>
+              </div>
+              <span class="glossary-alias">"La velocidad real a la que avanza tu bola de nieve"</span>
+              <p class="glossary-definition">
+                Es la tasa porcentual anual constante a la que crece una inversión considerando que las ganancias de cada año se reinvierten para generar ganancias todavía mayores el año siguiente (el efecto multiplicador del interés compuesto).
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🍎 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>El huerto de manzanos:</strong> Si siembras un árbol y el primer año te da 10 manzanas, en vez de comértelas todas, tomas sus semillas y plantas 10 árboles más. En unos años no tienes 10 manzanas, tienes una huerta entera produciendo cientos de frutos porque los frutos anteriores trabajaron para ti.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> La calculadora de la web modela matemáticamente tu CAGR real restando inflación y comisiones para no darte ilusiones infladas.</div>
+            </div>
+          </div>
+
+          <!-- 4. FIBRA -->
+          <div class="glossary-card" data-category="bolsa" data-keywords="fibra fideicomiso bienes raices rentas locales bodegas fibramq">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">FIBRA (Bienes Raíces en Bolsa)</h3>
+                <span class="glossary-cat-badge cat-bolsa">Bolsa y FIBRAs</span>
+              </div>
+              <span class="glossary-alias">"Ser dueño de una rebanada de grandes edificios y cobrar rentas"</span>
+              <p class="glossary-definition">
+                Un Fideicomiso de Infraestructura y Bienes Raíces es un instrumento que agrupa cientos de propiedades comerciales, parques industriales u hoteles. Al comprar un título en la bolsa mexicana, te conviertes en copropietario y recibes distribuciones periódicas de las rentas.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🏢 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>Comprar una rebanada de un centro comercial:</strong> Comprar un local en una plaza cuesta millones de pesos y está fuera del alcance de casi cualquiera. A través de una FIBRA (como FIBRAMQ), compras un "cachito" de $35 pesos y cada tres meses te depositan a tu cuenta bancaria tu parte proporcional de las rentas cobradas a inquilinos como Walmart o Amazon.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> Concilia automáticamente tus títulos de FIBRAMQ en Bursanet y proyecta tus rentas trimestrales directas a tu cuenta.</div>
+            </div>
+          </div>
+
+          <!-- 5. ETF -->
+          <div class="glossary-card" data-category="bolsa" data-keywords="etf canasta fondo indexado sp500 ivvpeso qqqm diversificacion">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">ETF (Canasta de Inversión)</h3>
+                <span class="glossary-cat-badge cat-bolsa">Bolsa y FIBRAs</span>
+              </div>
+              <span class="glossary-alias">"La canasta surtida que te protege de que una fruta salga mala"</span>
+              <p class="glossary-definition">
+                Un ETF (Exchange Traded Fund) es un fondo que cotiza en bolsa como si fuera una sola acción, pero por dentro contiene cientos de empresas distintas (por ejemplo, el S&amp;P 500 agrupa a las 500 empresas más grandes de EE.UU. como Apple, Microsoft y Google).
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🍉 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>El huacal de fruta surtida:</strong> Si te gastas todo tu dinero en comprar exclusivamente mangos y esa temporada viene una plaga, lo pierdes todo. En cambio, si compras una caja surtida con manzanas, plátanos, peras, naranjas y uvas, si una fruta sale agria, las otras cuatro compensan el postre de tu familia.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> Recomendamos ETFs ultraeficientes de bajo costo (como IVVPESO a $147 MXN o QQQM) para que con poco dinero tengas presencia global.</div>
+            </div>
+          </div>
+
+          <!-- 6. SIC -->
+          <div class="glossary-card" data-category="bolsa" data-keywords="sic sistema internacional cotizaciones bolsa mexicana dolares pesos importacion">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">SIC (Mercado Global Mexicano)</h3>
+                <span class="glossary-cat-badge cat-bolsa">Bolsa y FIBRAs</span>
+              </div>
+              <span class="glossary-alias">"La aduana legal para comprar activos mundiales en pesos mexicanos"</span>
+              <p class="glossary-definition">
+                Es la plataforma oficial de la Bolsa Mexicana de Valores (BMV) que permite a cualquier ciudadano comprar y vender acciones y ETFs extranjeros directamente desde su casa de bolsa mexicana (como Bursanet o GBM), pagando y cobrando en pesos mexicanos.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">✈️ Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>La tienda de dulces importados de tu colonia:</strong> En vez de comprar un boleto de avión a Nueva York, tramitar visa, cambiar pesos a dólares y pagar comisiones en el extranjero para comprar tus chocolates favoritos, vas a la tienda de tu esquina en México, pagas $50 pesos en la caja y te llevas el producto legalmente importado.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> Todos los ETFs extranjeros recomendados (como QQQM e IVVPESO) operan vía SIC regulado por CNBV, garantizándote respaldo fiscal en México.</div>
+            </div>
+          </div>
+
+          <!-- 7. Cosecha de Rendimientos -->
+          <div class="glossary-card" data-category="patrimonio" data-keywords="cosecha rendimientos ganancias harvesting retirar utilidades capital protegido">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Cosecha de Rendimientos</h3>
+                <span class="glossary-cat-badge cat-patrimonio">Patrimonio y Retiro</span>
+              </div>
+              <span class="glossary-alias">"Retirar solo la fruta sin tocar el tronco del árbol"</span>
+              <p class="glossary-definition">
+                Consiste en retirar exclusivamente las ganancias o plusvalías que generaron tus inversiones, manteniendo tu capital original invertido 100% intacto para que continúe trabajando y produciendo beneficios a futuro sin descapitalizarte.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🍋 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>El limonero de tu patio:</strong> Si invertiste $1,000 pesos en sembrar un árbol de limones y este mes dio frutos por valor de $200 pesos, cortas los limones para hacer limonada fresca o venderlos, pero no cortas el tronco ni las ramas. El árbol (tu capital) sigue entero en tu jardín para florecer de nuevo el mes que viene.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> Nuestro motor <code>BalanceDeltaEngine</code> detecta retiros en tus capturas y clasifica automáticamente si es cosecha pura de ganancias para asegurar que tu capital base no sufra.</div>
+            </div>
+          </div>
+
+          <!-- 8. Descapitalización -->
+          <div class="glossary-card" data-category="patrimonio" data-keywords="descapitalizacion perdida capital base comer ahorros retiro mixto">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Descapitalización</h3>
+                <span class="glossary-cat-badge cat-patrimonio">Patrimonio y Retiro</span>
+              </div>
+              <span class="glossary-alias">"Comerte la semilla que estaba destinada a dar la cosecha"</span>
+              <p class="glossary-definition">
+                Ocurre cuando retiras más dinero del que ganaste, obligando al sistema a vender parte de tu capital base inicial. Esto reduce el tamaño de tu patrimonio productivo y merma la capacidad de generar ingresos futuros.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🐄 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>Vender las vacas que dan leche:</strong> Si tienes 5 vacas lecheras que te dan sustento diario y decides vender 2 vacas para pagar una fiesta o un capricho, ahora solo te quedan 3 vacas produciendo leche; tu fuente de riqueza disminuyó y tus ingresos de cada mañana serán menores para siempre.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> Si efectúas un retiro mayor a tus ganancias, el bot te notifica de inmediato: <em>"Retiro Mixto Detectado"</em>, recalculando tu costo base para advertirte de la reducción de tu capital.</div>
+            </div>
+          </div>
+
+          <!-- 9. Satoshis -->
+          <div class="glossary-card" data-category="cripto" data-keywords="satoshis sats bitcoin centavos fraccion btc unidad">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Satoshis</h3>
+                <span class="glossary-cat-badge cat-cripto">Cripto y Bitcoin</span>
+              </div>
+              <span class="glossary-alias">"Los centavos de Bitcoin"</span>
+              <p class="glossary-definition">
+                Es la unidad de medida más pequeña de Bitcoin. Así como 1 peso mexicano se divide en 100 centavos, 1 Bitcoin completo se divide en 100,000,000 (cien millones) de satoshis. No necesitas comprar un Bitcoin entero; puedes ahorrar desde $50 o $100 pesos en satoshis.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🧀 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>Comprar jamón o queso por gramos:</strong> Si una pierna de jamón serrano cuesta $1,500 pesos, no tienes que cargar con la pierna entera: le pides al encargado "deme $50 pesos de jamón" y te pesa exactamente 40 gramos. Los satoshis son exactamente esos gramos accesibles de Bitcoin.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> El bot registra tus compras en satoshis exactos (ej. 17,776 sats por $200 MXN) para que veas crecer tu alcancía digital sin confusiones de decimales.</div>
+            </div>
+          </div>
+
+          <!-- 10. RSI -->
+          <div class="glossary-card" data-category="trading" data-keywords="rsi fuerza relativa termometro euforia panico sobrecompra sobreventa">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">RSI (Termómetro del Aforo)</h3>
+                <span class="glossary-cat-badge cat-trading">Trading y Estrategia</span>
+              </div>
+              <span class="glossary-alias">"El medidor de euforia o pánico en el mercado"</span>
+              <p class="glossary-definition">
+                El Índice de Fuerza Relativa (RSI) es un número del 0 al 100 que mide la velocidad y magnitud de las compras y ventas. Si está arriba de 70 indica "sobrecompra" (demasiada euforia y precios caros); si está abajo de 30 indica "sobreventa" (pánico exagerado y precios de remate).
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🏬 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>La fila de una tienda en El Buen Fin:</strong> Si llegas a una tienda y la fila da la vuelta a la manzana con empujones y precios inflados (RSI > 70), lo más prudente es no meterte a comprar. En cambio, si vas el lunes en la mañana cuando está vacía y rematan liquidaciones al 50% (RSI < 30), compras con calma y con el máximo beneficio.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> Cuando escribes <code>/timing</code>, el bot consulta el RSI de 4 horas para confirmarte si es momento óptimo de compra o si es prematuro.</div>
+            </div>
+          </div>
+
+          <!-- 11. Orden Límite vs Mercado -->
+          <div class="glossary-card" data-category="trading" data-keywords="orden limite maker orden mercado taker comisiones bitso bursanet">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Orden Límite (Maker) vs Mercado (Taker)</h3>
+                <span class="glossary-cat-badge cat-trading">Trading y Estrategia</span>
+              </div>
+              <span class="glossary-alias">"Poner tu precio con calma vs pagar con urgencia lo que pidan"</span>
+              <p class="glossary-definition">
+                Una <strong>Orden Límite</strong> es cuando tú defines el precio exacto al que quieres comprar o vender y esperas pacientemente en la fila; las plataformas te premian cobrándote la comisión más baja (Maker: 0.60% en Bitso). Una <strong>Orden a Mercado</strong> compra de inmediato al precio del momento y te cobran una comisión más alta por la prisa (Taker: 0.78%).
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🚗 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>Comprar un auto seminuevo:</strong> Si pones un letrero que dice <em>"Compro este modelo en $140,000; el que acepte me llama"</em>, actúas como Maker: negocias con tiempo y te ahorras mucho dinero. Si se te descompone el coche y vas corriendo a un lote a pagar el precio de lista que ellos fijen porque te urge moverte hoy, eres Taker y asumes el sobreprecio.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> Nuestras guías y calculadoras siempre te enseñan a usar Órdenes Límite para ahorrarte hasta $140,000 pesos en comisiones bancarias durante tu vida inversora.</div>
+            </div>
+          </div>
+
+          <!-- 12. Precio Promedio Ponderado -->
+          <div class="glossary-card" data-category="patrimonio" data-keywords="precio promedio ponderado costo base adquisicion matematicas compras">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Precio Promedio Ponderado</h3>
+                <span class="glossary-cat-badge cat-patrimonio">Patrimonio y Retiro</span>
+              </div>
+              <span class="glossary-alias">"El costo real promedio de todo lo que has comprado"</span>
+              <p class="glossary-definition">
+                Es el costo promedio por unidad calculado tomando en cuenta el dinero total invertido entre todos los títulos o satoshis acumulados. Te dice a partir de qué precio ya estás teniendo ganancias reales, absorbiendo las subidas y bajadas del mercado.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">⛽ Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>El consumo mensual de gasolina:</strong> Si la primera quincena cargaste $200 pesos cuando el litro estaba a $22, y la segunda quincena cargaste otros $200 cuando subió a $24, tu costo promedio pagado no fue ni $22 ni $24, sino exactamente $22.95 por litro. Ese es tu precio base real para medir tu rendimiento.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> Con el comando <code>/libro</code> puedes consultar en cualquier segundo tu precio promedio ponderado de compra actualizado.</div>
+            </div>
+          </div>
+
+          <!-- 13. Escenario de Estrés -->
+          <div class="glossary-card" data-category="patrimonio" data-keywords="escenario estres stress testing simulacro crisis inflacion caida bolsa">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Escenario de Estrés (Stress Testing)</h3>
+                <span class="glossary-cat-badge cat-patrimonio">Patrimonio y Retiro</span>
+              </div>
+              <span class="glossary-alias">"La prueba de resistencia ante las peores tormentas económicas"</span>
+              <p class="glossary-definition">
+                Es una prueba de modelación matemática que somete a tu portafolio a crisis históricas severas (como el desplome del 2008, la pandemia del 2020 o inflaciones del 10%) para evaluar si tus ahorros sobrevivirían sin quebrar antes de que ocurran en la vida real.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🏗️ Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>El simulacro de sismo y la prueba de choque de autos:</strong> Nadie espera a que ocurra un terremoto real para averiguar si un hospital se sostiene; los ingenieros simulan vibraciones extremas en computadoras para asegurarse de que las columnas aguanten y la gente esté a salvo.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> En la sección Calculadora puedes activar la casilla <em>"Escenario de Estrés"</em> para ver cómo resiste tu estrategia ante caídas del 30% del mercado.</div>
+            </div>
+          </div>
+
+          <!-- 14. Liquidez -->
+          <div class="glossary-card" data-category="patrimonio" data-keywords="liquidez efectivo cash disponibilidad diaria actiren poder compra">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Liquidez y Poder de Compra</h3>
+                <span class="glossary-cat-badge cat-patrimonio">Patrimonio y Retiro</span>
+              </div>
+              <span class="glossary-alias">"El dinero disponible en mano para reaccionar al instante"</span>
+              <p class="glossary-definition">
+                Es el dinero en efectivo o en fondos de deuda gubernamental de disponibilidad diaria (como ACTIREN en Bursanet) que no está expuesto a caídas bruscas y que puedes retirar a tu cuenta bancaria o usar para comprar ofertas de mercado en cuestión de segundos.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">👛 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>El dinero en la cartera y el tanque de reserva:</strong> No puedes salir a la calle teniendo todo tu patrimonio amarrado en un terreno o una casa, porque si se te poncha una llanta o tienes un gasto médico imprevisto, no puedes pagar con un pedazo de barda. Necesitas efectivo líquido en la mano.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> Mantenemos un componente de liquidez en ACTIREN B para que tu patrimonio gane intereses diarios mientras esperas oportunidades de compra.</div>
+            </div>
+          </div>
+
+          <!-- 15. Rebalanceo -->
+          <div class="glossary-card" data-category="bolsa" data-keywords="rebalanceo cartera porcentaje proporciones equilibrio alinear">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Rebalanceo de Cartera</h3>
+                <span class="glossary-cat-badge cat-bolsa">Bolsa y FIBRAs</span>
+              </div>
+              <span class="glossary-alias">"Podar lo que creció mucho para regar lo que viene atrás"</span>
+              <p class="glossary-definition">
+                Es la acción periódica (por ejemplo, cada 6 o 12 meses) de vender una pequeña porción de los activos que subieron mucho de precio para comprar los que quedaron rezagados o baratos, regresando tu portafolio a sus porcentajes originales de seguridad.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">⚖️ Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>Alinear la carga de una carretilla:</strong> Si cargas una carretilla con sacos de cemento y todo el peso se inclina hacia la llanta derecha, la carretilla se te va a voltear. Tienes que mover un saco del lado pesado al lado liviano para que avance derechita, sin esfuerzo y sin peligro de que se caiga la carga.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> El comando <code>/rebalanceo</code> calcula exactamente cuántos pesos transferir entre tus fondos de Actinver para mantener el balance ideal.</div>
+            </div>
+          </div>
+
+          <!-- 16. Volatilidad -->
+          <div class="glossary-card" data-category="trading" data-keywords="volatilidad subidas bajadas olas mar riesgo fluctuacion">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Volatilidad</h3>
+                <span class="glossary-cat-badge cat-trading">Trading y Estrategia</span>
+              </div>
+              <span class="glossary-alias">"El oleaje del mar: peligro para el que no sabe nadar, impulso para el surfista"</span>
+              <p class="glossary-definition">
+                Es la velocidad y amplitud con la que se mueven los precios en el mercado. Volatilidad no significa pérdida; significa movimiento. Para quien tiene reglas y paciencia, la volatilidad representa una fábrica de descuentos para comprar barato y cosechar después.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🏄 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>El oleaje en la playa:</strong> Si te metes al mar hondo sin saber nadar y sin salvavidas, las olas te asustan y te revuelcan. Pero si eres un surfista preparado con tabla y técnica, esperas con calma a que venga la ola grande para impulsarte y llegar más lejos.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> Usamos la volatilidad a tu favor gracias a los centinelas automáticos que te avisan cuándo una ola bajista es una gran oportunidad de entrada.</div>
+            </div>
+          </div>
+
+          <!-- 17. Gatekeeper DCA -->
+          <div class="glossary-card" data-category="trading" data-keywords="gatekeeper filtro compras prematuras disciplina candado freno impulso">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Gatekeeper DCA (Filtro Anticompras Prematuras)</h3>
+                <span class="glossary-cat-badge cat-trading">Trading y Estrategia</span>
+              </div>
+              <span class="glossary-alias">"El candado que te protege de comprar por impulso o aburrimiento"</span>
+              <p class="glossary-definition">
+                Es un algoritmo centinela que bloquea las compras cuando el precio apenas cayó un centavo o cuando el mercado todavía no ha formado un piso estadístico confiable, evitando que gastes tu liquidez en rebajas falsas antes de tiempo.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🛒 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>La lista del súper estricta:</strong> Si vas al supermercado con hambre y sin lista, compras galletas y refrescos que no necesitabas al precio que estén. El Gatekeeper es como llevar un acompañante prudente que te dice: <em>"Guarda tu dinero; esas galletas las rebajan al 50% el jueves, espérate tantito"</em>.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> El bot evalúa el RSI y la distancia porcentual del dip; si no cumple los requisitos, te indica claramente: <em>"Alerta silenciada: compra prematura evitada"</em>.</div>
+            </div>
+          </div>
+
+          <!-- 18. Balance Delta Engine -->
+          <div class="glossary-card" data-category="patrimonio" data-keywords="balance delta engine conciliacion automatica capturas portafolio retiros depositos sin comprobante">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Balance Delta Reconciler</h3>
+                <span class="glossary-cat-badge cat-patrimonio">Patrimonio y Retiro</span>
+              </div>
+              <span class="glossary-alias">"La libreta inteligente que detecta si metiste o sacaste dinero sin pedirte recibos"</span>
+              <p class="glossary-definition">
+                Es el motor que compara cualquier foto de tu portafolio o saldo actual contra tu libro contable histórico. Si tu saldo aumentó, acredita la aportación; si disminuyó, calcula matemáticamente si retiraste ganancias cosechadas o si tocaste tu capital original, sin necesidad de comandos.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">📝 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>El frasco de ahorros de la cocina:</strong> Tienes un frasco donde guardas dinero. Si tu pareja mete $500 pesos, la libreta anota el nuevo ahorro sin pedirle el ticket del banco. Y si sacas $100 pesos, la libreta revisa si los tomaste de las propinas ganadas (ganancias) o del fondo de la renta (capital base) para mantener las cuentas claras.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> Puedes subir una simple captura de tu app de Bitso o Bursanet y el bot reconciliará aportaciones, cosechas de rendimientos o retiros mixtos en segundos.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="glossaryEmpty" style="display: none; text-align: center; padding: 48px 20px; background: rgba(15, 23, 42, 0.5); border: 1px dashed var(--border-color); border-radius: var(--radius-lg); margin-top: 24px;">
+          <p style="font-size: 32px; margin-bottom: 8px;">🔍</p>
+          <h4 style="font-size: 18px; color: var(--text-main); margin-bottom: 6px;">No se encontraron términos para tu búsqueda</h4>
+          <p style="font-size: 14px; color: var(--text-muted); margin: 0;">Prueba buscando palabras como <em>"swing trading"</em>, <em>"aguacates"</em>, <em>"tanda"</em>, <em>"limonero"</em> o <em>"retiro"</em>.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SECTION 8: CUMPLIMIENTO REGULATORIO Y MARCO LEGAL -->
 
     <section id="marco-legal" class="page-section">
 
       <div class="section-header" style="margin-bottom: 24px;">
 
-        <span class="section-tag">Capítulo 7 • Transparencia Institucional y Legal</span>
+        <span class="section-tag">Capítulo 8 • Transparencia Institucional y Legal</span>
 
         <h2>Marco Legal, Deslinde Regulatorio y Protección de Datos</h2>
 
@@ -6489,7 +7140,62 @@
 
 
 
-</script>
+
+
+    // ========================================================
+    // LOGICA INTERACTIVA DEL GLOSARIO FINANCIERO COTIDIANO
+    // ========================================================
+    let currentGlossaryCategory = 'all';
+
+    function setGlossaryCategory(category, buttonEl) {
+      currentGlossaryCategory = category;
+      const pills = document.querySelectorAll('.glossary-pill');
+      pills.forEach(p => p.classList.remove('active'));
+      if (buttonEl) buttonEl.classList.add('active');
+      filterGlossary();
+    }
+
+    function filterGlossary() {
+      const searchInput = document.getElementById('glossarySearch');
+      const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+      const cards = document.querySelectorAll('.glossary-card');
+      const countBar = document.getElementById('glossaryCountBar');
+      const emptyBox = document.getElementById('glossaryEmpty');
+
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category') || '';
+        const keywords = card.getAttribute('data-keywords') || '';
+        const title = (card.querySelector('.glossary-term-title')?.textContent || '').toLowerCase();
+        const def = (card.querySelector('.glossary-definition')?.textContent || '').toLowerCase();
+        const ex = (card.querySelector('.glossary-example-text')?.textContent || '').toLowerCase();
+        const alias = (card.querySelector('.glossary-alias')?.textContent || '').toLowerCase();
+
+        const matchCategory = (currentGlossaryCategory === 'all' || cat === currentGlossaryCategory);
+        const matchQuery = !query || 
+          title.includes(query) || 
+          keywords.includes(query) || 
+          def.includes(query) || 
+          ex.includes(query) || 
+          alias.includes(query);
+
+        if (matchCategory && matchQuery) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (countBar) {
+        countBar.textContent = `Mostrando ${visibleCount} de ${cards.length} conceptos financieros con ejemplos de la vida real`;
+      }
+      if (emptyBox) {
+        emptyBox.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    }
+
+  </script>
 
 </body>
 
