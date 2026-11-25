@@ -2998,6 +2998,7 @@
         <li><a href="#guias">Guías</a></li>
         <li><a href="#activos">Universo</a></li>
         <li><a href="#evaluador">Evaluador</a></li>
+        <li><a href="#dualidad-btc" style="color: #a855f7; font-weight: 700;">⚖️ Doble Finalidad BTC</a></li>
         <li><a href="#calculadora">Calculadora</a></li>
         <li><a href="#descargas">Biblioteca</a></li>
         <li><a href="#resenas">Ejercicios</a></li>
@@ -4047,6 +4048,239 @@
 
     </section>
 
+
+
+    
+    <!-- SECTION 3.5: DOBLE FINALIDAD ESTRATÉGICA DE BITCOIN (ACUMULACIÓN VS COSECHA FIAT FIBRAS) -->
+    <section id="dualidad-btc" class="page-section" style="padding: 60px 0; border-top: 1px solid rgba(168, 85, 247, 0.2); border-bottom: 1px solid rgba(168, 85, 247, 0.2); background: radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.08) 0%, rgba(15, 23, 42, 0.4) 70%);">
+      <div class="section-header" style="text-align: center; margin-bottom: 45px;">
+        <span class="section-tag" style="background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Capítulo 3.5 • Filosofía Algorítmica Dual</span>
+        <h2 style="font-size: 2.2rem; font-weight: 800; margin: 15px 0 10px; color: #ffffff; letter-spacing: -0.02em;">La Doble Finalidad Estratégica de Bitcoin</h2>
+        <p style="max-width: 820px; margin: 0 auto; color: #94a3b8; font-size: 1.05rem; line-height: 1.6;">Dos metas patrimoniales radicalmente distintas, gobernadas con precisión matemática por un solo copiloto inteligente. Tú eliges tu unidad de cuenta; el algoritmo ejecuta con disciplina institucional.</p>
+      </div>
+
+      <!-- Selector Interactivo de Filosofía -->
+      <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 35px; flex-wrap: wrap;">
+        <button id="btnTabModo1" onclick="switchDualityTab('modo1')" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; font-weight: 800; border: none; padding: 12px 24px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);">
+          ⚡ Finalidad 1: Acumular Satoshis (Reserva de Valor)
+        </button>
+        <button id="btnTabModo2" onclick="switchDualityTab('modo2')" style="background: rgba(30, 41, 59, 0.8); color: #cbd5e1; font-weight: 700; border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 24px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
+          🏢 Finalidad 2: Motor de Rentas FIBRAs (Cosecha Fiat)
+        </button>
+        <button id="btnTabComparar" onclick="switchDualityTab('ambos')" style="background: rgba(30, 41, 59, 0.8); color: #cbd5e1; font-weight: 700; border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 24px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
+          ⚖️ Comparativa y Sinergia 70/30
+        </button>
+      </div>
+
+      <!-- Grid Principal de Tarjetas Duales -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 40px;">
+        
+        <!-- Tarjeta Modo 1: Acumulación de Satoshis -->
+        <div id="cardModo1" class="duality-card" style="background: rgba(15, 23, 42, 0.85); border: 2px solid rgba(245, 158, 11, 0.4); border-radius: 18px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; right: 0; background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; font-weight: 900; font-size: 0.75rem; padding: 4px 14px; border-bottom-left-radius: 12px; text-transform: uppercase;">Unidad: Satoshis</div>
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <div style="width: 50px; height: 50px; background: rgba(245, 158, 11, 0.15); border: 1px solid #f59e0b; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem;">⚡</div>
+            <div>
+              <h3 style="color: #f8fafc; font-size: 1.35rem; margin: 0; font-weight: 800;">Modo Acumulación Pura</h3>
+              <span style="color: #fbbf24; font-size: 0.85rem; font-weight: 600;">Reserva Soberana Intergeneracional</span>
+            </div>
+          </div>
+          <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">
+            El dinero fiat sufre devaluación constante e inflación estructural. En este modo, <strong>1 Satoshi siempre es 1 Satoshi</strong> de los 2,100 billones que existirán jamás. Tu meta no es acumular pesos ni dólares que pierden poder de compra, sino maximizar la cantidad de satoshis bajo tu posesión.
+          </p>
+          <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+            <h4 style="color: #fbbf24; font-size: 0.9rem; margin: 0 0 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">⚙️ Mecánica Operativa del Algoritmo:</h4>
+            <ul style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6; margin: 0; padding-left: 20px;">
+              <li><strong>Venta Límite Maker en Sobrecompra (RSI &ge; 65-70):</strong> Congela temporalmente una porción en fiat (pesos o dólares) con comisión mínima del 0.1%.</li>
+              <li><strong>Recompra Límite Maker en Soporte:</strong> El sistema calcula el retroceso técnico y vuelve a comprar Bitcoin. Al haber recomprado más abajo, <strong>obtienes más satoshis gratis</strong> con el mismo capital fiat original.</li>
+              <li><strong>Capital de Bolsillo Intacto:</strong> Tu balance de satoshis crece ciclo tras ciclo sin que tengas que inyectar más dinero de tu salario.</li>
+            </ul>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #64748b; border-top: 1px solid rgba(255, 255, 255, 0.08); pt: 15px; padding-top: 15px;">
+            <span>🎯 <strong>Horizonte:</strong> 5 a 20+ años</span>
+            <span style="color: #10b981; font-weight: 700;">Invariante: ΔSats &gt; 0</span>
+          </div>
+        </div>
+
+        <!-- Tarjeta Modo 2: Acelerador y Cosecha Fiat para FIBRAs -->
+        <div id="cardModo2" class="duality-card" style="background: rgba(15, 23, 42, 0.85); border: 2px solid rgba(56, 189, 248, 0.4); border-radius: 18px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; right: 0; background: linear-gradient(135deg, #0284c7, #0369a1); color: #fff; font-weight: 900; font-size: 0.75rem; padding: 4px 14px; border-bottom-left-radius: 12px; text-transform: uppercase;">Unidad: MXN / USD Fiat</div>
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <div style="width: 50px; height: 50px; background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem;">🏢</div>
+            <div>
+              <h3 style="color: #f8fafc; font-size: 1.35rem; margin: 0; font-weight: 800;">Modo Cosecha y Rentas</h3>
+              <span style="color: #38bdf8; font-size: 0.85rem; font-weight: 600;">Locomotora de Flujo Pasivo para FIBRAs</span>
+            </div>
+          </div>
+          <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">
+            En este modo, <strong>la unidad de cuenta es tu dinero fiat (MXN/USD)</strong>. Bitcoin es utilizado como un motor de aceleración matemática de alto rendimiento para cosechar plusvalías asimétricas y transferirlas de inmediato a activos regulados en <strong>Bursanet (Actinver)</strong> que pagan rentas constantes.
+          </p>
+          <div style="background: rgba(2, 6, 23, 0.6); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+            <h4 style="color: #38bdf8; font-size: 0.9rem; margin: 0 0 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">⚙️ Mecánica Operativa del Algoritmo:</h4>
+            <ul style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6; margin: 0; padding-left: 20px;">
+              <li><strong>Motor de Tracción Asimétrico:</strong> Aprovecha el crecimiento histórico de Bitcoin (~35%-50% anualizado compuesto) para inflar velozmente el capital disponible.</li>
+              <li><strong>Cosecha Macro de Ciclo ($1.8M+ MXN / $95k+ USD):</strong> El bot avisa la liquidación del 50% de las ganancias en Bitso y emite la orden de retiro a cuenta bancaria CLABE.</li>
+              <li><strong>Siembra en FIBRAs Industriales:</strong> Esos pesos cosechados se depositan en Bursanet para comprar FIBRAMQ, FUNO o PROLOGIS, asegurando dividendos del 8.5% al 10.5% anual en efectivo trimestral.</li>
+            </ul>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #64748b; border-top: 1px solid rgba(255, 255, 255, 0.08); pt: 15px; padding-top: 15px;">
+            <span>🎯 <strong>Horizonte:</strong> 3 a 7 años</span>
+            <span style="color: #38bdf8; font-weight: 700;">Invariante: Rentas Trimestrales MXN</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Infografía Visual del Ecosistema de Alimentación Simbiótica -->
+      <div style="background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 20px; padding: 35px; margin-bottom: 40px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);">
+        <h3 style="text-align: center; color: #c084fc; font-size: 1.3rem; margin: 0 0 10px; font-weight: 800;">🔄 El Ciclo Virtuoso: De la Volatilidad de Bitcoin a la Renta Inmobiliaria Fiduciaria</h3>
+        <p style="text-align: center; color: #94a3b8; font-size: 0.95rem; max-width: 750px; margin: 0 auto 30px;">Cómo interactúan ambas plataformas sin intermediarios costosos ni riesgo de custodia cruzada:</p>
+        
+        <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 20px; text-align: center;">
+          
+          <div style="flex: 1; min-width: 180px; background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 14px; padding: 20px;">
+            <div style="font-size: 2rem; margin-bottom: 8px;">🪙</div>
+            <div style="color: #fbbf24; font-weight: 800; font-size: 1rem; margin-bottom: 5px;">1. Bitso Alpha</div>
+            <div style="color: #cbd5e1; font-size: 0.82rem; line-height: 1.4;">Ahorro disciplinado en Bitcoin. El bot audita comisiones Maker (0.1%) y concilia tu capital real de bolsillo.</div>
+          </div>
+
+          <div style="font-size: 1.8rem; color: #a855f7; font-weight: 900;">➔</div>
+
+          <div style="flex: 1; min-width: 180px; background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 14px; padding: 20px;">
+            <div style="font-size: 2rem; margin-bottom: 8px;">🤖</div>
+            <div style="color: #c084fc; font-weight: 800; font-size: 1rem; margin-bottom: 5px;">2. Copiloto 24/7</div>
+            <div style="color: #cbd5e1; font-size: 0.82rem; line-height: 1.4;">Monitorea RSI 4H, medias móviles y ciclos. Te avisa en Telegram el momento matemático óptimo para actuar.</div>
+          </div>
+
+          <div style="font-size: 1.8rem; color: #a855f7; font-weight: 900;">➔</div>
+
+          <div style="flex: 1; min-width: 180px; background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 14px; padding: 20px;">
+            <div style="font-size: 2rem; margin-bottom: 8px;">🌾</div>
+            <div style="color: #38bdf8; font-weight: 800; font-size: 1rem; margin-bottom: 5px;">3. Cosecha Parcial</div>
+            <div style="color: #cbd5e1; font-size: 0.82rem; line-height: 1.4;">Toma de ganancias disciplinada en máximos. Tu principal en satoshis queda protegido en custodia personal.</div>
+          </div>
+
+          <div style="font-size: 1.8rem; color: #a855f7; font-weight: 900;">➔</div>
+
+          <div style="flex: 1; min-width: 180px; background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 14px; padding: 20px;">
+            <div style="font-size: 2rem; margin-bottom: 8px;">🏦</div>
+            <div style="color: #34d399; font-weight: 800; font-size: 1rem; margin-bottom: 5px;">4. Actinver Bursanet</div>
+            <div style="color: #cbd5e1; font-size: 0.82rem; line-height: 1.4;">Compra de FIBRAs industriales y comerciales. Genera flujo de efectivo cada 90 días depositado directo a tu banco.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tabla Comparativa Detallada -->
+      <div style="overflow-x: auto; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 20px; margin-bottom: 35px;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; color: #cbd5e1;">
+          <thead>
+            <tr style="border-bottom: 2px solid rgba(255, 255, 255, 0.15); color: #f8fafc;">
+              <th style="padding: 14px 16px;">Dimensión Estratégica</th>
+              <th style="padding: 14px 16px; color: #fbbf24;">⚡ Modo 1: Acumular Satoshis</th>
+              <th style="padding: 14px 16px; color: #38bdf8;">🏢 Modo 2: Motor de Rentas FIBRAs</th>
+              <th style="padding: 14px 16px; color: #c084fc;">⚖️ Modelo Híbrido (70% Bolsa / 30% BTC)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: 12px 16px; font-weight: 700; color: #fff;">Unidad de Cuenta Mental</td>
+              <td style="padding: 12px 16px;">Satoshis (sats)</td>
+              <td style="padding: 12px 16px;">Pesos Mexicanos (MXN) / Dólares (USD)</td>
+              <td style="padding: 12px 16px;">Flujo Mensual en MXN + Reserva Soberana en Sats</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05); background: rgba(255, 255, 255, 0.02);">
+              <td style="padding: 12px 16px; font-weight: 700; color: #fff;">Métrica de Éxito</td>
+              <td style="padding: 12px 16px; color: #34d399;">Mayor cantidad de sats sin meter nuevo dinero</td>
+              <td style="padding: 12px 16px; color: #38bdf8;">Mayor renta trimestral pasiva recibida</td>
+              <td style="padding: 12px 16px; color: #c084fc;">Rendimiento compuesto del 25%-35% anual equilibrado</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: 12px 16px; font-weight: 700; color: #fff;">Destino de las Ganancias</td>
+              <td style="padding: 12px 16px;">Recompra en dips; transferencia a Hardware Wallet</td>
+              <td style="padding: 12px 16px;">Retiro a banco para compra de FIBRAs / S&amp;P 500</td>
+              <td style="padding: 12px 16px;">70% reinversión en FIBRAs, 30% acumulación en sats</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05); background: rgba(255, 255, 255, 0.02);">
+              <td style="padding: 12px 16px; font-weight: 700; color: #fff;">Resistencia a la Volatilidad</td>
+              <td style="padding: 12px 16px;">Inmune psicológicamente (las caídas son oportunidades)</td>
+              <td style="padding: 12px 16px;">Controlada (las ganancias se amarran en ladrillos)</td>
+              <td style="padding: 12px 16px;">Máxima estabilidad: la renta fija bursátil amortigua a BTC</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 16px; font-weight: 700; color: #fff;">Auditoría Antifraude</td>
+              <td style="padding: 12px 16px;" colspan="3">
+                <span style="display: inline-block; background: rgba(16, 185, 129, 0.15); color: #34d399; padding: 4px 10px; border-radius: 6px; font-weight: 700;">✅ Motor de Conciliación de Invariantes Fiat Activo</span>
+                — El copiloto separa estrictamente tu capital aportado de bolsillo de las plusvalías flotantes del mercado, evitando ilusiones contables.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Banner de Vinculación a la Calculadora -->
+      <div style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(56, 189, 248, 0.15)); border: 1px dashed rgba(168, 85, 247, 0.4); border-radius: 14px; padding: 20px; text-align: center;">
+        <p style="color: #e2e8f0; font-size: 1rem; margin: 0 0 10px; font-weight: 600;">
+          💡 <strong>¿Listo para ver las matemáticas en acción?</strong> Utiliza el simulador interactivo de abajo para proyectar tus resultados bajo cada modalidad.
+        </p>
+        <a href="#calculadora" style="display: inline-block; background: #a855f7; color: #fff; font-weight: 800; font-size: 0.9rem; padding: 10px 24px; border-radius: 10px; text-decoration: none; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);">
+          Bajar a la Calculadora Tri-Modal ➔
+        </a>
+      </div>
+
+    </section>
+
+    <script>
+      function switchDualityTab(tab) {
+        var card1 = document.getElementById('cardModo1');
+        var card2 = document.getElementById('cardModo2');
+        var btn1 = document.getElementById('btnTabModo1');
+        var btn2 = document.getElementById('btnTabModo2');
+        var btnAmbos = document.getElementById('btnTabComparar');
+
+        if (!card1 || !card2) return;
+
+        if (tab === 'modo1') {
+          card1.style.display = 'block';
+          card1.style.transform = 'scale(1.02)';
+          card1.style.borderColor = '#f59e0b';
+          card2.style.display = 'none';
+          
+          btn1.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
+          btn1.style.color = '#000';
+          btn2.style.background = 'rgba(30, 41, 59, 0.8)';
+          btn2.style.color = '#cbd5e1';
+          btnAmbos.style.background = 'rgba(30, 41, 59, 0.8)';
+          btnAmbos.style.color = '#cbd5e1';
+        } else if (tab === 'modo2') {
+          card1.style.display = 'none';
+          card2.style.display = 'block';
+          card2.style.transform = 'scale(1.02)';
+          card2.style.borderColor = '#38bdf8';
+
+          btn2.style.background = 'linear-gradient(135deg, #0284c7, #0369a1)';
+          btn2.style.color = '#fff';
+          btn1.style.background = 'rgba(30, 41, 59, 0.8)';
+          btn1.style.color = '#cbd5e1';
+          btnAmbos.style.background = 'rgba(30, 41, 59, 0.8)';
+          btnAmbos.style.color = '#cbd5e1';
+        } else {
+          card1.style.display = 'block';
+          card1.style.transform = 'none';
+          card1.style.borderColor = 'rgba(245, 158, 11, 0.4)';
+          card2.style.display = 'block';
+          card2.style.transform = 'none';
+          card2.style.borderColor = 'rgba(56, 189, 248, 0.4)';
+
+          btnAmbos.style.background = 'linear-gradient(135deg, #9333ea, #7e22ce)';
+          btnAmbos.style.color = '#fff';
+          btn1.style.background = 'rgba(30, 41, 59, 0.8)';
+          btn1.style.color = '#cbd5e1';
+          btn2.style.background = 'rgba(30, 41, 59, 0.8)';
+          btn2.style.color = '#cbd5e1';
+        }
+      }
+    </script>
 
 
     <!-- SECTION 4: SIMULADOR PATRIMONIAL TRI-MODAL (ACTINVER / BTC / HIBRIDO) -->
