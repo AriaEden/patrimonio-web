@@ -46,6 +46,15 @@ A lo largo de 12 auditorías forenses independientes y múltiples fases de desar
 - **11:30 [Estrategia Legal & INDAUTOR]:** Formalización del expediente técnico de registro de obra de software ante INDAUTOR (`EXPEDIENTE_REGISTRO_INDAUTOR_SOFTWARE.pdf`) y del dictamen jurídico de propiedad intelectual (`DICTAMEN_LEGAL_Y_PROTECCION_PROPIEDAD_INTELECTUAL.pdf`), certificando la autoría y titularidad moral y patrimonial al 100% a favor de **Hilda Belem Ortiz Fuentes**.
 - **12:45 [Trading & Auditoría Contable]:** Conciliación matemática de capital fiat depositado (`total_fiat_deposited_usd` y `total_fiat_deposited_mxn`) frente a la valuación flotante. Implementación de la visualización simultánea de precios en USD/MXN y satoshis/fracciones BTC. Formalización de la **Estrategia de Doble Finalidad de Bitcoin**: acumulación de satoshis a largo plazo vs refugio y cosecha de dinero fiat mediante indicadores técnicos en modo inverso.
 - **14:35 [Frontend & Arquitectura Web]:** Rediseño institucional del menú superior en `index.html` para resolver el desbordamiento horizontal en resoluciones estándar. Sustitución de los 12 enlaces por 4 menús desplegables con diseño Glassmorphism (*Primeros Pasos*, *Estrategia & Herramientas*, *Educación & Guías*, *Legal & Recursos*) y drawer móvil responsive con botón hamburguesa.
+- **17:15 [Cumplimiento Forense & Auditoría Externa]:** Subsanación integral P0/P1 post-auditoría Ai-1 y Ai-2:
+  1. **Fundamentación Bursátil:** Corrección de la fundamentación jurídica a los **Artículos 225 y 227 Bis 1 de la Ley del Mercado de Valores** (delimitación estricta de no-asesoría y servicios algorítmicos automatizados).
+  2. **Libro Mayor de Partida Doble:** Incorporación de cuentas independientes para efectivo líquido (`fiat_cash_balance`) y ganancias realizadas (`realized_pnl`), resolviendo el contraejemplo contable de liquidación total a fiat.
+  3. **Cifrado de Respaldos:** Creación de la rutina de empaquetado ZIP protegido con contraseña (`boveda_rescate_cifrada_*.zip`) en el comando `/respaldo`.
+  4. **Crypto-Shredding en WAL:** Anonimización irreversible (`ANONYMIZED_USER`) en `user_rescue_audit_log.jsonl` ante `/borrar_datos` para conciliar la inmutabilidad SHA-256 con los Artículos 16 y 24 de la LFPDPPP.
+  5. **Erradicación de Términos Absolutos:** Retiro de afirmaciones como "garantías matemáticas", "satoshis gratis" e "inmortalidad" conforme al Art. 32 de la LFPC.
+  6. **Desacoplamiento DCA vs Gatekeeper:** Separación formal de la máquina de acumulación periódica frente a la máquina de recompra táctica.
+  7. **Métricas RPO/RTO:** Documentación de metas operativas de diseño (RPO <= 15 min, RTO <= 60 min) reconociendo la naturaleza de almacenamiento efímero en la nube.
+
 - **15:20 [Resiliencia & Disaster Recovery]:** Creación del motor de auto-sanación instantánea (*Self-Healing*), bitácora inmutable append-only con firma criptográfica SHA-256 (`user_rescue_audit_log.jsonl`), respaldo atómico con snapshots rotativos y despliegue de los comandos de rescate `/respaldo`, `/exportar_usuarios`, `/estatus_rescate` y `/restaurar_respaldo`.
 
 ---
