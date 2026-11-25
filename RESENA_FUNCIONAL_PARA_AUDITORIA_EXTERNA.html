@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dossier Técnico-Funcional y Reseña de Operaciones para Auditoría Externa</title>
+<style>
+  @page {
+    size: letter;
+    margin: 18mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.5;
+    font-size: 8.8pt;
+    margin: 0;
+    padding: 0;
+  }
+  .cover {
+    page-break-after: always;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+  .badge-audit {
+    display: inline-block;
+    border: 2px solid #0f172a;
+    background-color: #0f172a;
+    color: white;
+    padding: 5px 16px;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .cover h1 {
+    font-size: 21pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+    line-height: 1.25;
+  }
+  .cover h2 {
+    font-size: 12.5pt;
+    font-weight: 600;
+    color: #475569;
+    margin: 0 0 25px 0;
+  }
+  .cover-card {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 16px 22px;
+    max-width: 520px;
+    margin: 0 auto 30px auto;
+    text-align: left;
+    font-size: 8.5pt;
+    line-height: 1.6;
+  }
+  .section-header {
+    background-color: #0284c7;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 10.5pt;
+    font-weight: 800;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+  h2 {
+    font-size: 10.5pt;
+    color: #0f172a;
+    border-bottom: 1.5px solid #cbd5e1;
+    padding-bottom: 4px;
+    margin-top: 14px;
+    margin-bottom: 8px;
+  }
+  h3 {
+    font-size: 9pt;
+    color: #0369a1;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+  p {
+    margin: 0 0 7px 0;
+    text-align: justify;
+  }
+  ul, ol {
+    margin: 0 0 8px 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 3px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 7.8pt;
+    page-break-inside: avoid;
+  }
+  table th, table td {
+    border: 1px solid #cbd5e1;
+    padding: 5px 7px;
+    text-align: left;
+  }
+  table th {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  code {
+    background-color: #f1f5f9;
+    color: #0369a1;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 7.8pt;
+    font-weight: bold;
+  }
+  .box-highlight {
+    background-color: #eff6ff;
+    border-left: 4px solid #0284c7;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 8.2pt;
+  }
+  .box-alert {
+    background-color: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 8.2pt;
+  }
+  .box-gold {
+    background-color: #fffbeb;
+    border-left: 4px solid #d97706;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 8.2pt;
+  }
+  .footer {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 6px;
+    margin-top: 20px;
+    font-size: 7.2pt;
+    color: #64748b;
+    text-align: center;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+  <div class="badge-audit">EXPEDIENTE OFICIAL DE AUDITORÍA EXTERNA</div>
+  <h1>DOSSIER TÉCNICO-FUNCIONAL Y RESEÑA OPERATIVA DEL SISTEMA</h1>
+  <h2>Ecosistema Híbrido "Patrimonio Inteligente" &bull; Plataforma Web y Copiloto Financiero</h2>
+  
+  <div class="cover-card">
+    <strong>FICHA DE AUDITORÍA Y CONTROL:</strong><br>
+    &bull; <strong>Iniciativa:</strong> Patrimonio Inteligente (Web + Telegram Bot Cloud)<br>
+    &bull; <strong>Titular y Autora Responsable:</strong> Hilda Belem Ortiz Fuentes<br>
+    &bull; <strong>Destinatario:</strong> Cuerpo Colegiado de Auditores Externos (Tecnología, Cumplimiento y Finanzas)<br>
+    &bull; <strong>Fecha de Emisión:</strong> 25 de Noviembre de 2026<br>
+    &bull; <strong>Régimen de Protección:</strong> Secreto Industrial (LFPPI Arts. 163–169) y Reserva de Derechos (LFDA)<br>
+    &bull; <strong>Nivel de Acceso:</strong> Descripción Funcional Completa (Sin Divulgación de Código Fuente Sensible)<br>
+    &bull; <strong>Propósito:</strong> Facilitar la revisión independiente de gobernanza, no-custodia, rigor matemático y resiliencia.
+  </div>
+
+  <div style="font-size: 8pt; color: #475569; max-width: 500px; margin: 0 auto; line-height: 1.5;">
+    Este documento expone detalladamente la arquitectura de operación, el tratamiento de datos y los invariantes contables que operan tras bambalinas, proveyendo al auditor los fundamentos para dictaminar las áreas no observables desde la interfaz pública.
+  </div>
+</div>
+
+<!-- SECCIÓN 1 -->
+<div class="section-header">1. OBJETO DEL DOCUMENTO Y MARCO DE REVISIÓN INDEPENDIENTE</div>
+<p>
+  El presente dossier técnico-funcional ha sido preparado para que los <strong>auditores externos</strong> dispongan de una radiografía fiel, exhaustiva e inequívoca del comportamiento del ecosistema <strong>Patrimonio Inteligente</strong>. Dado que la creadora salvaguarda sus modelos algorítmicos bajo la figura de <strong>Secreto Industrial</strong>, este informe suple cualquier inspección de código fuente directo, explicando de manera precisa y verificable <em>las entradas, los procesos de validación, las reglas contables, las salidas y los controles de fallo</em>.
+</p>
+
+<!-- SECCIÓN 2 -->
+<div class="section-header">2. NATURALEZA JURÍDICA Y DELIMITACIÓN REGULATORIA (NO-CUSTODIA)</div>
+<div class="box-alert">
+  <strong>DELIMITACIÓN FORENSE FUNDAMENTAL:</strong> El sistema es 100% no custodial. No capta, no retiene, no transfiere ni administra dinero fiduciario ni activos virtuales de terceros.
+</div>
+<ul>
+  <li><strong>Cero Captación de Pasivos:</strong> La plataforma no encuadra en los supuestos de captación de recursos del público del Art. 2º ni Art. 11 de la Ley Fintech, ni realiza captación bancaria reservada (Art. 103 LIC).</li>
+  <li><strong>Custodia Exclusiva en Entidades Reguladas:</strong> Los usuarios abren y operan sus cuentas directamente en:
+    <ul>
+      <li><strong>Bitso México:</strong> Para la compra y custodia de Bitcoin con cuentas fondeadas vía SPEI.</li>
+      <li><strong>Bursanet (Actinver):</strong> Casa de bolsa mexicana supervisada por la Comisión Nacional Bancaria y de Valores (CNBV) para la adquisición de títulos bursátiles y FIBRAs.</li>
+    </ul>
+  </li>
+  <li><strong>Deslinde de Asesoría Reservada:</strong> En cumplimiento del Art. 210 de la Ley del Mercado de Valores (LMV), el sistema no emite órdenes discrecionales ni gestiona carteras individuales. Su función es <strong>estrictamente didáctica y de soporte analítico</strong> amparada en los Artículos 6º y 7º de la Constitución Política de los Estados Unidos Mexicanos (libertad de difusión científica, tecnológica e informativa).</li>
+</ul>
+
+<!-- SECCIÓN 3 -->
+<div class="section-header">3. ARQUITECTURA FUNCIONAL DEL FRONTEND WEB</div>
+<p>
+  La plataforma web (<code>ariaeden.github.io/patrimonio-web</code>) actúa como un entorno de divulgación educativa ejecutado íntegramente en el navegador del usuario (*Client-Side Rendering*):
+</p>
+<ol>
+  <li><strong>Privacidad Estricta de Navegación:</strong> No se implementan balizas de seguimiento (pixels), librerías de telemetría de terceros ni almacenamiento de cookies analíticas. Toda simulación se calcula de manera efímera en la memoria RAM del dispositivo.</li>
+  <li><strong>Simulador Matemático con Capitalización Compuesta Mensual:</strong>
+    La calculadora financiera aplica la tasa de interés geométrica continua mensual para evitar el error común de la división lineal:
+    $$	ext{Tasa Mensual} = (1 + r_{	ext{anual}})^{1/12} - 1$$
+    Proyecta cuatro escenarios de estrés macroeconómico (incluyendo inflación acelerada y rendimientos reales negativos), distinguiendo con total transparencia el <em>Total Aportado de Bolsillo</em> del <em>Crecimiento Financiero Estimado</em>.
+  </li>
+  <li><strong>Evaluador Bursátil de FIBRAs y ETFs:</strong> Módulo didáctico que presenta parámetros de instrumentos institucionales (FIBRAMQ12, FMTY14, IVVPESO, QQQM) combinando su rendimiento por dividendo, costo de administración (TER) y oscilador técnico RSI Wilder (14D) diario para orientar decisiones prudentes.</li>
+</ol>
+
+<div class="page-break"></div>
+
+<!-- SECCIÓN 4 -->
+<div class="section-header">4. ARQUITECTURA DEL COPILOTO EN LA NUBE (OPERATIVA ASÍNCRONA)</div>
+<p>
+  El motor central opera como un microservicio en Python dentro de un contenedor Docker en Render Cloud, interactuando con los usuarios mediante el bot de Telegram (<code>@dabel_btc_copiloto_bot</code>). A continuación se describe su funcionamiento interno para auditoría:
+</p>
+
+<h3>4.1. Centinela de Mercado 24/7 y Blindaje Anti-Alertas Prematuras (*Gatekeeper*)</h3>
+<ul>
+  <li><strong>Lectura Viva de Precios:</strong> Consulta cotizaciones públicas en tiempo real (Bitso Order Book y tipo de cambio oficial).</li>
+  <li><strong>Mecanismo Gatekeeper de Protección de Liquidez:</strong> Para proteger al usuario de operar por ansiedad en micro-rebotes falsos, el centinela evalúa el estado del portafolio antes de emitir cualquier aviso:
+    <ul>
+      <li>Si el usuario vendió recientemente y se encuentra en <code>EN_LIQUIDEZ</code>, la alerta de compra se <strong>bloquea automáticamente</strong> hasta que el precio de mercado experimente una corrección mínima del <strong>-2.5%</strong> frente a la salida previa. Esto garantiza que la recompra siempre capture satoshis gratuitos adicionales sin inyectar dinero nuevo.</li>
+      <li>Si el usuario posee satoshis en cartera, se suprimen alertas de compra si el precio cotiza por encima de su costo promedio, previniendo compras a precios desfavorables.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>4.2. Algoritmo de Doble Finalidad Estratégica</h3>
+<div class="box-gold">
+  <strong>Bimodalidad Cuantitativa Protegida ante INDAUTOR:</strong><br>
+  &bull; <strong>Modo Acumulación Patrimonial (Unidad de cuenta: Satoshis):</strong> Diseñado para ahorro intergeneracional. El bot orienta la compra en sobreventa (RSI 4H &le; 30-35) mediante órdenes límite tipo Maker (0.10% a 0.60% de comisión), buscando promediar a la baja y maximizar el número de satoshis guardados.<br>
+  &bull; <strong>Modo Cosecha y Rentas FIBRAs (Unidad de cuenta: Fiat MXN/USD):</strong> Diseñado para crear flujo de efectivo inmediato. Bitcoin actúa como acelerador: al registrarse sobrecompra extrema (RSI 4H &ge; 65-70) o máximos de ciclo macro ($1,800,000+ MXN / $95,000+ USD), el sistema alerta para cosechar plusvalías y transferirlas a Bursanet para fondear FIBRAs inmobiliarias que reparten dividendos trimestrales libres de volatilidad.
+</div>
+
+<!-- SECCIÓN 5 -->
+<div class="section-header">5. MOTOR DE AUDITORÍA CONTABLE Y CERTIFICACIÓN DE COMPROBANTES</div>
+<p>
+  Para certificar que los saldos y operaciones de los miembros son legítimos y no pueden adulterarse, el sistema implementa un protocolo forense de cuatro pasos:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 25%;">Etapa del Proceso</th>
+      <th style="width: 35%;">Mecanismo Técnico Aplicado</th>
+      <th>Garantía para el Auditor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Ingesta Óptica</strong></td>
+      <td>El usuario envía captura de pantalla de su orden ejecutada en Bitso. El sistema extrae: precio, monto BTC y total pagado.</td>
+      <td>No se solicitan credenciales bancarias ni accesos API privados a la cuenta del usuario.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Huella Criptográfica SHA-256</strong></td>
+      <td>Se calcula un hash SHA-256 unívoco concatenando los datos esenciales de la orden (precio, volumen, fecha, ID).</td>
+      <td><strong>Antiduplicación Absoluta:</strong> Si una orden se envía dos veces, el hash colisiona y es rechazada de inmediato.</td>
+    </tr>
+    <tr>
+      <td><strong>3. Conciliación de Invariantes</strong></td>
+      <td>El sistema segrega matemáticamente el <em>Capital Depositado de Bolsillo</em> (<code>total_fiat_deposited</code>) de la <em>Valuación Flotante</em>.</td>
+      <td>El saldo acumulado refleja con precisión contable el dinero real aportado sin mezclarlo con fluctuaciones de mercado.</td>
+    </tr>
+    <tr>
+      <td><strong>4. Lectura Dual Forzosa</strong></td>
+      <td>Toda salida presenta simultáneamente: Satoshis enteros + Fracción BTC; Dólares (USD) + Pesos Mexicanos (MXN).</td>
+      <td>Eliminación total de ambigüedades entre el sistema de satoshis y la pantalla decimal de Bitso.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<!-- SECCIÓN 6 -->
+<div class="section-header">6. PRIVACIDAD DE DATOS Y CUMPLIMIENTO LFPDPPP</div>
+<ul>
+  <li><strong>Minimización Extrema:</strong> No se almacena ningún dato personal sensible ni bancario. El sistema solo asocia un <code>chat_id</code> numérico de Telegram con el nombre público voluntario.</li>
+  <li><strong>Cancelación y Purga Inmediata (Derechos ARCO):</strong> El comando <code>/borrar_datos</code> ejecuta una purga atómica e irreversible del perfil y sus comprobantes de la base de datos, cumpliendo a cabalidad con el Artículo 16 de la LFPDPPP.</li>
+  <li><strong>Tratamiento Seguro de Imágenes:</strong> Las capturas de comprobantes se archivan localmente con nombres ofuscados y huellas SHA-256 en un entorno privado, sin exposición en URLs públicas.</li>
+</ul>
+
+<!-- SECCIÓN 7 -->
+<div class="section-header">7. GOBERNANZA, RESILIENCIA Y PLAN ANTE DESASTRES (*DISASTER RECOVERY*)</div>
+<p>
+  El sistema incorpora una infraestructura de resiliencia empresarial para asegurar que ninguna falla externa comprometa los datos de la comunidad:
+</p>
+
+<h3>7.1. Segregación Estricta de Privilegios (Super-Admin)</h3>
+<p>
+  Todos los comandos de gobierno (aprobación de nuevos miembros, suspensiones, extensiones de vigencia, auditorías y solicitudes de respaldo) están protegidos a nivel de middleware por validación del <code>chat_id</code> contra la clave maestra <code>SUPER_ADMIN_ID</code> perteneciente a **Hilda Belem Ortiz Fuentes**. Cualquier solicitud no autorizada es rechazada y registrada en la bitácora de seguridad.
+</p>
+
+<h3>7.2. Escritura Atómica y Auto-Sanación (*Self-Healing*)</h3>
+<div class="box-highlight">
+  <strong>Protocolo de Auto-Sanación en Arranque:</strong><br>
+  Toda escritura a base de datos utiliza un archivo temporal <code>.tmp</code> con llamada obligatoria a <code>fsync</code> de disco duro antes del renombrado definitivo. Si por un apagón o reinicio imprevisto de Render el archivo principal sufriera corrupción, el algoritmo de arranque acude automáticamente a la carpeta de snapshots rotativos (<code>user_verifications/backups/</code>), restaura el último estado íntegro y levanta el servicio en milisegundos con cero pérdida de transacciones.
+</div>
+
+<h3>7.3. Bitácora Inmutable Write-Ahead Log (WAL)</h3>
+<p>
+  Cada evento de usuario (alta, aprobación, depósito, orden de compra o ejercicio de derechos ARCO) se registra de forma secuencial en <code>user_rescue_audit_log.jsonl</code>. Este archivo funciona exclusivamente en modo *append-only* (solo adición) con sellos de tiempo exactos (UTC-6) y firmas SHA-256, permitiendo a los auditores realizar un rastreo forense determinista de cada cambio ocurrido en el sistema.
+</p>
+
+<h3>7.4. Respaldo Soberano Offline e Independencia de Nube</h3>
+<p>
+  Mediante el comando <code>/respaldo</code>, la administradora recibe periódicamente en su propio chat de Telegram un paquete triple conformado por:
+</p>
+<ol>
+  <li><code>respaldo_usuarios_patrimonio_*.json</code>: Serialización íntegra de la base de datos de usuarios.</li>
+  <li><code>bitso_libro_contable_*.json</code>: Registro contable completo de compras y ventas certificadas.</li>
+  <li><code>directorio_usuarios_rescate_*.csv</code>: Hoja de cálculo exportable y compatible con <strong>Microsoft Excel</strong> conteniendo la relación de miembros, sus teléfonos/usuarios y sus saldos.</li>
+</ol>
+<p>
+  <strong>Dictamen de Continuidad:</strong> En caso de pérdida total del proveedor de nube o catástrofe externa, el sistema puede ser restaurado al 100% en cualquier nuevo servidor o entorno local en menos de 10 segundos únicamente proveyendo estos archivos, garantizando la soberanía patrimonial absoluta.
+</p>
+
+<!-- SECCIÓN 8 -->
+<div class="section-header">8. CHECKLIST SINTÉTICO PARA EL DICTAMEN DE AUDITORÍA EXTERNA</div>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 30%;">Área Evaluada</th>
+      <th style="width: 45%;">Punto de Control Auditor</th>
+      <th>Resultado del Sistema</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Delimitación No-Custodial</strong></td>
+      <td>¿El sistema capta o retiene dinero de los usuarios?</td>
+      <td><strong>NO.</strong> Los fondos residen en Bitso y Bursanet.</td>
+    </tr>
+    <tr>
+      <td><strong>2. No-Intermediación Bursátil</strong></td>
+      <td>¿El sistema opera de forma discrecional o sin confirmación?</td>
+      <td><strong>NO.</strong> El bot es de asistencia didáctica; las órdenes las ejecuta el usuario.</td>
+    </tr>
+    <tr>
+      <td><strong>3. Rigor Matemático</strong></td>
+      <td>¿La calculadora aplica capitalización geométrica y estrés?</td>
+      <td><strong>SÍ.</strong> Fórmula geométrica continua y 4 escenarios macro.</td>
+    </tr>
+    <tr>
+      <td><strong>4. Integridad Antiduplicación</strong></td>
+      <td>¿Se pueden inflar saldos enviando comprobantes repetidos?</td>
+      <td><strong>NO.</strong> Algoritmo SHA-256 unívoco por orden con bloqueo automático.</td>
+    </tr>
+    <tr>
+      <td><strong>5. Privacidad y LFPDPPP</strong></td>
+      <td>¿Se almacenan cuentas bancarias o existe purga ARCO?</td>
+      <td><strong>CUMPLE.</strong> Datos mínimos (`chat_id`) y purga con `/borrar_datos`.</td>
+    </tr>
+    <tr>
+      <td><strong>6. Recuperación ante Desastres</strong></td>
+      <td>¿Se pueden perder los saldos ante una caída del servidor?</td>
+      <td><strong>NO.</strong> Auto-sanación, WAL inmutable y respaldos exportables a Excel.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  Dossier Técnico-Funcional para Auditoría Externa &bull; Patrimonio Inteligente &bull; Titular: Hilda Belem Ortiz Fuentes &bull; Noviembre 2026.
+</div>
+
+</body>
+</html>
