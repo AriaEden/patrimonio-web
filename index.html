@@ -2993,6 +2993,7 @@
 
       <ul class="nav-links" id="topNavLinks">
         <li><a href="#videos" onclick="playHeroVideo('ninos')" style="color: #38bdf8; font-weight: 700;">🎬 Video Explicativo</a></li>
+        <li><a href="#guia-bot" style="color: #c084fc; font-weight: 700;">🤖 Guía del Bot</a></li>
         <li><a href="#confianza" style="color: #10b981; font-weight: 700;">🛡️ Confianza y Seguridad</a></li>
         <li><a href="#guias">Guías</a></li>
         <li><a href="#activos">Universo</a></li>
@@ -3034,6 +3035,9 @@
         <button type="button" id="btnHeroPlayVideo" onclick="playHeroVideo('ninos')" style="padding: 14px 28px; border-radius: 10px; font-weight: 800; font-size: 16px; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(2,132,199,0.5); transition: all 0.2s;">
           🎬 Ver Video Explicativo (Reproducir Aquí) ▶
         </button>
+        <a href="#guia-bot" class="btn-secondary" style="padding: 14px 22px; border-radius: 10px; font-weight: 700; text-decoration: none; background: rgba(192,132,252,0.12); color: #c084fc; border: 1px solid rgba(192,132,252,0.35); display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(192,132,252,0.2);">
+          🤖 Guía & Video del Bot
+        </a>
         <a href="#confianza" class="btn-secondary" style="padding: 14px 22px; border-radius: 10px; font-weight: 700; text-decoration: none; background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.35); display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(16,185,129,0.2);">
           🛡️ ¿Por qué tu dinero está seguro?
         </a>
@@ -3076,6 +3080,12 @@
         <button id="btnTabAdultos" onclick="switchVideoTab('adultos')" style="background:rgba(255,255,255,0.06); color:#94a3b8; border:1px solid rgba(255,255,255,0.1); padding:12px 24px; border-radius:10px; font-weight:700; font-size:15px; cursor:pointer; display:flex; align-items:center; gap:8px; transition:all 0.2s;">
 
           🧑 Modo Jóvenes y Adultos (Estrategia y Uso del Bot)
+
+        </button>
+
+        <button id="btnTabBot" onclick="switchVideoTab('bot')" style="background:rgba(255,255,255,0.06); color:#94a3b8; border:1px solid rgba(255,255,255,0.1); padding:12px 24px; border-radius:10px; font-weight:700; font-size:15px; cursor:pointer; display:flex; align-items:center; gap:8px; transition:all 0.2s;">
+
+          🤖 Video Tutorial del Copiloto (Primer Uso)
 
         </button>
 
@@ -3251,6 +3261,203 @@
 
         </div>
 
+      </div>
+
+
+
+      <!-- Contenedor Video 3: Tutorial Copiloto Telegram -->
+      <div id="videoContainerBot" style="display:none; background:linear-gradient(145deg, rgba(30,41,59,0.85), rgba(15,23,42,0.95)); border:1px solid rgba(192,132,252,0.35); border-radius:16px; padding:24px; max-width:960px; margin:0 auto; box-shadow:0 12px 30px rgba(0,0,0,0.4);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
+          <div>
+            <span style="background:rgba(192,132,252,0.2); color:#c084fc; padding:4px 12px; border-radius:6px; font-size:12px; font-weight:700;">VIDEO TUTORIAL OFICIAL · 1080p FULL HD</span>
+            <h3 style="margin:8px 0 0 0; color:#fff; font-size:1.35rem;">🤖 Tu Primer Día con el Copiloto: Sin Códigos, Fácil y Seguro</h3>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <a href="video_tutorial_copiloto.mp4" download="video_tutorial_copiloto.mp4" style="background:#c084fc; color:#0f172a; padding:8px 16px; border-radius:8px; text-decoration:none; font-weight:700; font-size:13px; display:inline-flex; align-items:center; gap:6px;">
+              ⬇️ Descargar MP4 (4.4 MB · 1080p Full HD)
+            </a>
+            <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" rel="noopener noreferrer" style="background:rgba(56,189,248,0.15); color:#38bdf8; border:1px solid rgba(56,189,248,0.3); padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:700; font-size:13px; display:inline-flex; align-items:center; gap:6px;">
+              🚀 Abrir en Telegram ↗
+            </a>
+          </div>
+        </div>
+
+        <div style="position:relative; width:100%; border-radius:12px; overflow:hidden; background:#000; box-shadow:0 6px 20px rgba(0,0,0,0.5);">
+          <video id="playerBot" controls poster="poster_bot_tutorial.png" playsinline webkit-playsinline preload="auto" style="width:100%; height:auto; display:block; border-radius:12px; background:#000;">
+            <source src="video_tutorial_copiloto.mp4" type="video/mp4">
+            Tu navegador no soporta reproducción directa de video MP4.
+          </video>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin-top:20px;">
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(16,185,129,0.25); border-radius:10px; padding:14px;">
+            <div style="font-size:20px; margin-bottom:4px;">🚀</div>
+            <h5 style="margin:0 0 4px 0; color:#10b981; font-size:13px;">1. Bienvenida y Lote Inicial</h5>
+            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">Al pulsar /start te asigna un lote seguro de $10 USD (~$200 MXN). Regla de oro: Cero custodia de tus fondos.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(56,189,248,0.25); border-radius:10px; padding:14px;">
+            <div style="font-size:20px; margin-bottom:4px;">💬</div>
+            <h5 style="margin:0 0 4px 0; color:#38bdf8; font-size:13px;">2. Español Cotidiano</h5>
+            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">Pregunta "¿Compro ahorita?" y el bot analiza el RSI en tiempo real recomendando paciencia táctica y orden límite.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(245,158,11,0.25); border-radius:10px; padding:14px;">
+            <div style="font-size:20px; margin-bottom:4px;">📸</div>
+            <h5 style="margin:0 0 4px 0; color:#f59e0b; font-size:13px;">3. Comprobante por Foto</h5>
+            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">Sube tu captura de Bitso o Bursanet y la visión inteligente extrae satoshis, pesos y precio para certificar tu libro.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(192,132,252,0.25); border-radius:10px; padding:14px;">
+            <div style="font-size:20px; margin-bottom:4px;">🔔</div>
+            <h5 style="margin:0 0 4px 0; color:#c084fc; font-size:13px;">4. Alerta de Cosecha 24/7</h5>
+            <p style="margin:0; font-size:12px; color:#cbd5e1; line-height:1.4;">El bot vigila el mercado día y noche y te notifica automáticamente en tu Telegram cuando es momento de cosechar ganancias.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- SECTION: GUIA DE USUARIO Y SIMULADOR INTERACTIVO DEL COPILOTO -->
+    <section id="guia-bot" class="page-section" style="scroll-margin-top: 90px; margin-top: 40px; padding-top: 20px;">
+      <div class="section-header">
+        <span class="section-tag" style="background: rgba(192, 132, 252, 0.15); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.35);">🤖 Guía Práctica de Primer Uso • Cero Estrés</span>
+        <h2>¿Cómo Usar tu Copiloto en Telegram? Tutorial y Simulador Interactivo</h2>
+        <p>No necesitas memorizar comandos técnicos ni ser programador. Aprende cómo interactuar con tu asistente en español cotidiano, cómo registrar tus compras con una foto y cómo recibir alertas automáticas de ganancia.</p>
+      </div>
+
+      <!-- SIMULADOR INTERACTIVO: 2 COLUMNAS (SELECTOR + PANTALLA DE SMARTPHONE) -->
+      <div style="background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85)); border: 1px solid rgba(192, 132, 252, 0.3); border-radius: 18px; padding: 26px; margin-bottom: 36px; box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
+        
+        <div style="text-align: center; margin-bottom: 24px;">
+          <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #c084fc; font-weight: 700;">Simulador Didáctico en Vivo</span>
+          <h3 style="margin: 6px 0 10px 0; color: #fff; font-size: 1.4rem;">Explora los 4 Momentos Reales de un Usuario Nuevo</h3>
+          <p style="color: #94a3b8; font-size: 14px; max-width: 680px; margin: 0 auto;">Haz clic en cualquiera de los 4 pasos a continuación para ver exactamente cómo se ve la conversación en la pantalla de tu teléfono móvil.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; align-items: start;">
+          
+          <!-- Columna Izquierda: Selector de Escenarios -->
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            
+            <!-- Escenario 1 -->
+            <div id="simCard1" onclick="switchSimulatorStep(1)" style="background: rgba(16, 185, 129, 0.12); border: 2px solid #10b981; border-radius: 14px; padding: 16px 18px; cursor: pointer; transition: all 0.2s;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                <span style="background: #10b981; color: #0f172a; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 6px;">PASO 1</span>
+                <span style="color: #10b981; font-size: 13px; font-weight: 700;">Primer Mensaje (/start)</span>
+              </div>
+              <h4 style="margin: 0 0 6px 0; color: #fff; font-size: 15px;">Tu Bienvenida Segura y Lote Inicial</h4>
+              <p style="margin: 0; font-size: 13px; color: #cbd5e1; line-height: 1.45;">Al pulsar Iniciar, el bot te da la bienvenida, fija tu lote sugerido ($10 USD / $200 MXN) y te recuerda que <strong>nadie toca tu dinero</strong>.</p>
+            </div>
+
+            <!-- Escenario 2 -->
+            <div id="simCard2" onclick="switchSimulatorStep(2)" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 16px 18px; cursor: pointer; transition: all 0.2s;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 6px;">PASO 2</span>
+                <span style="color: #38bdf8; font-size: 13px; font-weight: 700;">Español Cotidiano</span>
+              </div>
+              <h4 style="margin: 0 0 6px 0; color: #fff; font-size: 15px;">Pregúntale: "¿Compro ahorita?"</h4>
+              <p style="margin: 0; font-size: 13px; color: #cbd5e1; line-height: 1.45;">Cero comandos difíciles. Escríbele con tus propias palabras y recibe asesoría con paciencia táctica y análisis de RSI.</p>
+            </div>
+
+            <!-- Escenario 3 -->
+            <div id="simCard3" onclick="switchSimulatorStep(3)" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 16px 18px; cursor: pointer; transition: all 0.2s;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                <span style="background: rgba(245, 158, 11, 0.2); color: #f59e0b; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 6px;">PASO 3</span>
+                <span style="color: #f59e0b; font-size: 13px; font-weight: 700;">Registro por Foto (OCR)</span>
+              </div>
+              <h4 style="margin: 0 0 6px 0; color: #fff; font-size: 15px;">Sube tu Comprobante de Bitso o Actinver</h4>
+              <p style="margin: 0; font-size: 13px; color: #cbd5e1; line-height: 1.45;">Toma captura de pantalla a tu orden ejecutada. La visión inteligente extrae montos y precios para certificar tu contabilidad.</p>
+            </div>
+
+            <!-- Escenario 4 -->
+            <div id="simCard4" onclick="switchSimulatorStep(4)" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 16px 18px; cursor: pointer; transition: all 0.2s;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                <span style="background: rgba(192, 132, 252, 0.2); color: #c084fc; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 6px;">PASO 4</span>
+                <span style="color: #c084fc; font-size: 13px; font-weight: 700;">Alerta de Cosecha 24/7</span>
+              </div>
+              <h4 style="margin: 0 0 6px 0; color: #fff; font-size: 15px;">Aviso Automático de Toma de Ganancias</h4>
+              <p style="margin: 0; font-size: 13px; color: #cbd5e1; line-height: 1.45;">Cuando el mercado entra en sobrecompra, el copiloto te dispara una alerta para vender tu lote con ganancia neta.</p>
+            </div>
+
+            <div style="margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap;">
+              <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 200px; text-align: center; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-weight: 700; font-size: 14px; padding: 12px 18px; border-radius: 10px; text-decoration: none; box-shadow: 0 4px 14px rgba(2,132,199,0.4);">
+                🚀 Abrir Copiloto en Telegram ↗
+              </a>
+              <button onclick="playHeroVideo('bot')" style="background: rgba(192,132,252,0.15); color: #c084fc; border: 1px solid rgba(192,132,252,0.4); font-weight: 700; font-size: 14px; padding: 12px 18px; border-radius: 10px; cursor: pointer;">
+                🎬 Ver Video Tutorial ▶
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Columna Derecha: Smartphone Mockup con Chat Interactivo -->
+          <div style="background: #0f172a; border: 3px solid #334155; border-radius: 28px; padding: 14px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); max-width: 440px; margin: 0 auto; width: 100%;">
+            
+            <!-- Status Bar Phone -->
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 12px 8px 12px; font-size: 12px; color: #94a3b8; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <span>9:41 AM</span>
+              <div style="background: #1e293b; padding: 2px 14px; border-radius: 10px; font-size: 10px; color: #64748b;">Telegram</div>
+              <span>📶 5G 100%</span>
+            </div>
+
+            <!-- Bot Header -->
+            <div style="display: flex; align-items: center; gap: 12px; padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(30, 41, 59, 0.4); border-radius: 8px; margin-top: 6px;">
+              <div style="position: relative; width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #0284c7, #2563eb); display: flex; align-items: center; justify-content: center; font-size: 20px;">
+                🤖
+                <span style="position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; background: #10b981; border: 2px solid #0f172a; border-radius: 50%;"></span>
+              </div>
+              <div>
+                <div style="color: #fff; font-weight: 700; font-size: 14px;">mi_btc_copiloto ❤️</div>
+                <div style="color: #38bdf8; font-size: 11px;">bot · en línea 24/7 · Cero custodia</div>
+              </div>
+            </div>
+
+            <!-- Chat Canvas (Animated Message Container) -->
+            <div id="simChatScreen" style="min-height: 380px; max-height: 440px; overflow-y: auto; padding: 14px 6px; display: flex; flex-direction: column; gap: 12px; font-size: 13px;">
+              <!-- Los mensajes se inyectan dinámicamente con JavaScript -->
+            </div>
+
+            <!-- Simulated Input Box -->
+            <div style="display: flex; align-items: center; gap: 8px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08);">
+              <div style="flex: 1; background: #1e293b; border-radius: 20px; padding: 8px 14px; color: #64748b; font-size: 12px;">
+                Escribe un mensaje o pulsa un botón...
+              </div>
+              <div style="width: 34px; height: 34px; border-radius: 50%; background: #2563eb; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; cursor: pointer;">
+                ➤
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LAS 4 REGLAS DE ORO DE TRANQUILIDAD -->
+      <h3 style="text-align: center; color: #fff; font-size: 1.3rem; margin-bottom: 20px;">
+        💡 Las 4 Reglas de Tranquilidad para Nuevos Usuarios
+      </h3>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 30px;">
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 12px; padding: 18px;">
+          <div style="font-size: 24px; margin-bottom: 6px;">🛡️</div>
+          <h4 style="color: #10b981; font-size: 14px; margin-bottom: 6px;">1. Nadie toca tu dinero</h4>
+          <p style="margin: 0; font-size: 12.5px; color: #cbd5e1; line-height: 1.45;">Cuentas abiertas y reguladas a tu nombre en Bitso y Actinver. El bot nunca te pedirá transferirle capital ni solicitará contraseñas.</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 12px; padding: 18px;">
+          <div style="font-size: 24px; margin-bottom: 6px;">🌱</div>
+          <h4 style="color: #38bdf8; font-size: 14px; margin-bottom: 6px;">2. Empieza en chiquito</h4>
+          <p style="margin: 0; font-size: 12.5px; color: #cbd5e1; line-height: 1.45;">Recomendamos empezar con $10 USD (~$200 MXN) o títulos de FIBRAs desde $20 pesos. Aprende sin poner en riesgo tu paz familiar.</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: 12px; padding: 18px;">
+          <div style="font-size: 24px; margin-bottom: 6px;">🎯</div>
+          <h4 style="color: #f59e0b; font-size: 14px; margin-bottom: 6px;">3. Compra con orden Límite</h4>
+          <p style="margin: 0; font-size: 12.5px; color: #cbd5e1; line-height: 1.45;">En Bitso Alpha y Bursanet usamos orden Límite (Maker). Ahorras hasta el 76% de comisiones bancarias y fijas tu precio con calma.</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(192, 132, 252, 0.25); border-radius: 12px; padding: 18px;">
+          <div style="font-size: 24px; margin-bottom: 6px;">🌙</div>
+          <h4 style="color: #c084fc; font-size: 14px; margin-bottom: 6px;">4. Duerme tranquilo</h4>
+          <p style="margin: 0; font-size: 12.5px; color: #cbd5e1; line-height: 1.45;">No tienes que vigilar gráficas. Tu copiloto monitorea 24/7 y te avisa a tu Telegram cuando hay un soporte o una toma de ganancia.</p>
+        </div>
       </div>
 
     </section>
@@ -4566,7 +4773,7 @@
 
           </div>
 
-          <button type="button" onclick="openModalComandos()" class="btn-download" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #10b981; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 600;">📱 Ver Chuleta Interactiva</button>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;"><button type="button" onclick="openModalComandos()" class="btn-download" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #10b981; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 600;">📱 Ver Chuleta</button><a href="#guia-bot" class="btn-download" style="background: rgba(192, 132, 252, 0.2); border: 1px solid #c084fc; color: #c084fc; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">🤖 Guía de Usuario</a></div>
 
         </div>
 
@@ -4598,7 +4805,26 @@
 
           </div>
 
-          <a href="./video_explicativo_adultos.mp4" download="video_explicativo_adultos.mp4" class="btn-download" style="background: rgba(129, 140, 248, 0.2); border: 1px solid #818cf8; color: #818cf8;">🎬 Descargar Video MP4 (8.4 MB · 1080p Full HD)</a>
+          <a href="./video_explicativo_adultos.mp4" download="video_explicativo_adultos.mp4" class="btn-download" style="background: rgba(129, 140, 248, 0.2); border: 1px solid #818cf8; color: #818cf8;">🎬 Descargar Video MP4 (1.8 MB · 1080p Full HD)</a>
+
+        </div>
+
+        <div class="doc-item" style="border-left: 3px solid #c084fc;">
+
+          <div>
+
+            <span class="doc-badge" style="background: rgba(192, 132, 252, 0.2); color: #c084fc;">🎬 TUTORIAL OFICIAL (COPILOTO)</span>
+
+            <h4>Video Tutorial: Tu Primer Día con el Copiloto en Telegram</h4>
+
+            <p>Video demostrativo Full HD (1080p). Recorrido visual paso a paso: bienvenida segura, hablarle en español cotidiano sin comandos, subir captura de Bitso/Bursanet y recibir alertas automáticas de ganancia.</p>
+
+          </div>
+
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button type="button" onclick="playHeroVideo('bot')" class="btn-download" style="background:#7c3aed; color:#fff; border:none; cursor:pointer; font-weight:700;">▶️ Reproducir en Pantalla</button>
+            <a href="./video_tutorial_copiloto.mp4" download="video_tutorial_copiloto.mp4" class="btn-download" style="background: rgba(192, 132, 252, 0.2); border: 1px solid #c084fc; color: #c084fc;">⬇️ Descargar MP4 (4.4 MB)</a>
+          </div>
 
         </div>
 
@@ -5658,7 +5884,7 @@
 
     const ASSET_PREVIEWS = {
 
-       {
+       "FMTY14": {
 
         name: "Fibra Monterrey (FMTY14) • Industrial y Oficinas",
 
@@ -5692,7 +5918,7 @@
 
       },
 
-       {
+       "FIBRAMQ12": {
 
         name: "Fibra Macquarie (FIBRAMQ12) • Logística y Nearshoring",
 
@@ -5726,7 +5952,7 @@
 
       },
 
-       {
+       "FUNO11": {
 
         name: "Fibra Uno (FUNO11) • Portafolio Diversificado",
 
@@ -5794,7 +6020,7 @@
 
       },
 
-       {
+       "IVVPESO": {
 
         name: "iShares S&P 500 Peso Hedged ETF (IVVPESO)",
 
@@ -5828,7 +6054,7 @@
 
       },
 
-       {
+       "VOO": {
 
         name: "Vanguard S&P 500 ETF (VOO • SIC)",
 
@@ -5862,7 +6088,7 @@
 
       },
 
-       {
+       "QQQM": {
 
         name: "Invesco Nasdaq 100 ETF (QQQM • SIC)",
 
@@ -5896,7 +6122,7 @@
 
       },
 
-       {
+       "SCHD": {
 
         name: "Schwab U.S. Dividend Equity ETF (SCHD • SIC)",
 
@@ -5930,7 +6156,7 @@
 
       },
 
-       {
+       "SMH": {
 
         name: "VanEck Semiconductor ETF (SMH • SIC)",
 
@@ -5964,7 +6190,7 @@
 
       },
 
-       {
+       "CEMEX": {
 
         name: "Cemex, S.A.B. de C.V. (CEMEX CPO • BMV)",
 
@@ -5998,7 +6224,7 @@
 
       },
 
-       {
+       "GFINBUR": {
 
         name: "Grupo Financiero Inbursa (GFINBUR O • BMV)",
 
@@ -6032,7 +6258,7 @@
 
       },
 
-       {
+       "AMX": {
 
         name: "América Móvil, S.A.B. de C.V. (AMX B • BMV)",
 
@@ -6066,7 +6292,7 @@
 
       },
 
-       {
+       "WALMEX": {
 
         name: "Walmart de México y Centroamérica (WALMEX • BMV)",
 
@@ -6100,7 +6326,7 @@
 
       },
 
-       {
+       "NVDA": {
 
         name: "NVIDIA Corporation (NVDA • SIC)",
 
@@ -6134,7 +6360,7 @@
 
       },
 
-       {
+       "BTC": {
 
         name: "Bitcoin (BTC • Red Descentralizada)",
 
@@ -6898,6 +7124,17 @@
 
       <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:16px; margin-bottom:20px;">
 
+      <div style="background: rgba(192, 132, 252, 0.12); border: 1px solid rgba(192, 132, 252, 0.35); border-radius: 12px; padding: 14px 18px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="flex: 1; min-width: 240px;">
+          <strong style="color: #c084fc; font-size: 14px;">💡 ¿Primera vez usando el Copiloto?</strong>
+          <p style="margin: 4px 0 0 0; font-size: 13px; color: #cbd5e1; line-height: 1.4;">No necesitas memorizar estos comandos. Puedes escribirle en español común (ej. <em>"¿Compro ahorita?"</em>) o ver nuestra guía con simulador y video interactivo.</p>
+        </div>
+        <a href="#guia-bot" onclick="closeModalComandos()" style="background: #c084fc; color: #0f172a; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          🤖 Ver Guía y Video ↗
+        </a>
+      </div>
+
+
         <h3 style="margin:0; font-size:20px; color:#38bdf8; display:flex; align-items:center; gap:8px;">
 
           🤖 Chuleta de Comandos del Copiloto Telegram
@@ -7046,7 +7283,156 @@
     // ========================================================
     // REPRODUCCIÓN DIRECTA DE VIDEO (HERO & BOTONES)
     // ========================================================
+
+    // SIMULADOR INTERACTIVO DE TELEGRAM
+    var simCurrentStep = 1;
+    var SIM_SCENARIOS = {
+      1: {
+        userMsg: "/start",
+        userTime: "10:00 AM",
+        botBadge: "👋 ¡HOLA Y BIENVENIDO!",
+        botText: "Soy tu Copiloto de Educación Patrimonial.<br><br>🎯 <strong>Lote Base Asignado:</strong> $10.00 USD (~$200 MXN) para acumular con calma.<br><br>🛡️ <strong>Regla de Oro:</strong> Cero custodia. Tu dinero permanece siempre a tu nombre en Bitso o Actinver. ¡Yo te guío paso a paso sin prisas!",
+        botTime: "10:00 AM",
+        buttons: [
+          { text: "📖 Ver Libro Contable", action: "libro" },
+          { text: "💰 Simular Recompra", action: "recompra" },
+          { text: "⚡ Conversor en Vivo", action: "conversor" }
+        ]
+      },
+      2: {
+        userMsg: "¿Compro ahorita?",
+        userTime: "10:40 AM",
+        botBadge: "✋ CONSEJO EN TIEMPO REAL: ESPERAR",
+        botText: "El <strong>RSI 4H</strong> se ubica en <strong>59.6</strong> (impulso alcista saludable, sin descuento extremo).<br><br>💡 Comprar ahorita significaría pagar comisiones de más. Te aconsejo colocar una orden <strong>LÍMITE Maker</strong> en zona de soporte. Te avisaré cuando toque el punto óptimo.",
+        botTime: "10:40 AM",
+        buttons: [
+          { text: "🎯 Ver Precio Soporte", action: "soporte" },
+          { text: "📊 RSI en Vivo", action: "rsi" }
+        ]
+      },
+      3: {
+        userMsg: "📷 [Foto enviada: Comprobante Bitso Alpha 10,435 sats a $1,718,000 MXN]",
+        userTime: "8:15 PM",
+        botBadge: "✅ COMPROBANTE DETECTADO Y CERTIFICADO",
+        botText: "• <strong>Activo:</strong> Bitcoin (BTC)<br>• <strong>Satoshis adquiridos:</strong> 10,435 sats<br>• <strong>Inversión:</strong> $179.27 MXN ($10.44 USD)<br>• <strong>Tipo de orden:</strong> Límite Maker (0.6% com.)<br><br>📖 Asentado en tu <strong>Libro Contable con Merkle Root</strong>.",
+        botTime: "8:15 PM",
+        buttons: [
+          { text: "📖 Ver Resumen", action: "libro" },
+          { text: "⚡ Simular Recompra", action: "recompra" }
+        ]
+      },
+      4: {
+        userMsg: "🔔 [Notificación automática 24/7 recibida en tu Telegram]",
+        userTime: "7:30 AM",
+        botBadge: "🔔 ¡ALERTA DE COSECHA DE GANANCIAS!",
+        botText: "Tu lote de 10,435 sats ha alcanzado el objetivo:<br>💰 <strong>Ganancia Neta:</strong> +5.49% (+10.99 MXN)<br>📊 <strong>RSI 4H:</strong> 68.2 (Zona de sobrecompra)<br><br>👉 Vende este lote en Bitso Alpha para guardar tu ganancia y esperar la siguiente oportunidad más abajo.",
+        botTime: "7:30 AM",
+        buttons: [
+          { text: "✅ Confirmar Venta", action: "cosecha" },
+          { text: "📊 Análisis de Ganancia", action: "analisis" }
+        ]
+      }
+    };
+
+    function renderSimulatorChat(step) {
+      var screen = document.getElementById('simChatScreen');
+      if (!screen) return;
+      var data = SIM_SCENARIOS[step];
+      if (!data) return;
+
+      var html = '';
+      
+      // Mensaje de usuario (Derecha)
+      html += '<div style="align-self:flex-end; max-width:85%; background:#2563eb; color:#fff; border-radius:14px 14px 4px 14px; padding:10px 14px; box-shadow:0 2px 8px rgba(0,0,0,0.3);">';
+      html += '  <div style="font-size:13px; line-height:1.4;">' + data.userMsg + '</div>';
+      html += '  <div style="font-size:10px; color:#bfdbfe; text-align:right; margin-top:4px;">' + data.userTime + ' ✓✓</div>';
+      html += '</div>';
+
+      // Mensaje de bot (Izquierda)
+      var borderCol = (step === 4) ? '#c084fc' : (step === 3 ? '#f59e0b' : '#38bdf8');
+      var bgCol = (step === 4) ? 'rgba(88, 28, 135, 0.35)' : 'rgba(30, 41, 59, 0.7)';
+      
+      html += '<div style="align-self:flex-start; max-width:92%; background:' + bgCol + '; border:1px solid ' + borderCol + '; color:#f8fafc; border-radius:14px 14px 14px 4px; padding:12px 14px; box-shadow:0 3px 12px rgba(0,0,0,0.4);">';
+      html += '  <div style="color:' + borderCol + '; font-weight:800; font-size:11.5px; margin-bottom:6px; letter-spacing:0.5px;">' + data.botBadge + '</div>';
+      html += '  <div style="font-size:12.5px; line-height:1.5; color:#e2e8f0;">' + data.botText + '</div>';
+      
+      // Botones táctiles inline
+      if (data.buttons && data.buttons.length > 0) {
+        html += '<div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; border-top:1px solid rgba(255,255,255,0.08); padding-top:8px;">';
+        data.buttons.forEach(function(b) {
+          html += '<button onclick="simBotClick(\'' + b.action + '\')" style="background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; font-size:11.5px; font-weight:700; padding:6px 10px; border-radius:8px; cursor:pointer; transition:all 0.15s;">' + b.text + '</button>';
+        });
+        html += '</div>';
+      }
+
+      html += '  <div style="font-size:10px; color:#94a3b8; text-align:right; margin-top:4px;">' + data.botTime + '</div>';
+      html += '</div>';
+
+      screen.innerHTML = html;
+      screen.scrollTop = 0;
+    }
+
+    function switchSimulatorStep(step) {
+      simCurrentStep = step;
+      for (var i = 1; i <= 4; i++) {
+        var card = document.getElementById('simCard' + i);
+        if (card) {
+          if (i === step) {
+            card.style.background = 'rgba(192, 132, 252, 0.15)';
+            card.style.border = '2px solid #c084fc';
+          } else {
+            card.style.background = 'rgba(255, 255, 255, 0.03)';
+            card.style.border = '1px solid rgba(255, 255, 255, 0.1)';
+          }
+        }
+      }
+      renderSimulatorChat(step);
+    }
+
+    function simBotClick(action) {
+      var screen = document.getElementById('simChatScreen');
+      if (!screen) return;
+      var respHtml = '';
+      if (action === 'libro') {
+        respHtml = '<div style="align-self:flex-start; max-width:92%; background:rgba(16,185,129,0.15); border:1px solid #10b981; color:#fff; border-radius:12px; padding:10px 12px; font-size:12px; margin-top:4px;">' +
+          '📖 <strong>LIBRO CONTABLE:</strong> 10,435 sats registrados • Costo Promedio: $1,718,000 MXN • Valuación Actual: $190.26 MXN (+10.99 MXN) • Merkle Root: 4bef5e10... ✓' +
+          '</div>';
+      } else if (action === 'recompra') {
+        respHtml = '<div style="align-self:flex-start; max-width:92%; background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#fff; border-radius:12px; padding:10px 12px; font-size:12px; margin-top:4px;">' +
+          '💰 <strong>SIMULACIÓN RECOMPRA:</strong> Al vender en pico de ciclo y recomprar en zona de retroceso (Soporte 4H), acumularás +435 sats matemáticos sin poner más dinero de tu bolsillo.' +
+          '</div>';
+      } else if (action === 'conversor') {
+        respHtml = '<div style="align-self:flex-start; max-width:92%; background:rgba(245,158,11,0.15); border:1px solid #f59e0b; color:#fff; border-radius:12px; padding:10px 12px; font-size:12px; margin-top:4px;">' +
+          '⚡ <strong>PARIDAD VIVA:</strong> 10,435 sats = 0.00010435 BTC = $190.26 MXN. ¡Un paso firme en tu reserva digital!' +
+          '</div>';
+      } else if (action === 'soporte') {
+        respHtml = '<div style="align-self:flex-start; max-width:92%; background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#fff; border-radius:12px; padding:10px 12px; font-size:12px; margin-top:4px;">' +
+          '🎯 <strong>PRECIO SOPORTE:</strong> Orden Límite Maker sugerida en $1,695,000 MXN para no pagar spread caro.' +
+          '</div>';
+      } else if (action === 'rsi') {
+        respHtml = '<div style="align-self:flex-start; max-width:92%; background:rgba(16,185,129,0.15); border:1px solid #10b981; color:#fff; border-radius:12px; padding:10px 12px; font-size:12px; margin-top:4px;">' +
+          '📊 <strong>RSI 4H:</strong> 59.6 — Zona neutral alcista. Paciencia: el algoritmo te avisará si toca sobrecompra.' +
+          '</div>';
+      } else if (action === 'cosecha') {
+        respHtml = '<div style="align-self:flex-start; max-width:92%; background:rgba(192,132,252,0.2); border:1px solid #c084fc; color:#fff; border-radius:12px; padding:10px 12px; font-size:12px; margin-top:4px;">' +
+          '✅ <strong>¡COSECHA EXITOSA!</strong> Lote liquidado en Bitso Alpha. Tu ganancia de +10.99 MXN está segura en tu saldo de pesos. Esperando siguiente dip para recomprar.' +
+          '</div>';
+      } else {
+        respHtml = '<div style="align-self:flex-start; max-width:92%; background:rgba(30,41,59,0.7); border:1px solid #64748b; color:#cbd5e1; border-radius:12px; padding:10px 12px; font-size:12px; margin-top:4px;">' +
+          '🤖 ¡Comando procesado exitosamente por tu Copiloto 24/7!' +
+          '</div>';
+      }
+      screen.insertAdjacentHTML('beforeend', respHtml);
+      screen.scrollTop = screen.scrollHeight;
+    }
+
+    // Inicializar simulador al cargar DOM
+    document.addEventListener('DOMContentLoaded', function() {
+      switchSimulatorStep(1);
+    });
+
     function playHeroVideo(mode) {
+
       mode = mode || 'ninos';
       switchVideoTab(mode);
       
@@ -7055,13 +7441,25 @@
         targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
       
-      var player = (mode === 'ninos') ? document.getElementById('playerNinos') : document.getElementById('playerAdultos');
+      // Pausar todos los reproductores primero
+      var pNinos = document.getElementById('playerNinos');
+      var pAdultos = document.getElementById('playerAdultos');
+      var pBot = document.getElementById('playerBot');
+      if (pNinos && !pNinos.paused) pNinos.pause();
+      if (pAdultos && !pAdultos.paused) pAdultos.pause();
+      if (pBot && !pBot.paused) pBot.pause();
+
+      var player = null;
+      if (mode === 'ninos') player = pNinos;
+      else if (mode === 'adultos') player = pAdultos;
+      else if (mode === 'bot') player = pBot;
+
       if (player) {
         setTimeout(function() {
           var p = player.play();
           if (p !== undefined) {
             p.then(function() {
-              console.log('Video iniciado correctamente');
+              console.log('Video ' + mode + ' iniciado correctamente');
             }).catch(function(err) {
               console.warn('Auto-reproducción bloqueada con audio, reproduciendo en silencio:', err);
               player.muted = true;
@@ -7073,87 +7471,61 @@
     }
 
     function switchVideoTab(mode) {
-
       var ninosCont = document.getElementById('videoContainerNinos');
-
       var adultosCont = document.getElementById('videoContainerAdultos');
-
+      var botCont = document.getElementById('videoContainerBot');
       var btnNinos = document.getElementById('btnTabNinos');
-
       var btnAdultos = document.getElementById('btnTabAdultos');
-
+      var btnBot = document.getElementById('btnTabBot');
       var vNinos = document.getElementById('playerNinos');
-
       var vAdultos = document.getElementById('playerAdultos');
+      var vBot = document.getElementById('playerBot');
 
-      
+      // Ocultar todos
+      if (ninosCont) ninosCont.style.display = 'none';
+      if (adultosCont) adultosCont.style.display = 'none';
+      if (botCont) botCont.style.display = 'none';
+
+      // Resetear botones
+      [btnNinos, btnAdultos, btnBot].forEach(function(btn) {
+        if (btn) {
+          btn.style.background = 'rgba(255,255,255,0.06)';
+          btn.style.color = '#94a3b8';
+          btn.style.border = '1px solid rgba(255,255,255,0.1)';
+          btn.style.boxShadow = 'none';
+        }
+      });
+
+      // Pausar reproductores
+      if (vNinos && !vNinos.paused) vNinos.pause();
+      if (vAdultos && !vAdultos.paused) vAdultos.pause();
+      if (vBot && !vBot.paused) vBot.pause();
 
       if (mode === 'ninos') {
-
         if (ninosCont) ninosCont.style.display = 'block';
-
-        if (adultosCont) adultosCont.style.display = 'none';
-
         if (btnNinos) {
-
           btnNinos.style.background = '#0284c7';
-
           btnNinos.style.color = '#fff';
-
           btnNinos.style.border = 'none';
-
           btnNinos.style.boxShadow = '0 4px 14px rgba(2,132,199,0.3)';
-
         }
-
-        if (btnAdultos) {
-
-          btnAdultos.style.background = 'rgba(255,255,255,0.06)';
-
-          btnAdultos.style.color = '#94a3b8';
-
-          btnAdultos.style.border = '1px solid rgba(255,255,255,0.1)';
-
-          btnAdultos.style.boxShadow = 'none';
-
-        }
-
-        if (vAdultos && !vAdultos.paused) vAdultos.pause();
-
-      } else {
-
-        if (ninosCont) ninosCont.style.display = 'none';
-
+      } else if (mode === 'adultos') {
         if (adultosCont) adultosCont.style.display = 'block';
-
         if (btnAdultos) {
-
           btnAdultos.style.background = '#0284c7';
-
           btnAdultos.style.color = '#fff';
-
           btnAdultos.style.border = 'none';
-
           btnAdultos.style.boxShadow = '0 4px 14px rgba(2,132,199,0.3)';
-
         }
-
-        if (btnNinos) {
-
-          btnNinos.style.background = 'rgba(255,255,255,0.06)';
-
-          btnNinos.style.color = '#94a3b8';
-
-          btnNinos.style.border = '1px solid rgba(255,255,255,0.1)';
-
-          btnNinos.style.boxShadow = 'none';
-
+      } else if (mode === 'bot') {
+        if (botCont) botCont.style.display = 'block';
+        if (btnBot) {
+          btnBot.style.background = '#7c3aed';
+          btnBot.style.color = '#fff';
+          btnBot.style.border = 'none';
+          btnBot.style.boxShadow = '0 4px 14px rgba(124,58,237,0.4)';
         }
-
-        if (vNinos && !vNinos.paused) vNinos.pause();
-
       }
-
     }
 
 
