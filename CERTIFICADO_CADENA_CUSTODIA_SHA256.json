@@ -1,0 +1,132 @@
+{
+  "project_name": "Patrimonio Inteligente",
+  "author_and_sole_owner": "Hilda Belem Ortiz Fuentes",
+  "timestamp_utc": "2026-11-25 01:32:12 UTC",
+  "timestamp_epoch": 1795570332,
+  "legal_framework": [
+    "Ley Federal del Derecho de Autor (LFDA Arts. 13 Fracc. XI, 101-114)",
+    "Código de Comercio (Arts. 89-114 - Mensajes de Datos y Firmas Electrónicas)",
+    "NOM-151-SCFI-2016 (Conservación de mensajes de datos e inalterabilidad)",
+    "Convenio de Berna para la Protección de las Obras Literarias y Artísticas",
+    "OpenTimestamps / Bitcoin Blockchain Proof of Existence Standard"
+  ],
+  "git_commits_verification": {
+    "master_repo": "https://github.com/AriaEden/patrimonio-inteligente",
+    "web_repo": "https://github.com/AriaEden/patrimonio-web"
+  },
+  "notarized_assets": [
+    {
+      "file_name": "index.html",
+      "relative_path": "subir_a_github\\index.html",
+      "sha256": "2d798cf04a4a1b1948adc37c8641529597380ee392877278fca5795924e8018a",
+      "size_bytes": 231902,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "copilot_telegram_runner.py",
+      "relative_path": "subir_a_github\\copilot_telegram_runner.py",
+      "sha256": "acf177416841ad34ce914b5b6e7c3f7f3e749cebc306f58a420f9b9d78227fb9",
+      "size_bytes": 35621,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "telegram_bot_manager.py",
+      "relative_path": "subir_a_github\\btc_accumulator\\telegram_bot_manager.py",
+      "sha256": "9b3fd4b8a8e539a8647400228a8908f80baac1b75be0d02a50135699274f13b8",
+      "size_bytes": 245407,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "balance_delta_engine.py",
+      "relative_path": "subir_a_github\\btc_accumulator\\balance_delta_engine.py",
+      "sha256": "e078115646ccb82b74720e2a586620029b98b2f1087668ba5a13df13f8ff929f",
+      "size_bytes": 14283,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "fiscal_strategy_engine.py",
+      "relative_path": "subir_a_github\\btc_accumulator\\fiscal_strategy_engine.py",
+      "sha256": "da4369ac24232e53f5505195d9765fba522c34eb0e9166e1c8668fb5e42ba2c1",
+      "size_bytes": 7658,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "adaptive_platform_engine.py",
+      "relative_path": "subir_a_github\\btc_accumulator\\adaptive_platform_engine.py",
+      "sha256": "14316bb5fd1710c47ca8a3fbd8bb697b5adbaa6f3ba74f6f464e56118bf59b7a",
+      "size_bytes": 24835,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "bitso_trade_book.json",
+      "relative_path": "subir_a_github\\user_verifications\\bitso_trade_book.json",
+      "sha256": "2f70941b527da2241df0b73d37fd8213c81b9c550c7ee5a9ebdc9d5f7a29e00a",
+      "size_bytes": 1719,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "user_trade_journal.json",
+      "relative_path": "subir_a_github\\user_verifications\\user_trade_journal.json",
+      "sha256": "7f7c70a60c2c48b0f43f254182f9c976d4b1d0ab2a37adb25496cb0f21dc7cf1",
+      "size_bytes": 5812,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "actinver_portfolio.json",
+      "relative_path": "subir_a_github\\user_verifications\\actinver_portfolio.json",
+      "sha256": "4154118ec5c7fa42283738f491996fe997b5fca38a0f1659470f350df98a9824",
+      "size_bytes": 1267,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "test_phase_state.json",
+      "relative_path": "subir_a_github\\user_verifications\\test_phase_state.json",
+      "sha256": "a8536d3dfc66caa41b81183c7dbbc11ec1b7e78fa147a517b7843e25084d0aec",
+      "size_bytes": 184,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "GUIA_PASO_A_PASO_COMPRA_BITSO_Y_ACTINVER.pdf",
+      "relative_path": "subir_a_github\\GUIA_PASO_A_PASO_COMPRA_BITSO_Y_ACTINVER.pdf",
+      "sha256": "449ce0e7b27c7c138e6172516d5d8296e114512e067649aba966b55aea85ae5b",
+      "size_bytes": 801072,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "MANUAL_DE_PRIMERA_VEZ_POR_EDADES.pdf",
+      "relative_path": "subir_a_github\\MANUAL_DE_PRIMERA_VEZ_POR_EDADES.pdf",
+      "sha256": "dbfa8aa4cb48b3f243032e36714fbb26b59dd2a4894e3cc9602135d98c9c4c1d",
+      "size_bytes": 495053,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "TALLER_FINANZAS_PREPA_ADULTOS_CTE_PADRES.pdf",
+      "relative_path": "subir_a_github\\TALLER_FINANZAS_PREPA_ADULTOS_CTE_PADRES.pdf",
+      "sha256": "38a202457b79a4e74e4fda1926e5cdb3f07503622073ebb6ba6fbca246d1daa7",
+      "size_bytes": 286622,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "FICHA_INFOGRAFICA_BITCOIN_PARA_TODOS.pdf",
+      "relative_path": "subir_a_github\\FICHA_INFOGRAFICA_BITCOIN_PARA_TODOS.pdf",
+      "sha256": "1a47c78fd6e5ee4d1edba59437c7a893c87bfbce01010ddf42dfc9ddbdc90f8a",
+      "size_bytes": 106080,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "EXPEDIENTE_REGISTRO_INDAUTOR_SOFTWARE.pdf",
+      "relative_path": "EXPEDIENTE_REGISTRO_INDAUTOR_SOFTWARE.pdf",
+      "sha256": "5fc1fa26add6aee3a2da6aec3d0afb07063d241a4f4ab41868fe964a647de491",
+      "size_bytes": 136167,
+      "status": "SEALED_AND_AUTHENTICATED"
+    },
+    {
+      "file_name": "EXPEDIENTE_REGISTRO_INDAUTOR_SOFTWARE.html",
+      "relative_path": "EXPEDIENTE_REGISTRO_INDAUTOR_SOFTWARE.html",
+      "sha256": "7793f722fdc487fc957cc4b01b3ab4cbc986fb935f878bc2cc8f4e2c50e9a668",
+      "size_bytes": 15010,
+      "status": "SEALED_AND_AUTHENTICATED"
+    }
+  ],
+  "master_merkle_root_sha256": "4bef5e105526175199dd8fb258832e25e586f287e70345d2b892515b5f91d1ee"
+}
