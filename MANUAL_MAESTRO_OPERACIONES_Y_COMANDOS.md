@@ -28,7 +28,7 @@ El sistema rompe con la visión simplista de ver a Bitcoin como una simple apues
 - **Modo Acumulación de Satoshis (Reserva de Valor Intergeneracional):**  
   La unidad de cuenta mental son los **Satoshis (sats)**. El bot ayuda al usuario a comprar en zonas de sobreventa técnica (RSI 4H ≤ 30-35) utilizando órdenes límite tipo **Maker** en Bitso (comisión preferencial de 0.10% o 0.60% sin cruzar el spread). El objetivo es acumular la mayor cantidad de satoshis con el menor costo promedio posible, sin vender por miedo.
 - **Modo Refugio y Cosecha de Dinero Fiat (Rentas FIBRAs con Indicadores Inversos):**  
-  La unidad de cuenta mental es la moneda fiduciaria (**MXN / USD**). Si el usuario prefiere acumular pesos o dólares, el sistema invierte la lógica: cuando Bitcoin entra en sobrecompra extrema (RSI 4H ≥ 65-70) o en techos de ciclo macro ($1,800,000+ MXN / $95,000+ USD), el bot alerta para cosechar plusvalías y transferirlas a casas de bolsa reguladas en México (Bursanet / Actinver) para comprar FIBRAs inmobiliarias (FIBRAMQ, FUNO, FMTY), asegurando un flujo de rentas pasivas trimestrales en pesos (8.5% a 10.5% anual) blindado contra la volatilidad. Además, al presentarse correcciones del -2.5% o mayores, el sistema emite el cálculo exacto de recompra para cosechar satoshis gratuitos sin aportar dinero nuevo.
+  La unidad de cuenta mental es la moneda fiduciaria (**MXN / USD**). Si el usuario prefiere acumular pesos o dólares, el sistema invierte la lógica: cuando Bitcoin entra en sobrecompra extrema (RSI 4H ≥ 65-70) o en techos de ciclo macro ($1,800,000+ MXN / $95,000+ USD), el bot alerta para cosechar plusvalías y transferirlas a casas de bolsa reguladas en México (Bursanet / Actinver) para comprar FIBRAs inmobiliarias (FIBRAMQ, FUNO, FMTY), asegurando un flujo de rentas pasivas trimestrales en pesos (8.5% a 10.5% anual) blindado contra la volatilidad. Además, al presentarse correcciones del -2.5% o mayores, el sistema emite el cálculo exacto de recompra para cosechar satoshis adicionales en retrocesos de mercado sin aportar dinero nuevo.
 
 ### 1.3. Motor de Auditoría Contable Continua y Conciliación Fiat
 Para evitar cualquier ambigüedad contable o malentendido con los usuarios:
@@ -70,6 +70,18 @@ Para garantizar que **ningún usuario ni historial se pierda jamás**, el sistem
 | `/capital_neto` | Ninguno | Reporte consolidado del capital total fiat inyectado por todos los miembros del bot. |
 
 ---
+
+### 2.1.1. Seguridad Criptográfica de Respaldos (Cifrado ZIP con Contraseña)
+En estricto cumplimiento con la LFPDPPP y para prevenir cualquier riesgo de fuga de datos en caso de compromiso de sesión en Telegram:
+- El comando `/respaldo` ya no envía archivos CSV en texto plano.
+- Empaqueta el directorio de usuarios, el JSON de la base de datos y el libro mayor dentro de un **contenedor ZIP protegido con contraseña** (`boveda_rescate_cifrada_*.zip`).
+- La contraseña maestra (`SUPER_ADMIN_BACKUP_PIN`) se comunica de manera disociada y permite abrir los archivos en cualquier descompresor estándar (Windows, macOS, Linux).
+
+### 2.1.1. Seguridad Criptográfica de Respaldos (Cifrado ZIP con Contraseña)
+En estricto cumplimiento con la LFPDPPP y para prevenir cualquier riesgo de fuga de datos en caso de compromiso de sesión en Telegram:
+- El comando `/respaldo` ya no envía archivos CSV en texto plano.
+- Empaqueta el directorio de usuarios, el JSON de la base de datos y el libro mayor dentro de un **contenedor ZIP protegido con contraseña** (`boveda_rescate_cifrada_*.zip`).
+- La contraseña maestra (`SUPER_ADMIN_BACKUP_PIN`) se comunica de manera disociada y permite abrir los archivos en cualquier descompresor estándar (Windows, macOS, Linux).
 
 ### 2.2. Guía Detallada de Comandos de Super-Admin
 
@@ -162,7 +174,7 @@ Para garantizar que **ningún usuario ni historial se pierda jamás**, el sistem
 - **Si tu meta es Acumular Satoshis (Patrimonio Intergeneracional):**
   Ignora la volatilidad de corto plazo. Cada vez que el bot te notifique una sobreventa técnica, coloca compras límite tipo Maker y deja tus monedas guardadas. Tu objetivo es ver crecer el número de satoshis mes con mes.
 - **Si tu meta es Acumular y Cosechar Fiat (Flujo de Dinero / Rentas FIBRAs):**
-  Cuando el bot detecte una sobrecompra técnica (RSI ≥ 65-70), coloca una orden de venta límite para asegurar ganancias en pesos o dólares. Si el mercado retrocede al menos un 2.5%, el comando `/timing` te indicará el precio exacto para volver a entrar y ganar más satoshis gratis, o bien, podrás retirar esas ganancias en pesos para comprar FIBRAs en Actinver/Bursanet y gozar de rentas trimestrales reguladas.
+  Cuando el bot detecte una sobrecompra técnica (RSI ≥ 65-70), coloca una orden de venta límite para asegurar ganancias en pesos o dólares. Si el mercado retrocede al menos un 2.5%, el comando `/timing` te indicará el precio exacto para volver a entrar y ganar más satoshis adicionales en recompra con descuento, o bien, podrás retirar esas ganancias en pesos para comprar FIBRAs en Actinver/Bursanet y gozar de rentas trimestrales reguladas.
 
 ---
 
