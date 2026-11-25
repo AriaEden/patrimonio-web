@@ -107,7 +107,7 @@
 
 <div class="meta-grid">
   <div><strong>Iniciativa:</strong> Patrimonio Inteligente (Plataforma Híbrida)</div>
-  <div><strong>Titular y Dirección:</strong> La Titular y Desarrolladora Responsable</div>
+  <div><strong>Titular y Dirección:</strong> Hilda Belem Ortiz Fuentes (Titular y Desarrolladora Responsable)</div>
   <div><strong>Periodo Comprendido:</strong> Septiembre 2026 &ndash; Noviembre 2026</div>
   <div><strong>Auditorías Superadas:</strong> 11 Auditorías Forenses Consecutivas</div>
   <div><strong>Arquitectura:</strong> Web no custodial + Docker microservicio + Bot Telegram</div>
@@ -341,6 +341,36 @@
       <td><span class="badge-tag tag-compliance">Estrategia Legal</span></td>
       <td>Blindaje contra Sobrerregulación CNBV, Deslinde Educativo Minimalista y Automatización Trimestral</td>
       <td>Evaluación de riesgo regulatorio en México ante la Comisión Nacional Bancaria y de Valores (CNBV) y CONDUSEF. Se determinó que exhibir un marco hiper-regulatorio citando artículos específicos de la Ley del Mercado de Valores y Ley Fintech exponía innecesariamente a la creadora a sospechas de intermediación reservada. <strong>1) Deslinde Minimalista:</strong> Se retiró el bloque <code>#compliance-framework</code> y se sustituyó por un deslinde directo de software libre educativo amparado en los Arts. 6º y 7º Constitucionales, desmarcándose categóricamente de cualquier figura regulada (cero captación, cero custodia y no asesoría). <strong>2) Domicilio Legal LFPDPPP:</strong> Se formalizó la Opción B de representación jurídica y buzón digital en CDMX. <strong>3) Automatización Trimestral:</strong> Se configuró un flujo programado en GitHub Actions (<code>.github/workflows/update_educational_materials.yml</code>) ejecutado el día 1 de cada trimestre (Enero, Abril, Julio, Octubre) mediante el script <code>update_educational_materials.py</code>, asegurando la actualización autónoma y continua de los 4 manuales en PDF y cotizaciones de referencia.</td>
+    </tr>
+    <tr>
+      <td><strong>25/Nov/2026 &bull; 08:15</strong></td>
+      <td><span class="badge-tag tag-code">Multimedia & Web UX</span></td>
+      <td>Video Tutorial del Copiloto e Integración de Guía Interactiva en Web</td>
+      <td>Producción audiovisual y renderizado del video tutorial oficial (<code>video_tutorial_copiloto.mp4</code>, 1080p a 30 FPS con locución natural e infografías didácticas) guiando el uso del bot de Telegram. Integración en la plataforma web mediante dos puntos de contacto: sección <code>#videos</code> (carrusel multimedia para niños, adultos y bot) y sección dedicada <code>#guia-bot</code> con póster institucional y botones directos. Despliegue en producción en GitHub (Commits <code>b52a05cf</code> y <code>6e8979be</code>).</td>
+    </tr>
+    <tr>
+      <td><strong>25/Nov/2026 &bull; 11:30</strong></td>
+      <td><span class="badge-tag tag-legal">Estrategia Legal & INDAUTOR</span></td>
+      <td>Expediente Técnico de Registro de Software ante INDAUTOR y Dictamen de Propiedad Intelectual</td>
+      <td>Formalización jurídica exhaustiva del expediente de registro de software ante el Instituto Nacional del Derecho de Autor (INDAUTOR) atribuido en un 100% a <strong>Hilda Belem Ortiz Fuentes</strong> como autora y titular de derechos morales y patrimoniales. Generación del dictamen legal (<code>DICTAMEN_LEGAL_Y_PROTECCION_PROPIEDAD_INTELECTUAL.pdf</code>) y del expediente técnico oficial (<code>EXPEDIENTE_REGISTRO_INDAUTOR_SOFTWARE.pdf</code>) consolidando el diagrama de arquitectura, el resumen descriptivo no divulgativo, las 7 librerías de terceros (MIT/Apache 2.0) y la reserva de derechos bajo la Ley Federal del Derecho de Autor y Ley Federal de Protección a la Propiedad Industrial.</td>
+    </tr>
+    <tr>
+      <td><strong>25/Nov/2026 &bull; 12:45</strong></td>
+      <td><span class="badge-tag tag-sec">Trading & Auditoría Contable</span></td>
+      <td>Conciliación de Capital Fiat, Dualidad Satoshis/BTC y Estrategia de Doble Finalidad</td>
+      <td>Desarrollo del motor de auditoría contable continua y conciliación de capital fiat en <code>telegram_bot_manager.py</code>. Se resolvió la discrepancia de saldos implementando el rastreo independiente de <code>total_fiat_deposited_usd</code> y <code>total_fiat_deposited_mxn</code> en el perfil de cada usuario. Se estandarizó la visualización simultánea de todos los montos en dólares (USD) y pesos mexicanos (MXN), así como el desglose transparente en fracciones de BTC y satoshis enteros, permitiendo operar tanto en Bitso Alpha como en Bitso clásico. Formalización de la <strong>Estrategia de Doble Finalidad de Bitcoin</strong>: acumulación patrimonial a largo plazo (HODL) o acumulación/cosecha de dinero fiat utilizando los indicadores técnicos en modo inverso (toma de utilidades en sobrecompra y recompras con descuento).</td>
+    </tr>
+    <tr>
+      <td><strong>25/Nov/2026 &bull; 14:35</strong></td>
+      <td><span class="badge-tag tag-code">Frontend & Arquitectura Web</span></td>
+      <td>Rediseño Institucional del Menú Superior: Dropdowns Glassmorphism y Drawer Móvil</td>
+      <td>Reestructuración arquitectónica del encabezado de navegación en <code>index.html</code> para eliminar el desbordamiento de pantalla (overflow horizontal) detectado en resoluciones estándar (1366px y 1024px). Sustitución de los 12 enlaces estáticos horizontales por 4 menús desplegables institucionales con estética Glassmorphism: 1) 🎬 Primeros Pasos, 2) ⚖️ Estrategia & Herramientas (incluyendo la nueva sección <code>#dualidad-btc</code>), 3) 📚 Educación & Guías, y 4) 🏛️ Legal & Recursos. Integración de menú lateral deslizante tipo Drawer para dispositivos móviles (&lt;1180px), optimización táctil y fijación del botón de acción <code>Abrir Asistente ↗</code>. Despliegue en GitHub (Commits <code>838f6e62</code> y <code>606bedfa</code>).</td>
+    </tr>
+    <tr>
+      <td><strong>25/Nov/2026 &bull; 15:20</strong></td>
+      <td><span class="badge-tag tag-sec">Resiliencia & Disaster Recovery</span></td>
+      <td>Sistema Integral de Rescate de Usuarios, Respaldo Soberano Inmutable y Auto-Sanación (Self-Healing)</td>
+      <td>Implementación de la infraestructura de resiliencia ante desastres (*Disaster Recovery*) en <code>telegram_bot_manager.py</code>: <strong>1) Respaldo Atómico Seguro:</strong> Escritura con archivo temporal <code>.tmp</code>, sincronización forzada a disco (<code>fsync</code>) y generación de snapshots fechados rotativos en <code>user_verifications/backups/</code>. <strong>2) Bitácora Inmutable (WAL):</strong> Creación de <code>user_rescue_audit_log.jsonl</code>, registro append-only de cada evento de usuario con firma SHA-256 única para reconstrucción forense determinista. <strong>3) Auto-Sanación (*Self-Healing*):</strong> Algoritmo en <code>_load_users()</code> que ante ausencia o corrupción del archivo principal restaura automáticamente la base de datos desde el último snapshot válido sin interrupción operativa. <strong>4) Paquete Soberano de Rescate:</strong> Nuevos comandos <code>/respaldo</code>, <code>/exportar_usuarios</code>, <code>/estatus_rescate</code> y <code>/restaurar_respaldo</code> que envían directamente a la administradora el archivo JSON de usuarios, el JSON del libro contable y un directorio CSV compatible con Excel para contacto directo de emergencia por WhatsApp/email. Suite de pruebas ejecutada con 100% de éxito. Despliegue en GitHub (Commit <code>377b011d</code>).</td>
     </tr>
   </tbody>
 </table>
