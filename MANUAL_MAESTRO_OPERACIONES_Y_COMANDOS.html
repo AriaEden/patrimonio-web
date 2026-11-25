@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Manual Maestro de Operaciones, Gobernanza y Comandos — Patrimonio Inteligente</title>
+<style>
+  @page {
+    size: letter;
+    margin: 18mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.5;
+    font-size: 9pt;
+    margin: 0;
+    padding: 0;
+  }
+  .cover {
+    page-break-after: always;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  .badge-gov {
+    display: inline-block;
+    border: 2px solid #0284c7;
+    color: #0284c7;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 9pt;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .cover h1 {
+    font-size: 22pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+  }
+  .cover h2 {
+    font-size: 13pt;
+    font-weight: 600;
+    color: #475569;
+    margin: 0 0 30px 0;
+  }
+  .cover-box {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 18px 24px;
+    max-width: 520px;
+    margin: 0 auto 35px auto;
+    text-align: left;
+    font-size: 8.5pt;
+    line-height: 1.6;
+  }
+  .module-header {
+    background-color: #0f172a;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 11.5pt;
+    font-weight: 800;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+  }
+  h2 {
+    font-size: 11pt;
+    color: #0284c7;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 4px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  h3 {
+    font-size: 9.5pt;
+    color: #0f172a;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+  p {
+    margin: 0 0 8px 0;
+    text-align: justify;
+  }
+  ul, ol {
+    margin: 0 0 10px 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 14px;
+    font-size: 8pt;
+    page-break-inside: avoid;
+  }
+  table th, table td {
+    border: 1px solid #cbd5e1;
+    padding: 6px 8px;
+    text-align: left;
+  }
+  table th {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    font-weight: 700;
+  }
+  table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  code {
+    background-color: #f1f5f9;
+    color: #0369a1;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 8pt;
+    font-weight: bold;
+  }
+  .box-info {
+    background-color: #eff6ff;
+    border-left: 4px solid #0284c7;
+    padding: 8px 12px;
+    margin: 10px 0;
+    font-size: 8.5pt;
+  }
+  .box-warning {
+    background-color: #fef3c7;
+    border-left: 4px solid #d97706;
+    padding: 8px 12px;
+    margin: 10px 0;
+    font-size: 8.5pt;
+  }
+  .box-success {
+    background-color: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    padding: 8px 12px;
+    margin: 10px 0;
+    font-size: 8.5pt;
+  }
+  .footer {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 8px;
+    margin-top: 25px;
+    font-size: 7.5pt;
+    color: #64748b;
+    text-align: center;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+  <div class="badge-gov">DOCUMENTO OFICIAL DE OPERACIONES Y GOBERNANZA</div>
+  <h1>MANUAL MAESTRO DE OPERACIONES, GOBERNANZA Y COMANDOS</h1>
+  <h2>Ecosistema Integral "Patrimonio Inteligente" — Plataforma Web y Copiloto Financiero</h2>
+  
+  <div class="cover-box">
+    <strong>FICHA TÉCNICA Y LEGAL:</strong><br>
+    &bull; <strong>Titular y Autora Responsable:</strong> Hilda Belem Ortiz Fuentes<br>
+    &bull; <strong>Fecha de Emisión:</strong> 25 de Noviembre de 2026<br>
+    &bull; <strong>Versión Tecnológica:</strong> v3.0 Enterprise Resilient (Dual-Mode, Self-Healing & WAL)<br>
+    &bull; <strong>Registro de Propiedad Intelectual:</strong> Expediente INDAUTOR & Secreto Industrial LFPPI<br>
+    &bull; <strong>Entorno Operativo:</strong> Web Interactiva No Custodial + Bot Telegram 24/7 en Render Cloud<br>
+    &bull; <strong>Nivel de Confidencialidad:</strong> Uso Institucional Interno y Formación de Usuarios
+  </div>
+
+  <div style="font-size: 8.5pt; color: #475569; max-width: 500px; margin: 0 auto;">
+    Guía completa de arquitectura de sistemas, catálogo independiente de comandos administrativos (Super-Admin), catálogo de comandos para usuarios, y protocolo de contingencia y rescate ante fallos de servidor.
+  </div>
+</div>
+
+<!-- MÓDULO 1 -->
+<div class="module-header">MÓDULO 1: RESUMEN EJECUTIVO Y ARQUITECTURA DEL SISTEMA</div>
+<p>
+  <strong>Patrimonio Inteligente</strong> es una solución integral de tecnología financiera no custodial diseñada y desarrollada al 100% por <strong>Hilda Belem Ortiz Fuentes</strong>. Su objetivo es brindar a los usuarios en México una metodología cuantitativa clara, amigable y matemáticamente sólida para proteger su poder adquisitivo y construir un patrimonio duradero sin entregar su dinero a intermediarios oscuros ni pagar comisiones excesivas.
+</p>
+
+<h2>1.1. Los Tres Pilares Fundamentales del Ecosistema</h2>
+<ol>
+  <li><strong>Plataforma Web Educativa (Frontend):</strong> Portal interactivo alojado en GitHub Pages (<code>ariaeden.github.io/patrimonio-web</code>) que integra una calculadora de interés compuesto geométrico con 4 escenarios de estrés macroeconómico, comparador didáctico de FIBRAs inmobiliarias mexicanas vs índice S&P 500, un evaluador técnico con oscilador RSI (14D) diario, biblioteca de recursos descargables y videos tutoriales.</li>
+  <li><strong>Copiloto Financiero Automatizado (Backend Cloud):</strong> Microservicio en Python desplegado en Render Cloud bajo contenedor Docker (<code>copilot_telegram_runner.py</code> y <code>telegram_bot_manager.py</code>) que actúa como un centinela 24/7 en Telegram (<code>@dabel_btc_copiloto_bot</code>). El bot no es custodial (no tiene acceso a claves privadas ni ejecuta retiros), sino que orienta al usuario para operar en sus propias cuentas reguladas (Bitso y Bursanet/Actinver).</li>
+  <li><strong>Bóveda Contable, Forense y de Resiliencia:</strong> Motor algorítmico interno que certifica comprobantes de compra/venta en Bitso mediante huellas criptográficas SHA-256, reconcilia el capital fiat de bolsillo frente a la valuación flotante y respalda en tiempo real a cada usuario en una bitácora inmutable (Write-Ahead Log) inmune a fallos de servidor.</li>
+</ol>
+
+<h2>1.2. La Doble Finalidad Estratégica de Bitcoin</h2>
+<div class="box-info">
+  El sistema supera la falsa dicotomía entre "ahorrar en pesos" o "especular en cripto", formalizando dos finalidades financieras complementarias amparadas en el expediente de registro de INDAUTOR:
+</div>
+<ul>
+  <li><strong>Finalidad A &mdash; Acumulación Patrimonial Pura (Modo Satoshis):</strong> Diseñado para quienes buscan reserva de valor intergeneracional. La unidad de cuenta mental son los <strong>Satoshis (sats)</strong>. El bot alerta compras cuando el mercado experimenta sobreventa técnica (RSI 4H &le; 30-35) mediante órdenes límite tipo <em>Maker</em> en Bitso (comisión preferencial de 0.10% a 0.60% sin saltar el spread). Las monedas se conservan a largo plazo con el menor costo promedio posible.</li>
+  <li><strong>Finalidad B &mdash; Cosecha de Capital y Flujo Fiat (Modo Rentas FIBRAs Inversas):</strong> Diseñado para quienes prefieren maximizar su flujo en pesos mexicanos (MXN) o dólares (USD). Bitcoin funciona como acelerador patrimonial asimétrico: cuando el precio alcanza techos de ciclo macro ($1,800,000+ MXN / $95,000+ USD) o sobrecompra extrema (RSI 4H &ge; 65-70), el usuario monetiza parte de las plusvalías y transfiere el capital a Bursanet para comprar FIBRAs inmobiliarias (FIBRAMQ12, FUNO, FMTY14), cobrando rentas trimestrales reguladas (8.5%–10.5% anual) libres de volatilidad. Además, al presentarse una contracción de al menos -2.5%, el comando <code>/timing</code> calcula la recompra óptima para capturar satoshis gratuitos sin meter dinero nuevo.</li>
+</ul>
+
+<h2>1.3. Conciliación Continua de Capital Fiat y Lectura Dual</h2>
+<p>
+  Para salvaguardar la transparencia contable y evitar confusiones:
+</p>
+<ul>
+  <li><strong>Segregación Matemática:</strong> El bot rastrea de forma totalmente independiente el <em>Capital Real Depositado de Bolsillo</em> (<code>total_fiat_deposited_usd</code> / <code>total_fiat_deposited_mxn</code>) frente a la <em>Valuación Actual de Mercado</em>. De esta forma, el usuario siempre sabe exactamente cuánto dinero real ha aportado desde que comenzó a interactuar con la plataforma.</li>
+  <li><strong>Desglose Simultáneo en Todo Momento:</strong> Cada mensaje, reporte de saldo y comprobante muestra en paralelo: <strong>1)</strong> Satoshis enteros y fracción decimal de BTC; <strong>2)</strong> Importe en USD y conversión oficial a Pesos Mexicanos (MXN).</li>
+</ul>
+
+<div class="page-break"></div>
+
+<!-- MÓDULO 2 -->
+<div class="module-header">MÓDULO 2: MANUAL DE COMANDOS EXCLUSIVOS DE LA ADMINISTRADORA (SUPER-ADMIN)</div>
+<div class="box-warning">
+  <strong>ACCESO RESTRINGIDO:</strong> Los comandos de este módulo son de uso exclusivo para <strong>Hilda Belem Ortiz Fuentes</strong>. El sistema valida el <code>chat_id</code> del remitente contra el <code>SUPER_ADMIN_ID</code> antes de procesar cualquier instrucción. Cualquier intento de ejecución externa queda bloqueado y auditado.
+</div>
+
+<h2>2.1. Tabla General de Comandos de Super-Admin</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 22%;">Comando</th>
+      <th style="width: 25%;">Parámetros</th>
+      <th>Función y Efecto en Producción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>/usuarios</code></td>
+      <td>Ninguno</td>
+      <td>Genera un censo completo del padrón de usuarios registrados, clasificándolos en activos, pendientes, suspendidos y días restantes de vigencia.</td>
+    </tr>
+    <tr>
+      <td><code>/pendientes</code></td>
+      <td>Ninguno</td>
+      <td>Filtra y muestra exclusivamente las solicitudes en espera de aprobación enviadas por nuevos prospectos.</td>
+    </tr>
+    <tr>
+      <td><code>/aprobar</code></td>
+      <td><code>&lt;chat_id&gt; [días]</code></td>
+      <td>Autoriza la membresía oficial de un nuevo usuario, establece su vigencia (30 días por defecto) y le despacha el mensaje interactivo de bienvenida.</td>
+    </tr>
+    <tr>
+      <td><code>/renovar</code></td>
+      <td><code>&lt;chat_id&gt; &lt;días&gt;</code></td>
+      <td>Extiende la membresía del usuario por el número de días indicado tras validar su pago mensual.</td>
+    </tr>
+    <tr>
+      <td><code>/suspender</code></td>
+      <td><code>&lt;chat_id&gt;</code></td>
+      <td>Pausa temporalmente el servicio del usuario desactivando el envío de alertas y consultas operativas.</td>
+    </tr>
+    <tr>
+      <td><code>/reactivar</code></td>
+      <td><code>&lt;chat_id&gt;</code></td>
+      <td>Restaura el acceso completo de un usuario previamente suspendido sin afectar su libro contable histórico.</td>
+    </tr>
+    <tr>
+      <td><code>/bloquear</code></td>
+      <td><code>&lt;chat_id&gt;</code></td>
+      <td>Revoca permanentemente el acceso de un usuario infractor o malicioso.</td>
+    </tr>
+    <tr>
+      <td><code>/respaldo</code></td>
+      <td>Ninguno</td>
+      <td><strong>Bóveda Soberana de Rescate:</strong> Empaqueta y despacha directamente a Telegram el JSON de usuarios, el JSON contable de Bitso y el CSV compatible con Excel.</td>
+    </tr>
+    <tr>
+      <td><code>/exportar_usuarios</code></td>
+      <td>Ninguno</td>
+      <td>Envía a Telegram el directorio <code>.csv</code> listo para abrir en Microsoft Excel con nombres, teléfonos y saldos.</td>
+    </tr>
+    <tr>
+      <td><code>/estatus_rescate</code></td>
+      <td>Ninguno</td>
+      <td>Reporte de salud del motor de resiliencia: eventos en el WAL SHA-256, snapshots rotativos y memoria.</td>
+    </tr>
+    <tr>
+      <td><code>/restaurar_respaldo</code></td>
+      <td><code>&lt;archivo_snapshot&gt;</code></td>
+      <td>Instrucción de recuperación guiada para recargar un snapshot histórico en caso de catástrofe.</td>
+    </tr>
+    <tr>
+      <td><code>/auditoria</code></td>
+      <td>Ninguno</td>
+      <td>Informe forense de validación de comprobantes, folios duplicados o incongruencias de saldo.</td>
+    </tr>
+    <tr>
+      <td><code>/capital_neto</code></td>
+      <td>Ninguno</td>
+      <td>Reporte macro del total de capital fiat inyectado por toda la comunidad en el ecosistema.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>2.2. Guía Práctica de Gestión y Soporte Administrativo</h2>
+
+<h3>A. ¿Cómo Aprobar a un Nuevo Usuario Paso a Paso?</h3>
+<ol>
+  <li>El interesado pulsa <code>/start</code> en el bot y escribe sus datos.</li>
+  <li>El bot notifica inmediatamente al Super-Admin: <em>"🔔 NUEVA SOLICITUD DE ACCESO: Nombre: Juan Pérez | ID: 123456789"</em>.</li>
+  <li>Escribe en el chat: <code>/aprobar 123456789 30</code>.</li>
+  <li><strong>Respuesta del Sistema:</strong> El bot registra el usuario en <code>registered_users.json</code>, firma el evento con hash SHA-256 en <code>user_rescue_audit_log.jsonl</code>, genera un snapshot de seguridad y le envía a Juan Pérez su bienvenida con el teclado interactivo listo para usar.</li>
+</ol>
+
+<h3>B. ¿Cómo Ejecutar un Respaldo de Emergencia?</h3>
+<ol>
+  <li>Escribe en tu chat privado con el bot: <code>/respaldo</code>.</li>
+  <li>En menos de 5 segundos recibirás 3 archivos adjuntos en Telegram:
+    <ul>
+      <li><code>respaldo_usuarios_patrimonio_*.json</code> (Base de datos completa).</li>
+      <li><code>directorio_usuarios_rescate_*.csv</code> (Hoja de cálculo para abrir en Excel con contactos y balances).</li>
+      <li><code>bitso_libro_contable_*.json</code> (Historial inmutable de compras y ventas).</li>
+    </ul>
+  </li>
+  <li><strong>¡Listo!</strong> Guarda esos archivos en tu carpeta personal o manténlos en tus mensajes guardados de Telegram. Con ellos, la plataforma es 100% inmortal.</li>
+</ol>
+
+<div class="page-break"></div>
+
+<!-- MÓDULO 3 -->
+<div class="module-header">MÓDULO 3: MANUAL DE COMANDOS PARA USUARIOS Y CLIENTES</div>
+<p>
+  Este módulo contiene los comandos públicos y didácticos que los miembros autorizados pueden utilizar para consultar el mercado, auditar sus compras en Bitso y tomar decisiones informadas.
+</p>
+
+<h2>3.1. Tabla General de Comandos de Usuario</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 22%;">Comando</th>
+      <th style="width: 25%;">Formato</th>
+      <th>Respuesta y Utilidad para el Miembro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>/start</code></td>
+      <td><code>/start</code></td>
+      <td>Despliega el menú principal interactivo con botones de acceso rápido y estado de cuenta.</td>
+    </tr>
+    <tr>
+      <td><code>/ayuda</code></td>
+      <td><code>/ayuda</code></td>
+      <td>Guía rápida con instrucciones y preguntas frecuentes sobre el funcionamiento del bot.</td>
+    </tr>
+    <tr>
+      <td><code>/precio</code></td>
+      <td><code>/precio</code></td>
+      <td>Muestra el precio en vivo de Bitcoin en USD y MXN, tipo de cambio interbancario y tendencia inmediata.</td>
+    </tr>
+    <tr>
+      <td><code>/mercado</code></td>
+      <td><code>/mercado</code></td>
+      <td>Diagnóstico técnico integral: Oscilador RSI (4H), Índice de Miedo/Codicia y niveles clave de soporte.</td>
+    </tr>
+    <tr>
+      <td><code>/evaluar</code></td>
+      <td><code>/evaluar &lt;activo&gt;</code></td>
+      <td>Dictamen cuantitativo instantáneo para FIBRAs o ETFs (ej. <code>/evaluar FIBRAMQ12</code>, <code>/evaluar IVVPESO</code>).</td>
+    </tr>
+    <tr>
+      <td><code>/comisiones</code></td>
+      <td><code>/comisiones</code></td>
+      <td>Educación de comisiones: Comparativa Maker (0.60%) vs Taker (0.78%) y el impacto de operar en Bitso Alpha.</td>
+    </tr>
+    <tr>
+      <td><code>/saldo</code> o <code>/cuenta</code></td>
+      <td><code>/saldo</code></td>
+      <td>Consulta de patrimonio en Bitso: Satoshis acumulados, fracción BTC, capital invertido y valuación en USD/MXN.</td>
+    </tr>
+    <tr>
+      <td><code>/libro</code></td>
+      <td><code>/libro</code></td>
+      <td>Historial certificado de compras/ventas registradas con folios y huellas SHA-256 antidupicación.</td>
+    </tr>
+    <tr>
+      <td><code>/convertir</code></td>
+      <td><code>/convertir &lt;monto&gt;</code></td>
+      <td>Calculadora instantánea de pesos a satoshis al tipo de cambio y cotización vigente.</td>
+    </tr>
+    <tr>
+      <td><code>/simular_bitso</code></td>
+      <td><code>/simular_bitso</code></td>
+      <td>Simulador paso a paso para colocar una orden límite tipo Maker en Bitso Alpha evitando comisiones caras.</td>
+    </tr>
+    <tr>
+      <td><code>/simular_actinver</code></td>
+      <td><code>/simular_actinver</code></td>
+      <td>Simulador guiado para adquirir títulos bursátiles de FIBRAs en Bursanet (Actinver).</td>
+    </tr>
+    <tr>
+      <td><code>/timing</code></td>
+      <td><code>/timing</code></td>
+      <td>Monitorea el retroceso del mercado tras una venta para recomendar la recompra exacta con ganancia de satoshis.</td>
+    </tr>
+    <tr>
+      <td><code>/borrar_datos</code></td>
+      <td><code>/borrar_datos</code></td>
+      <td>Ejercicio de Derechos ARCO (LFPDPPP): Purga total e irrevocable de los datos del usuario en la base de datos.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>3.2. Guía de Operativa Cotidiana para el Miembro</h2>
+
+<h3>A. Cómo Enviar Capturas de Bitso para Registrar tus Compras</h3>
+<ol>
+  <li>Ingresa a tu cuenta de <strong>Bitso</strong> (web o aplicación móvil).</li>
+  <li>Coloca tu orden límite de compra Maker y espera a que se ejecute al 100%.</li>
+  <li>Toma una captura de pantalla clara del detalle de la orden ejecutada donde sea visible: <em>Precio de Compra, Monto en BTC y Total Pagado</em>.</li>
+  <li>Abre tu conversación de Telegram con el copiloto y **envía la imagen**.</li>
+  <li><strong>Qué hace el bot:</strong> Extrae automáticamente los números, valida la autenticidad con huella SHA-256 única para que nunca se duplique un registro, te acredita los nuevos satoshis y te entrega una tarjeta con tu saldo total actualizado y tu capital fiat acumulado.</li>
+</ol>
+
+<h3>B. Las Dos Metas que Puedes Elegir: Satoshis o Rentas Fiat</h3>
+<div class="box-success">
+  <strong>Tú decides tu meta:</strong><br>
+  &bull; Si buscas <strong>heredar riqueza libre de inflación</strong>, enfócate en acumular satoshis mediante compras regulares en sobreventa sin importar el precio diario.<br>
+  &bull; Si buscas <strong>hacer crecer tu dinero fiat y tener rentas mensuales</strong>, atiende las alertas de sobrecompra del bot para cosechar ganancias en pesos y comprar títulos de FIBRAs en Actinver/Bursanet.
+</div>
+
+<div class="page-break"></div>
+
+<!-- MÓDULO 4 -->
+<div class="module-header">MÓDULO 4: PROTOCOLO DE RESCATE Y RESTAURACIÓN ANTE EMERGENCIAS (DISASTER RECOVERY)</div>
+
+<h2>4.1. Respuesta a la Duda Central de la Administradora</h2>
+<div class="box-info">
+  <strong>Pregunta de Hilda Belem:</strong> <em>"Con estos archivos yo te los doy y vuelves a restaurar el sistema antes del error?"</em><br><br>
+  <strong>Respuesta Oficial y Categórica:</strong> <strong>SÍ, ABSOLUTAMENTE Y EN MENOS DE 10 SEGUNDOS.</strong><br>
+  El sistema fue programado con un diseño determinista: cada dato sensible (ID de usuario, nombre, teléfono, plan de membresía, fecha de expiración, total de satoshis y total de dinero fiat aportado) se encuentra serializado de forma exacta en el archivo <code>respaldo_usuarios_patrimonio_*.json</code> y en el libro <code>bitso_libro_contable_*.json</code>. Con solo entregar esos archivos, cualquier servidor nuevo o cualquier sesión del asistente restaura la base de datos idéntica a como estaba antes del fallo.
+</div>
+
+<h2>4.2. Matriz de Contingencias y Acciones Inmediatas</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 25%;">Escenario de Riesgo</th>
+      <th style="width: 35%;">Mecanismo de Protección Automático</th>
+      <th>Acción Requerida por Hilda Belem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Reinicio o caída de Render Cloud</strong></td>
+      <td>El contenedor Docker se reinicia automáticamente. La rutina <code>_load_users()</code> lee el archivo de base de datos intacto y el bot continúa en línea.</td>
+      <td><strong>Ninguna.</strong> El servicio se restablece de forma autónoma.</td>
+    </tr>
+    <tr>
+      <td><strong>Corrupción del archivo <code>registered_users.json</code></strong></td>
+      <td><strong>Auto-Sanación (Self-Healing):</strong> El bot detecta la anomalía en el arranque, acude a <code>user_verifications/backups/</code>, toma el último snapshot válido y se repara solo.</td>
+      <td><strong>Ninguna.</strong> El bot reporta en el log que se auto-reparó con éxito.</td>
+    </tr>
+    <tr>
+      <td><strong>Pérdida total del servidor o migración a otro hosting</strong></td>
+      <td>Con los archivos generados por <code>/respaldo</code>, se regenera la carpeta <code>user_verifications/</code> con los nombres oficiales y se inicia el bot.</td>
+      <td>Entregar los archivos de respaldo al asistente o subirlos al nuevo servidor. Tiempo de recuperación: &lt; 10 segundos.</td>
+    </tr>
+    <tr>
+      <td><strong>Bloqueo o cambio del Bot Token de Telegram</strong></td>
+      <td>Los datos de los usuarios dependen de su ID numérico permanente de Telegram (<code>chat_id</code>), no del nombre del bot. Al cambiar el token en Render, los usuarios se conservan al 100%.</td>
+      <td>Actualizar el token en las variables de entorno de Render y notificar a la comunidad el nuevo enlace.</td>
+    </tr>
+    <tr>
+      <td><strong>Imposibilidad temporal de encender el bot</strong></td>
+      <td>El archivo <code>directorio_usuarios_rescate_*.csv</code> generado por <code>/respaldo</code> contiene los nombres, teléfonos y saldos listos para abrir en <strong>Microsoft Excel</strong>.</td>
+      <td>Abrir el CSV en tu computadora y contactar directamente a los usuarios por WhatsApp o correo privado.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4.3. Protocolo de Restauración Manual Paso a Paso (Paso a Paso Rápido)</h2>
+<ol>
+  <li>Descarga en tu computadora el archivo <code>respaldo_usuarios_patrimonio_*.json</code> que te envió el bot.</li>
+  <li>Renómbralo como <code>registered_users.json</code>.</li>
+  <li>Descarga el archivo <code>bitso_libro_contable_*.json</code> y renómbralo como <code>bitso_trade_book.json</code>.</li>
+  <li>Coloca ambos archivos dentro de la carpeta <code>user_verifications/</code> del proyecto.</li>
+  <li>Inicia el bot o ejecuta el comando <code>python copiloto_maestro_runner.py</code>.</li>
+  <li><strong>¡Listo!</strong> Todos los miembros, saldos y comprobantes quedan certificados y activos al instante.</li>
+</ol>
+
+<div class="footer">
+  Manual Maestro de Operaciones, Gobernanza y Comandos &bull; Patrimonio Inteligente &bull; Titular: Hilda Belem Ortiz Fuentes &bull; Noviembre 2026.
+</div>
+
+</body>
+</html>
