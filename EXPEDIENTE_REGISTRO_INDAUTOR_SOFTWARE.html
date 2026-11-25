@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Expediente Oficial de Registro de Obra - INDAUTOR</title>
+<style>
+  @page {
+    size: letter;
+    margin: 18mm 15mm 18mm 15mm;
+  }
+  body {
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.45;
+    font-size: 9.5pt;
+    margin: 0;
+    padding: 0;
+  }
+  .cover-page {
+    page-break-after: always;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .gov-badge {
+    display: inline-block;
+    border: 2px solid #0f172a;
+    padding: 6px 16px;
+    font-weight: 800;
+    font-size: 10.5pt;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+  }
+  .cover-title {
+    font-size: 21pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .cover-subtitle {
+    font-size: 12pt;
+    color: #0284c7;
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+  .cover-meta {
+    margin: 0 auto;
+    width: 85%;
+    border-top: 2px solid #e2e8f0;
+    border-bottom: 2px solid #e2e8f0;
+    padding: 16px 0;
+    text-align: left;
+    font-size: 10pt;
+  }
+  .cover-meta table {
+    width: 100%;
+  }
+  .cover-meta td {
+    padding: 5px 8px;
+  }
+  .page-header {
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 5px;
+    margin-bottom: 14px;
+    font-size: 8pt;
+    color: #64748b;
+    display: flex;
+    justify-content: space-between;
+  }
+  h2 {
+    font-size: 11.5pt;
+    color: #0f172a;
+    border-left: 4px solid #0284c7;
+    padding-left: 8px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+  p {
+    text-align: justify;
+    margin-bottom: 8px;
+  }
+  .code-block {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 8px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 7.5pt;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.25;
+    color: #0f172a;
+    margin-bottom: 12px;
+  }
+  .table-summary {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+  }
+  .table-summary th, .table-summary td {
+    border: 1px solid #cbd5e1;
+    padding: 6px 8px;
+    font-size: 8.5pt;
+  }
+  .table-summary th {
+    background-color: #f1f5f9;
+  }
+  .box-highlight {
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin: 10px 0;
+    font-size: 9pt;
+  }
+</style>
+</head>
+<body>
+
+<!-- CARATULA OFICIAL -->
+<div class="cover-page">
+  <div class="gov-badge">INSTITUTO NACIONAL DEL DERECHO DE AUTOR (INDAUTOR)</div>
+  <div style="font-size: 9.5pt; color: #64748b; margin-bottom: 20px;">SECRETARÍA DE CULTURA &bull; GOBIERNO DE MÉXICO</div>
+  
+  <div class="cover-title">PATRIMONIO INTELIGENTE:<br>PLATAFORMA DE INVERSIÓN HÍBRIDA, MOTOR DE AUTOMATIZACIÓN VÍA APIS Y COPILOTO DIGITAL</div>
+  <div class="cover-subtitle">EXPEDIENTE DE REGISTRO DE OBRA: PROGRAMA DE COMPUTACIÓN (SOFTWARE) Y ARQUITECTURA MODULAR EXTENSIBLE</div>
+  
+  <div class="cover-meta">
+    <table>
+      <tr>
+        <td style="width: 42%; font-weight: bold;">Autora y Titular Patrimonial:</td>
+        <td><strong>Hilda Belem Ortiz Fuentes</strong> (100% de titularidad originaria)</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Rama de Registro:</td>
+        <td>Programa de Computación (Software) y Documentación Técnica</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Nacionalidad del Autor:</td>
+        <td>Mexicana</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Año de Creación:</td>
+        <td>2026</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Carácter de la Obra:</td>
+        <td>Primigenia, Individual e Inédita</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Capacidad Registrada:</td>
+        <td>Operación asistida (Copiloto) y automatización desatendida mediante interfaces API multi-brokerage</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;">Fundamento Legal:</td>
+        <td>Ley Federal del Derecho de Autor (Arts. 13 Fracc. XI, 101-114) y Art. 58 del Reglamento de la LFDA</td>
+      </tr>
+    </table>
+  </div>
+  
+  <div style="margin-top: 40px; font-size: 8.5pt; color: #475569;">
+    Ejemplar que contiene la Memoria Técnica Descriptiva, Declaración de Extensibilidad Modular,<br>Muestra de Código Fuente Oficial y Reserva de Secreto Industrial conforme a la LFPPI.
+  </div>
+</div>
+
+<!-- PAGINA 2: MEMORIA DESCRIPTIVA -->
+<div class="page-header">
+  <span>EXPEDIENTE INDAUTOR &bull; PATRIMONIO INTELIGENTE</span>
+  <span>MEMORIA TÉCNICA DESCRIPTIVA Y ALCANCE FUNCIONAL</span>
+</div>
+
+<h2>1. DESCRIPCIÓN TÉCNICA GENERAL</h2>
+<p>
+El software denominado <strong>«Patrimonio Inteligente»</strong> es una plataforma de software integral de tecnología financiera (Fintech) y educación patrimonial. Su arquitectura desacoplada permite operar en dos modalidades complementarias:
+</p>
+<ol>
+  <li><strong>Modalidad Asistida (Copiloto No Custodial):</strong> Procesa en tiempo real indicadores cuantitativos (RSI Wilder 14D, divergencias y medias institucionales de 50 y 200 periodos) para emitir diagnósticos y sugerencias operativas mediante mensajería cifrada, manteniendo el principio de ejecución soberana y veto humano.</li>
+  <li><strong>Plataforma Web Didáctica (Frontend):</strong> Aplicación en HTML5 y JavaScript con tres calculadoras de interés compuesto con conversión geométrica mensual-anual, proyecciones dinámicas y simuladores de estrés macroeconómico.</li>
+</ol>
+
+<h2>2. ALCANCE DE AUTOMATIZACIÓN DE DECISIONES VÍA APIS Y EXTENSIBILIDAD</h2>
+<div class="box-highlight">
+  <strong>DECLARACIÓN EXPRESA DE CAPACIDAD DE AUTOMATIZACIÓN (CLAIM DE PROPIEDAD INTELECTUAL):</strong><br>
+  Se hace constar en este registro que el sistema comprende una capa de abstracción de ejecución programática que permite la <strong>automatización total o parcial de la toma de decisiones financieras</strong> mediante interfaces de programación de aplicaciones (APIs REST, WebSockets, FIX Protocol y Webhooks), permitiendo su conexión y extensibilidad nativa a múltiples entidades financieras e intermediarios bursátiles.
+</div>
+
+<p>
+El software incorpora la lógica algorítmica para orquestar de forma desatendida:
+</p>
+<ul>
+  <li><strong>Colocación Automatizada de Órdenes Pasivas (Maker):</strong> Conexión con libros de órdenes para fijar posturas de compra en soporte con spread cero, reduciendo comisiones de corretaje.</li>
+  <li><strong>Motor de Rebalanceo Automático (Portfolio Drift Engine):</strong> Cálculo de desbalances entre bolsillos (70% Núcleo / 30% Satélite) y generación automática de órdenes de compra/venta cruzada entre diferentes clases de activos.</li>
+  <li><strong>Extensibilidad Multi-Entidad Financiera:</strong> Diseñado modularmente para integrarse con:
+    <ul>
+      <li><em>Plataformas de Criptoactivos:</em> Bitso, Binance, Coinbase, Kraken, etc.</li>
+      <li><em>Casas de Bolsa e Intermediarios Regulados:</em> Actinver / Bursanet, GBM+, Interactive Brokers (TWS API), Alpaca Markets, plataformas del SIC (Sistema Internacional de Cotizaciones), BMV y BIVA.</li>
+      <li><em>Orquestadores y Webhooks Externos:</em> Alertas automatizadas de TradingView, servidores en la nube y sistemas de contabilidad automatizada.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>2.1 ARQUITECTURA ALGORÍTMICA DE DUALIDAD PATRIMONIAL Y CONCILIACIÓN DE CAPITAL FIAT (CLAIM DE NOVEDAD TÉCNICA E INTELECTUAL)</h3>
+<div class="box-highlight">
+  <strong>REIVINDICACIÓN EXCLUSIVA DE DUALIDAD OPERATIVA Y CONCILIACIÓN MATEMÁTICA:</strong><br>
+  Se hace constar en este registro la protección autoral y de secreto industrial sobre el modelo algorítmico bi-modal desarrollado por la titular <strong>Hilda Belem Ortiz Fuentes</strong>, el cual desacopla la unidad de cuenta mental del usuario y ejecuta dos finalidades financieras complementarias con invariantes cuantitativos independientes:
+</div>
+<ol style="line-height: 1.5; font-size: 8.5pt;">
+  <li><strong>Finalidad 1: Reserva de Valor Intergeneracional (Modo Acumulación Pura de Satoshis):</strong><br>
+    Unidad de cuenta soberana en Satoshis (sats). El algoritmo ejecuta compras y recompras límite (Maker) con comisiones mínimas del 0.10% en Bitso ante señales de sobreventa (RSI 4H &le; 30-35) o rebotes técnicos. Cuando el mercado se sobrecalienta (RSI 4H &ge; 65-70), el sistema toma utilidades temporales en fiat y, al presentarse la contracción correctiva en soportes cuantitativos, ejecuta la recompra incrementando el volumen neto de satoshis acumulados (&Delta;Sats &gt; 0) sin demandar nueva aportación de capital de bolsillo del usuario.
+  </li>
+  <li><strong>Finalidad 2: Acelerador de Capital y Cosecha de Flujo Fiat para FIBRAs (Modo Creador de Rentas Pasivas):</strong><br>
+    Unidad de cuenta en moneda fiduciaria de curso legal (MXN / USD). Bitcoin opera como motor asimétrico de tracción acelerada de capital. Al dispararse la alerta macro de ciclo ($1,800,000+ MXN / $95,000+ USD) o zonas de toma de ganancias institucionales, el sistema emite instrucciones precisas de monetización parcial y transferencia a casas de bolsa reguladas (Bursanet / Actinver) para fondear portafolios de Fideicomisos de Inversión en Bienes Raíces (FIBRAs como FIBRAMQ, FUNO, PROLOGIS), amarrando flujo de efectivo trimestral en rendimientos por dividendo (8.5%–10.5% anual) blindados contra la volatilidad cripto.
+  </li>
+  <li><strong>Motor de Auditoría Continua y Conciliación de Invariantes de Capital Fiat:</strong><br>
+    Módulo algorítmico de verificación contable forense que audita segundo a segundo las operaciones ejecutadas, segregando matemáticamente el <em>Capital Real Aportado de Bolsillo</em> (depósitos netos acumulados) de la <em>Valuación Flotante del Mercado</em>. Este motor previene aberraciones de cálculo, auto-concilia órdenes límite pendientes y garantiza la transparencia contable exigida por las mejores prácticas financieras internacionales.
+  </li>
+</ol>
+
+
+<div style="page-break-after: always;"></div>
+
+<!-- PAGINA 3: ARQUITECTURA Y CERO CUSTODIA -->
+<div class="page-header">
+  <span>EXPEDIENTE INDAUTOR &bull; PATRIMONIO INTELIGENTE</span>
+  <span>ARQUITECTURA MODULAR Y SEGURIDAD JURÍDICA</span>
+</div>
+
+<h2>3. SEGURIDAD, NO CUSTODIA Y PRIVACIDAD DE DATOS</h2>
+<p>
+El programa fue desarrollado con estricto apego al marco regulatorio mexicano:
+</p>
+<table class="table-summary">
+  <thead>
+    <tr>
+      <th>Principio de Diseño</th>
+      <th>Marco Legal Aplicable</th>
+      <th>Implementación Técnica en el Software</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Cero Custodia de Fondos</strong></td>
+      <td>Art. 210 Ley del Mercado de Valores</td>
+      <td>El software no capta dinero ni custodia activos; opera sobre cuentas directas del titular en intermediarios regulados.</td>
+    </tr>
+    <tr>
+      <td><strong>Privacidad y Derechos ARCO</strong></td>
+      <td>Arts. 16, 29, 31 y 32 LFPDPPP</td>
+      <td>Módulo automatizado de cancelación y purga de identificadores técnicos mediante comando y emisión de folios únicos.</td>
+    </tr>
+    <tr>
+      <td><strong>Reserva de Secreto Industrial</strong></td>
+      <td>Arts. 163 al 168 LFPPI</td>
+      <td>Las fórmulas de ponderación matemática, umbrales cuantitativos y lógica propietaria se resguardan como secreto confidencial.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. MUESTRA OFICIAL DE CÓDIGO FUENTE (ART. 58 REGLAMENTO LFDA)</h2>
+<p style="font-size: 8.5pt; color: #475569;">
+A continuación se exhibe el extracto probatorio de las primeras fojas del código fuente que sustentan la arquitectura del software:
+</p>
+
+<div class="code-block">
+&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;es&quot;&gt;
+
+&lt;head&gt;
+
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+
+  &lt;title&gt;Patrimonio Inteligente | Centro de Cultura e Inversión Estratégica&lt;/title&gt;
+
+  &lt;meta name=&quot;description&quot; content=&quot;Aprende a construir y proteger tu patrimonio con reglas institucionales, cero intermediarios caros y custodia 100% regulada a tu propio nombre.&quot;&gt;
+
+  
+
+  &lt;!-- Anti-cache headers to ensure immediate updates in browser --&gt;
+
+  &lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-cache, no-store, must-revalidate&quot;&gt;
+
+  &lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;
+
+  &lt;meta http-equiv=&quot;Expires&quot; content=&quot;0&quot;&gt;
+
+  &lt;!-- Blindaje de Seguridad y Privacidad Web (Protección contra Ataques Externos) --&gt;
+  &lt;meta http-equiv=&quot;X-Content-Type-Options&quot; content=&quot;nosniff&quot;&gt;
+  &lt;meta name=&quot;referrer&quot; content=&quot;strict-origin-when-cross-origin&quot;&gt;
+  &lt;meta http-equiv=&quot;Permissions-Policy&quot; content=&quot;camera=(), microphone=(), geolocation=(), payment=(), usb=()&quot;&gt;
+
+
+
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+
+  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+
+  
+
+  &lt;style&gt;
+
+    :root {
+
+      --bg-dark: #070d19;
+
+      --bg-card: #0f172a;
+
+      --bg-card-hover: #1e293b;
+
+      --border-color: rgba(255, 255, 255, 0.08);
+
+      --border-focus: #38bdf8;
+
+      --text-main: #f8fafc;
+
+      --text-muted: #94a3b8;
+
+      --primary: #2563eb;
+
+      --primary-glow: rgba(37, 99, 235, 0.35);
+
+</div>
+
+<div style="page-break-after: always;"></div>
+
+<!-- PAGINA 4: CONCLUSIÓN Y FIRMA -->
+<div class="page-header">
+  <span>EXPEDIENTE INDAUTOR &bull; PATRIMONIO INTELIGENTE</span>
+  <span>MUESTRA DE CIERRE Y DECLARACIÓN DE AUTORÍA</span>
+</div>
+
+<h2>5. MUESTRA DE CÓDIGO FUENTE: MÓDULO DE INTERFAZ Y CIERRE</h2>
+<p style="font-size: 8.5pt; color: #475569;">
+A continuación se exhibe el extracto de las fojas finales del código fuente:
+</p>
+
+<div class="code-block">
+
+    // ========================================================
+    // LOGICA INTERACTIVA DEL GLOSARIO FINANCIERO COTIDIANO
+    // ========================================================
+    let currentGlossaryCategory = &#x27;all&#x27;;
+
+    function setGlossaryCategory(category, buttonEl) {
+      currentGlossaryCategory = category;
+      const pills = document.querySelectorAll(&#x27;.glossary-pill&#x27;);
+      pills.forEach(p =&gt; p.classList.remove(&#x27;active&#x27;));
+      if (buttonEl) buttonEl.classList.add(&#x27;active&#x27;);
+      filterGlossary();
+    }
+
+    function filterGlossary() {
+      const searchInput = document.getElementById(&#x27;glossarySearch&#x27;);
+      const query = (searchInput ? searchInput.value : &#x27;&#x27;).toLowerCase().trim();
+      const cards = document.querySelectorAll(&#x27;.glossary-card&#x27;);
+      const countBar = document.getElementById(&#x27;glossaryCountBar&#x27;);
+      const emptyBox = document.getElementById(&#x27;glossaryEmpty&#x27;);
+
+      let visibleCount = 0;
+      cards.forEach(card =&gt; {
+        const cat = card.getAttribute(&#x27;data-category&#x27;) || &#x27;&#x27;;
+        const keywords = card.getAttribute(&#x27;data-keywords&#x27;) || &#x27;&#x27;;
+        const title = (card.querySelector(&#x27;.glossary-term-title&#x27;)?.textContent || &#x27;&#x27;).toLowerCase();
+        const def = (card.querySelector(&#x27;.glossary-definition&#x27;)?.textContent || &#x27;&#x27;).toLowerCase();
+        const ex = (card.querySelector(&#x27;.glossary-example-text&#x27;)?.textContent || &#x27;&#x27;).toLowerCase();
+        const alias = (card.querySelector(&#x27;.glossary-alias&#x27;)?.textContent || &#x27;&#x27;).toLowerCase();
+
+        const matchCategory = (currentGlossaryCategory === &#x27;all&#x27; || cat === currentGlossaryCategory);
+        const matchQuery = !query || 
+          title.includes(query) || 
+          keywords.includes(query) || 
+          def.includes(query) || 
+          ex.includes(query) || 
+          alias.includes(query);
+
+        if (matchCategory &amp;&amp; matchQuery) {
+          card.style.display = &#x27;flex&#x27;;
+          visibleCount++;
+        } else {
+          card.style.display = &#x27;none&#x27;;
+        }
+      });
+
+      if (countBar) {
+        countBar.textContent = `Mostrando ${visibleCount} de ${cards.length} conceptos financieros con ejemplos de la vida real`;
+      }
+      if (emptyBox) {
+        emptyBox.style.display = visibleCount === 0 ? &#x27;block&#x27; : &#x27;none&#x27;;
+      }
+    }
+
+  &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+</div>
+
+<h2>6. DECLARACIÓN FORMAL DE AUTORÍA</h2>
+<p>
+Bajo protesta de decir verdad, la suscrita <strong>Hilda Belem Ortiz Fuentes</strong> declara ser la única autora y titular originaria de todos los derechos patrimoniales y morales sobre el programa de computación amparado por este ejemplar, incluyendo su arquitectura de automatización de decisiones vía API y su extensibilidad multi-broker. Los algoritmos cuantitativos no incluidos en este extracto se reservan formalmente como secreto industrial al amparo de la legislación federal mexicana.
+</p>
+
+<div style="margin-top: 40px; text-align: center;">
+  ____________________________________________________<br>
+  <strong>Hilda Belem Ortiz Fuentes</strong><br>
+  Autora y Titular Originaria al 100%
+</div>
+
+</body>
+</html>
