@@ -287,146 +287,490 @@
 
 
 
-    /* Navbar links */
+        /* ========================================================
+       MODERN INSTITUTIONAL NAVBAR & DROPDOWNS (REDESIGN)
+       ======================================================== */
+    header.site-header, header {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 13, 25, 0.94);
+      width: 100%;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-main);
+      flex-shrink: 0;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+    }
+
+    .brand-text .brand-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.2px;
+      display: block;
+    }
+
+    .brand-text p {
+      font-size: 9.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin: 0;
+    }
+
+    /* Desktop Nav */
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+    }
 
     .nav-links {
-
       display: flex;
-
-      gap: 4px;
-
+      gap: 6px;
       list-style: none;
-
       align-items: center;
-
       margin: 0;
-
       padding: 0;
-
     }
 
+    /* Dropdown container */
+    .nav-dropdown {
+      position: relative;
+    }
 
-
-    .nav-links a {
-
-      color: var(--text-muted);
-
-      text-decoration: none;
-
+    .nav-dropdown-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: #94a3b8;
+      padding: 7px 12px;
       font-size: 12.5px;
-
-      font-weight: 500;
-
-      padding: 6px 9px;
-
-      border-radius: 8px;
-
-      transition: all 0.2s;
-
-      display: inline-block;
-
-      white-space: nowrap;
-
-    }
-
-
-
-    .nav-links a:hover {
-
-      color: var(--text-main);
-
-      background: rgba(255, 255, 255, 0.05);
-
-    }
-
-
-
-    .nav-links a.active {
-
-      color: #38bdf8;
-
-      background: rgba(56, 189, 248, 0.12);
-
       font-weight: 600;
-
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      white-space: nowrap;
     }
 
+    .nav-dropdown-btn .chevron-icon {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.2s ease;
+      color: #64748b;
+    }
 
+    .nav-dropdown:hover .nav-dropdown-btn,
+    .nav-dropdown.active .nav-dropdown-btn,
+    .nav-dropdown-btn:focus-visible {
+      color: #f8fafc;
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-dropdown:hover .chevron-icon,
+    .nav-dropdown.is-open .chevron-icon {
+      transform: rotate(180deg);
+      color: #38bdf8;
+    }
+
+    /* Dropdown Menu Box */
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      min-width: 290px;
+      background: rgba(11, 19, 38, 0.98);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 14px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 24px rgba(56, 189, 248, 0.12);
+      padding: 8px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+      z-index: 1050;
+    }
+
+    .nav-dropdown::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 12px;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu,
+    .nav-dropdown.is-open .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Dropdown item styling */
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 12px;
+      border-radius: 9px;
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item.active {
+      background: rgba(56, 189, 248, 0.1);
+      border-color: rgba(56, 189, 248, 0.2);
+      transform: translateX(2px);
+    }
+
+    .dropdown-item .item-icon {
+      font-size: 16px;
+      width: 24px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .dropdown-item .item-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .dropdown-item .item-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dropdown-item:hover .item-title,
+    .dropdown-item.active .item-title {
+      color: #38bdf8;
+    }
+
+    .dropdown-item .item-desc {
+      font-size: 11px;
+      color: #94a3b8;
+      line-height: 1.3;
+    }
+
+    .dropdown-item.featured-item {
+      background: rgba(168, 85, 247, 0.08);
+      border-color: rgba(168, 85, 247, 0.2);
+    }
+
+    .dropdown-item.featured-item:hover,
+    .dropdown-item.featured-item.active {
+      background: rgba(168, 85, 247, 0.18);
+      border-color: rgba(168, 85, 247, 0.4);
+    }
+
+    .dropdown-item.featured-item .item-title {
+      color: #e9d5ff;
+    }
+
+    .badge-new {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-new-mobile {
+      background: #a855f7;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 8px;
+      text-transform: uppercase;
+      margin-left: 6px;
+    }
+
+    /* Actions and CTA */
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
 
     .btn-header {
-
-      background: rgba(37, 99, 235, 0.15);
-
-      border: 1px solid rgba(37, 99, 235, 0.3);
-
-      color: #60a5fa;
-
-      padding: 8px 16px;
-
-      border-radius: 30px;
-
-      font-size: 12.5px;
-
-      font-weight: 600;
-
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(2, 132, 199, 0.25));
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
       text-decoration: none;
-
-      transition: all 0.2s;
-
+      transition: all 0.2s ease;
       white-space: nowrap;
-
-      flex-shrink: 0;
-
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 10px rgba(56, 189, 248, 0.15);
     }
-
-
 
     .btn-header:hover {
-
-      background: var(--primary);
-
+      background: linear-gradient(135deg, #0284c7, #2563eb);
       color: white;
-
-      box-shadow: 0 4px 15px var(--primary-glow);
-
+      border-color: transparent;
+      box-shadow: 0 4px 18px rgba(2, 132, 199, 0.45);
+      transform: translateY(-1px);
     }
 
+    /* Mobile Hamburger Button */
+    .mobile-nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 8px;
+      transition: all 0.2s ease;
+    }
 
+    .mobile-nav-toggle:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
 
-    @media (max-width: 1024px) {
+    .hamburger-line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #e2e8f0;
+      border-radius: 2px;
+      transition: all 0.2s ease;
+    }
 
+    /* Mobile Drawer */
+    .mobile-drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .mobile-drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 300px;
+      height: 100vh;
+      background: #090e1a;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
+      z-index: 1999;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow-y: auto;
+    }
+
+    .mobile-nav-drawer.active {
+      right: 0;
+    }
+
+    .mobile-drawer-header {
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-drawer-close {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: color 0.2s;
+    }
+
+    .mobile-drawer-close:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-drawer-content {
+      padding: 16px 14px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-group-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #38bdf8;
+      padding: 8px 10px 4px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      margin-bottom: 4px;
+    }
+
+    .mobile-drawer-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.15s ease;
+    }
+
+    .mobile-drawer-link:hover,
+    .mobile-drawer-link.active {
+      background: rgba(56, 189, 248, 0.12);
+      color: #38bdf8;
+    }
+
+    .mobile-drawer-link.highlight-link {
+      color: #c084fc;
+      background: rgba(168, 85, 247, 0.08);
+    }
+
+    .btn-drawer-cta {
+      display: block;
+      text-align: center;
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 13.5px;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+    }
+
+    
+    
+    /* Refinamiento móvil ultra-compacto de una sola línea */
+    @media (max-width: 640px) {
+      header.site-header, header {
+        padding: 10px 0;
+      }
       .nav-wrapper {
-
-        flex-direction: column;
-
+        padding: 0 16px;
+        justify-content: space-between;
         align-items: center;
-
-        gap: 12px;
-
+        width: 100%;
+        box-sizing: border-box;
       }
-
-      .nav-links {
-
-        overflow-x: auto;
-
-        max-width: 100%;
-
-        padding-bottom: 4px;
-
-        scrollbar-width: none;
-
-        -ms-overflow-style: none;
-
+      .brand {
+        gap: 8px;
+        flex-shrink: 0;
       }
-
-      .nav-links::-webkit-scrollbar {
-
+      .brand-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+        border-radius: 8px;
+      }
+      .brand-text .brand-name {
+        font-size: 12.5px;
+      }
+      .brand-text p {
         display: none;
-
       }
-
+      .nav-actions .btn-header {
+        display: none !important;
+      }
+      .mobile-nav-toggle {
+        display: flex !important;
+        margin-left: auto;
+      }
     }
 
+    /* Breakpoint adjustments */
+    @media (max-width: 1180px) {
+      .desktop-nav {
+        display: none !important;
+      }
+      .mobile-nav-toggle {
+        display: flex !important;
+      }
+    }
 
 
     /* Hero */
@@ -2750,19 +3094,7 @@
 
 
 
-    @media (max-width: 1350px) {
-      .nav-links a {
-        font-size: 11px;
-        padding: 5px 6px;
-      }
-      .nav-links {
-        gap: 2px;
-      }
-      .btn-header {
-        padding: 6px 12px;
-        font-size: 11.5px;
-      }
-    }
+    
 
   
 
@@ -2971,45 +3303,228 @@
 
 
 
-  <!-- Header -->
-
-  <header>
-
+    <!-- Header Institucional Reorganizado con Menús Desplegables -->
+  <header class="site-header">
     <div class="container nav-wrapper">
-
       <a href="#" class="brand">
-
         <div class="brand-icon">PI</div>
-
         <div class="brand-text">
-
           <span class="brand-name">PATRIMONIO INTELIGENTE</span>
-
           <p>Cultura &bull; Estrategia &bull; Crecimiento</p>
-
         </div>
-
       </a>
 
-      <ul class="nav-links" id="topNavLinks">
-        <li><a href="#videos" onclick="playHeroVideo('ninos')" style="color: #38bdf8; font-weight: 700;">🎬 Video Explicativo</a></li>
-        <li><a href="#guia-bot" style="color: #c084fc; font-weight: 700;">🤖 Guía del Bot</a></li>
-        <li><a href="#confianza" style="color: #10b981; font-weight: 700;">🛡️ Confianza y Seguridad</a></li>
-        <li><a href="#guias">Guías</a></li>
-        <li><a href="#activos">Universo</a></li>
-        <li><a href="#evaluador">Evaluador</a></li>
-        <li><a href="#dualidad-btc" style="color: #a855f7; font-weight: 700;">⚖️ Doble Finalidad BTC</a></li>
-        <li><a href="#calculadora">Calculadora</a></li>
-        <li><a href="#descargas">Biblioteca</a></li>
-        <li><a href="#resenas">Ejercicios</a></li>
-        <li><a href="#glosario" style="color: #f59e0b; font-weight: 700;">📖 Glosario Cotidiano</a></li>
-        <li><a href="#marco-legal">Marco Legal</a></li>
-      </ul>
+      <!-- Navegación Principal de Escritorio con Dropdowns -->
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <ul class="nav-links" id="topNavLinks">
+          
+          <!-- Categoría 1: Primeros Pasos -->
+          <li class="nav-dropdown" data-dropdown="pasos">
+            <button class="nav-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">
+              <span>🎬 Primeros Pasos</span>
+              <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="#videos" onclick="playHeroVideo('ninos')" class="dropdown-item">
+                <span class="item-icon">🎬</span>
+                <div class="item-text">
+                  <span class="item-title">Videos Explicativos</span>
+                  <span class="item-desc">Aprende jugando (Niños) y Estrategia (Adultos)</span>
+                </div>
+              </a>
+              <a href="#guia-bot" class="dropdown-item">
+                <span class="item-icon">🤖</span>
+                <div class="item-text">
+                  <span class="item-title">Guía & Video del Bot</span>
+                  <span class="item-desc">Uso paso a paso de tu copiloto 24/7 en Telegram</span>
+                </div>
+              </a>
+              <a href="#confianza" class="dropdown-item">
+                <span class="item-icon">🛡️</span>
+                <div class="item-text">
+                  <span class="item-title">Confianza y Seguridad</span>
+                  <span class="item-desc">Cero custodia, cuentas a tu nombre y regulación CNBV</span>
+                </div>
+              </a>
+            </div>
+          </li>
 
-      <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" rel="noopener noreferrer" class="btn-header">Abrir Asistente ↗</a>
+          <!-- Categoría 2: Estrategia & Simulación -->
+          <li class="nav-dropdown" data-dropdown="estrategia">
+            <button class="nav-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">
+              <span>⚖️ Estrategia & Herramientas</span>
+              <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="#dualidad-btc" class="dropdown-item featured-item">
+                <span class="item-icon">⚖️</span>
+                <div class="item-text">
+                  <span class="item-title">Doble Finalidad BTC <span class="badge-new">Nuevo</span></span>
+                  <span class="item-desc">Acumular Satoshis vs. Cosechar Rentas FIBRAs</span>
+                </div>
+              </a>
+              <a href="#calculadora" class="dropdown-item">
+                <span class="item-icon">🧮</span>
+                <div class="item-text">
+                  <span class="item-title">Calculadora Tri-Modal</span>
+                  <span class="item-desc">Simula rendimientos Bolsa, Bitcoin o Híbrido</span>
+                </div>
+              </a>
+              <a href="#activos" class="dropdown-item">
+                <span class="item-icon">🌐</span>
+                <div class="item-text">
+                  <span class="item-title">Universo de Activos</span>
+                  <span class="item-desc">Modelo 70% Núcleo Rentas / 30% Satélite Crecimiento</span>
+                </div>
+              </a>
+              <a href="#evaluador" class="dropdown-item">
+                <span class="item-icon">📈</span>
+                <div class="item-text">
+                  <span class="item-title">Evaluador Institucional</span>
+                  <span class="item-desc">FIBRAs industriales, S&P 500 y activos globales</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- Categoría 3: Educación Financiera -->
+          <li class="nav-dropdown" data-dropdown="educacion">
+            <button class="nav-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">
+              <span>📚 Educación & Guías</span>
+              <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="#guias" class="dropdown-item">
+                <span class="item-icon">📘</span>
+                <div class="item-text">
+                  <span class="item-title">Guías Universales</span>
+                  <span class="item-desc">Apertura y fondeo paso a paso en Bitso y Bursanet</span>
+                </div>
+              </a>
+              <a href="#glosario" class="dropdown-item">
+                <span class="item-icon">📖</span>
+                <div class="item-text">
+                  <span class="item-title">Glosario Cotidiano</span>
+                  <span class="item-desc">Conceptos complejos explicados con analogías simples</span>
+                </div>
+              </a>
+              <a href="#resenas" class="dropdown-item">
+                <span class="item-icon">📝</span>
+                <div class="item-text">
+                  <span class="item-title">Ejercicios Prácticos</span>
+                  <span class="item-desc">Casos de estudio y modelado patrimonial familiar</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- Categoría 4: Legal & Recursos -->
+          <li class="nav-dropdown" data-dropdown="legal">
+            <button class="nav-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">
+              <span>🏛️ Legal & Recursos</span>
+              <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="#descargas" class="dropdown-item">
+                <span class="item-icon">📥</span>
+                <div class="item-text">
+                  <span class="item-title">Biblioteca Descargable</span>
+                  <span class="item-desc">Manuales PDF, infografías y formatos de auditoría</span>
+                </div>
+              </a>
+              <a href="#marco-legal" class="dropdown-item">
+                <span class="item-icon">📜</span>
+                <div class="item-text">
+                  <span class="item-title">Marco Legal & INDAUTOR</span>
+                  <span class="item-desc">Certificación autoral, no-custodia y secreto industrial</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Botón de Acción y Disparador Móvil -->
+      <div class="nav-actions">
+        <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" rel="noopener noreferrer" class="btn-header">
+          <span>Abrir Asistente</span>
+          <span style="font-size: 13px;">↗</span>
+        </a>
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Abrir menú de navegación" onclick="toggleMobileMenu()">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
 
     </div>
 
+    <!-- Menú Desplegable Lateral para Móviles y Tablets -->
+    <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileMenu()"></div>
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <div class="brand">
+          <div class="brand-icon">PI</div>
+          <div class="brand-text">
+            <span class="brand-name">PATRIMONIO INTELIGENTE</span>
+          </div>
+        </div>
+        <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Cerrar menú" onclick="closeMobileMenu()">✕</button>
+      </div>
+
+      <div class="mobile-drawer-content">
+        <div class="mobile-group-title">🎬 Primeros Pasos</div>
+        <a href="#videos" onclick="playHeroVideo('ninos'); closeMobileMenu();" class="mobile-drawer-link">
+          <span>🎬</span> Videos Explicativos
+        </a>
+        <a href="#guia-bot" onclick="closeMobileMenu();" class="mobile-drawer-link">
+          <span>🤖</span> Guía & Video del Bot
+        </a>
+        <a href="#confianza" onclick="closeMobileMenu();" class="mobile-drawer-link">
+          <span>🛡️</span> Confianza y Seguridad
+        </a>
+
+        <div class="mobile-group-title" style="margin-top: 14px;">⚖️ Estrategia & Simulación</div>
+        <a href="#dualidad-btc" onclick="closeMobileMenu();" class="mobile-drawer-link highlight-link">
+          <span>⚖️</span> Doble Finalidad BTC <span class="badge-new-mobile">Nuevo</span>
+        </a>
+        <a href="#calculadora" onclick="closeMobileMenu();" class="mobile-drawer-link">
+          <span>🧮</span> Calculadora Tri-Modal
+        </a>
+        <a href="#activos" onclick="closeMobileMenu();" class="mobile-drawer-link">
+          <span>🌐</span> Universo de Activos
+        </a>
+        <a href="#evaluador" onclick="closeMobileMenu();" class="mobile-drawer-link">
+          <span>📈</span> Evaluador Institucional
+        </a>
+
+        <div class="mobile-group-title" style="margin-top: 14px;">📚 Educación Financiera</div>
+        <a href="#guias" onclick="closeMobileMenu();" class="mobile-drawer-link">
+          <span>📘</span> Guías Universales
+        </a>
+        <a href="#glosario" onclick="closeMobileMenu();" class="mobile-drawer-link">
+          <span>📖</span> Glosario Cotidiano
+        </a>
+        <a href="#resenas" onclick="closeMobileMenu();" class="mobile-drawer-link">
+          <span>📝</span> Ejercicios Prácticos
+        </a>
+
+        <div class="mobile-group-title" style="margin-top: 14px;">🏛️ Legal & Recursos</div>
+        <a href="#descargas" onclick="closeMobileMenu();" class="mobile-drawer-link">
+          <span>📥</span> Biblioteca Descargable
+        </a>
+        <a href="#marco-legal" onclick="closeMobileMenu();" class="mobile-drawer-link">
+          <span>📜</span> Marco Legal & INDAUTOR
+        </a>
+
+        <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">
+          <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" rel="noopener noreferrer" class="btn-drawer-cta">
+            Abrir Asistente en Telegram ↗
+          </a>
+        </div>
+      </div>
+    </div>
   </header>
 
 
@@ -6042,70 +6557,121 @@
 
     // ========================================================
 
-    // SCROLLSPY & ACTIVE LINK HIGHLIGHTING
-
     // ========================================================
-
-    const sections = document.querySelectorAll('.page-section');
-
-    const navLinks = document.querySelectorAll('#topNavLinks a');
-
-
-
-    function highlightActiveNav() {
-
-      let scrollPos = window.scrollY + 120;
-
-      
-
-      sections.forEach(section => {
-
-        const top = section.offsetTop;
-
-        const height = section.offsetHeight;
-
-        const id = section.getAttribute('id');
-
-        
-
-        if (scrollPos >= top && scrollPos < top + height) {
-
-          navLinks.forEach(link => {
-
-            link.classList.remove('active');
-
-            if (link.getAttribute('href') === '#' + id || ((id === 'descargas' || id === 'videos') && link.getAttribute('href') === '#videos')) {
-
-              link.classList.add('active');
-
-            }
-
-          });
-
-        }
-
-      });
-
-
-
-      if (window.scrollY < 200) {
-
-        navLinks.forEach((l, idx) => {
-
-          if (idx === 0) l.classList.add('active');
-
-          else l.classList.remove('active');
-
-        });
-
+    // NAVEGACIÓN DESPLEGABLE INSTITUCIONAL & MENÚ MÓVIL
+    // ========================================================
+    function toggleMobileMenu() {
+      var drawer = document.getElementById('mobileNavDrawer');
+      var overlay = document.getElementById('mobileDrawerOverlay');
+      if (!drawer) return;
+      if (drawer.classList.contains('active')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
       }
-
     }
 
+    function openMobileMenu() {
+      var drawer = document.getElementById('mobileNavDrawer');
+      var overlay = document.getElementById('mobileDrawerOverlay');
+      if (drawer) drawer.classList.add('active');
+      if (overlay) overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
 
+    function closeMobileMenu() {
+      var drawer = document.getElementById('mobileNavDrawer');
+      var overlay = document.getElementById('mobileDrawerOverlay');
+      if (drawer) drawer.classList.remove('active');
+      if (overlay) overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle dropdowns con click para accesibilidad y táctil
+      var dropdownBtns = document.querySelectorAll('.nav-dropdown-btn');
+      dropdownBtns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var parent = this.closest('.nav-dropdown');
+          var wasOpen = parent.classList.contains('is-open');
+          document.querySelectorAll('.nav-dropdown').forEach(function(d) {
+            d.classList.remove('is-open');
+            var b = d.querySelector('.nav-dropdown-btn');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          });
+          if (!wasOpen) {
+            parent.classList.add('is-open');
+            this.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-dropdown')) {
+          document.querySelectorAll('.nav-dropdown').forEach(function(d) {
+            d.classList.remove('is-open');
+            var b = d.querySelector('.nav-dropdown-btn');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+
+      document.querySelectorAll('.dropdown-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+          document.querySelectorAll('.nav-dropdown').forEach(function(d) {
+            d.classList.remove('is-open');
+            var b = d.querySelector('.nav-dropdown-btn');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          });
+        });
+      });
+    });
+
+    // SCROLLSPY & ACTIVE LINK HIGHLIGHTING
+    function highlightActiveNav() {
+      var sections = document.querySelectorAll('.page-section');
+      var allNavLinks = document.querySelectorAll('.dropdown-item, .mobile-drawer-link');
+      var dropdownParents = document.querySelectorAll('.nav-dropdown');
+      var scrollPos = window.scrollY + 140;
+      var activeId = null;
+
+      sections.forEach(function(section) {
+        var top = section.offsetTop;
+        var height = section.offsetHeight;
+        var id = section.getAttribute('id');
+        if (scrollPos >= top && scrollPos < top + height) {
+          activeId = id;
+        }
+      });
+
+      if (activeId) {
+        allNavLinks.forEach(function(link) {
+          var href = link.getAttribute('href');
+          if (href === '#' + activeId || ((activeId === 'descargas' || activeId === 'videos') && href === '#videos')) {
+            link.classList.add('active');
+            var parentDropdown = link.closest('.nav-dropdown');
+            if (parentDropdown) {
+              parentDropdown.classList.add('active');
+            }
+          } else {
+            link.classList.remove('active');
+          }
+        });
+
+        dropdownParents.forEach(function(dp) {
+          if (!dp.querySelector('.dropdown-item.active')) {
+            dp.classList.remove('active');
+          }
+        });
+      }
+    }
 
     window.addEventListener('scroll', highlightActiveNav, { passive: true });
-
     window.addEventListener('DOMContentLoaded', highlightActiveNav);
 
 
