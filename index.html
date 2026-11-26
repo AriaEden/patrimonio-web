@@ -397,12 +397,37 @@
       color: #64748b;
     }
 
-    .nav-dropdown:hover .nav-dropdown-btn,
-    .nav-dropdown.active .nav-dropdown-btn,
+        .nav-dropdown:hover .nav-dropdown-btn,
     .nav-dropdown-btn:focus-visible {
       color: #f8fafc;
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Active Highlight Glowing State for Desktop Nav Dropdown */
+    .nav-dropdown.active .nav-dropdown-btn {
+      color: #38bdf8 !important;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(99, 102, 241, 0.15)) !important;
+      border: 1px solid rgba(56, 189, 248, 0.6) !important;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+      font-weight: 700 !important;
+      position: relative;
+    }
+
+    .nav-dropdown.active .chevron-icon {
+      color: #38bdf8 !important;
+    }
+
+    .nav-dropdown.active .nav-dropdown-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 10px;
+      right: 10px;
+      height: 3px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      border-radius: 3px;
+      box-shadow: 0 0 10px #38bdf8, 0 0 18px #818cf8;
     }
 
     .nav-dropdown:hover .chevron-icon,
@@ -3273,6 +3298,106 @@
       color: #34d399;
     }
 
+  
+    /* ============================================================== */
+    /* BARRA DE PROGRESO DE LECTURA (SCROLL PROGRESS BAR)             */
+    /* ============================================================== */
+    .scroll-progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3.5px;
+      width: 0%;
+      background: linear-gradient(90deg, #38bdf8 0%, #6366f1 40%, #ec4899 80%, #10b981 100%);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.9), 0 0 20px rgba(99, 102, 241, 0.6);
+      z-index: 1000;
+      pointer-events: none;
+      transition: width 0.08s ease-out;
+    }
+
+    /* ============================================================== */
+    /* BANNERS DE TRANSICIÓN DE MÓDULO (CHAPTER BREAKS)               */
+    /* ============================================================== */
+    .module-transition-header {
+      margin: 85px auto 35px;
+      max-width: 1200px;
+      padding: 0 20px;
+      scroll-margin-top: 100px;
+    }
+
+    .module-transition-card {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.88));
+      border: 1px solid rgba(56, 189, 248, 0.32);
+      border-left: 6px solid #38bdf8;
+      border-radius: 18px;
+      padding: 28px 32px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.12);
+      backdrop-filter: blur(16px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .module-transition-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100%;
+      background: radial-gradient(circle at right top, rgba(56, 189, 248, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .module-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      margin-bottom: 12px;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+    }
+
+    .module-transition-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #f8fafc;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .module-transition-desc {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin: 0;
+      max-width: 950px;
+    }
+
+    @media (max-width: 768px) {
+      .module-transition-header {
+        margin: 55px auto 25px;
+        padding: 0 12px;
+      }
+      .module-transition-card {
+        padding: 20px 20px;
+        border-radius: 14px;
+      }
+      .module-transition-title {
+        font-size: 20px;
+      }
+      .module-transition-desc {
+        font-size: 13.5px;
+      }
+    }
+
   </style>
 
   <!-- METADATOS OPEN GRAPH Y TWITTER CARD (PREVISUALIZACIÓN ELEGANTE) -->
@@ -3525,6 +3650,8 @@
         </div>
       </div>
     </div>
+      <!-- Barra de progreso de lectura horizontal (Scroll Progress Bar) -->
+    <div id="scrollProgressBar" class="scroll-progress-bar" role="progressbar" aria-label="Progreso de lectura" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   </header>
 
 
@@ -3567,7 +3694,24 @@
 
     </section>
 
-    <!-- SECTION: SALA MULTIMEDIA Y VIDEOS EXPLICATIVOS -->
+    
+    <!-- ============================================================== -->
+    <!-- CAPÍTULO 1: PRIMEROS PASOS                                     -->
+    <!-- ============================================================== -->
+    <div class="module-transition-header" id="modulo-1">
+      <div class="module-transition-card">
+        <div class="module-pill-tag">
+          <span>CAPÍTULO 1 &bull; PRIMEROS PASOS</span>
+        </div>
+        <h2 class="module-transition-title">🎬 Fundamentos, Simuladores y Espacio Seguro</h2>
+        <p class="module-transition-desc">
+          Comienza aquí: conoce la interfaz de tu copiloto 24/7 en Telegram, explora la pedagogía interactiva en video para niños y adultos, y verifica nuestra estricta política de no-custodia y transparencia matemática.
+        </p>
+      </div>
+    </div>
+
+
+<!-- SECTION: SALA MULTIMEDIA Y VIDEOS EXPLICATIVOS -->
 
     <section id="videos" class="page-section">
 
@@ -3831,8 +3975,7 @@
 
     </section>
 
-
-    <!-- SECTION: GUIA DE USUARIO Y SIMULADOR INTERACTIVO DEL COPILOTO -->
+<!-- SECTION: GUIA DE USUARIO Y SIMULADOR INTERACTIVO DEL COPILOTO -->
     <section id="guia-bot" class="page-section" style="scroll-margin-top: 90px; margin-top: 40px; padding-top: 20px;">
       <div class="section-header">
         <span class="section-tag" style="background: rgba(192, 132, 252, 0.15); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.35);">🤖 Guía Práctica de Primer Uso • Cero Estrés</span>
@@ -3978,7 +4121,7 @@
 
     </section>
 
-    <!-- SECTION: CONFIANZA, CALIDEZ Y BLINDAJE PARA PRINCIPIANTES -->
+<!-- SECTION: CONFIANZA, CALIDEZ Y BLINDAJE PARA PRINCIPIANTES -->
     <section id="confianza" class="page-section" style="margin-top: 40px; padding-top: 20px;">
       <div class="section-header">
         <span class="section-tag" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">🛡️ Confianza, Calidez y Certeza</span>
@@ -4133,467 +4276,24 @@
       </div>
     </section>
 
-<!-- SECTION 1: GUIAS DE COMPRA -->
 
-    <section id="guias" class="page-section">
-
-      <div class="section-header">
-
-        <span class="section-tag">Capítulo 1 • Operativa Práctica</span>
-
-        <h2>Guías Universales de Adquisición</h2>
-
-        <p>Aprende el método exacto para fondear por SPEI, colocar órdenes límite y blindar tu dinero frente a cobros ocultos.</p>
-
-      </div>
-
-
-
-      <div class="grid-3">
-
-        <div class="card">
-
-          <div class="card-icon">🪙</div>
-
-          <h3>Motor Cripto (Bitso Alpha)</h3>
-
-          <p>Acumula Satoshis (fracciones de Bitcoin) para proteger tu poder de compra de la inflación sin pagar comisiones bancarias abusivas.</p>
-
-          <ul class="card-list">
-
-            <li><strong>Fondeo SPEI:</strong> Transferencia instantánea desde cualquier banco a tu CLABE propia.</li>
-
-            <li><strong>Orden LÍMITE (Maker):</strong> Comisión reducida de libro (0.60% base Maker en Bitso Alpha para cuentas iniciales frente al 2.0%-2.5% de spread en compra simple; se reduce progresivamente hasta 0.10% según volumen).</li>
-
-            <li><strong>Ahorro Máximo:</strong> Ahorro del 70% al 76% en comisiones iniciales (0.60% Maker en Bitso Alpha vs 2.0%-2.5% de spread en compra simple; superior al 90% en volúmenes altos).</li>
-
-            <li><strong>Custodia Regulada:</strong> Fondeo en pesos mexicanos mediante institución fintech autorizada en México (IFPE) y custodia de activos digitales bajo tus propias credenciales en plataforma internacional auditada. El bot tiene cero custodia de claves o dinero.</li>
-
-          </ul>
-
+    <!-- ============================================================== -->
+    <!-- CAPÍTULO 2: ESTRATEGIA & HERRAMIENTAS                          -->
+    <!-- ============================================================== -->
+    <div class="module-transition-header" id="modulo-2">
+      <div class="module-transition-card" style="border-left-color: #6366f1;">
+        <div class="module-pill-tag" style="border-color: rgba(99, 102, 241, 0.4); color: #818cf8; background: rgba(99, 102, 241, 0.12);">
+          <span>CAPÍTULO 2 &bull; ESTRATEGIA & HERRAMIENTAS</span>
         </div>
-
-
-
-        <div class="card">
-
-          <div class="card-icon">🏬</div>
-
-          <h3>Motor Bursátil (Actinver / Bursanet)</h3>
-
-          <p>Conviértete en copropietario de parques industriales de Nearshoring y de las 500 mayores empresas de Estados Unidos.</p>
-
-          <ul class="card-list">
-
-            <li><strong>Mercado Regulado:</strong> Acceso directo a la BMV y al mercado internacional SIC.</li>
-
-            <li><strong>Flujo de Efectivo:</strong> Cobro de rentas trimestrales depositadas en efectivo a tu cuenta.</li>
-
-            <li><strong>Comisiones Transparentes:</strong> Corretaje de solo 0.25% + IVA por operación en Bursanet (apenas $2.90 pesos por cada $1,000 invertidos) y comisiones de gestión mínimas (< 0.15% anual en ETFs globales; 0.49% en IVVPESO con cobertura).</li>
-
-            <li><strong>Inversión Accesible desde ~$115 MXN:</strong> No necesitas $10,000 MXN para comprar 1 título de VOO; con IVVPESO o FIBRAs inviertes desde $115 MXN con la misma diversificación.</li>
-
-            <li><strong>Tratamiento Fiscal (LISR):</strong> 10% de ISR definitivo únicamente sobre ganancias en acciones/ETFs al vender (Art. 129 LISR), y rentas de FIBRAs con esquema fiscal preferencial.</li>
-
-            <li><strong>Dividendos de EE.UU. (W-8BEN vs IVVPESO):</strong> En ETFs extranjeros directos del SIC (VOO/QQQM), los dividendos tienen una retención en EE.UU. del 10% (con formato W-8BEN en Bursanet) más 10% de ISR en México. En cambio, IVVPESO reinvierte sus dividendos internamente sin requerir trámite de formato W-8BEN.</li>
-
-          </ul>
-
-        </div>
-
-
-
-        <div class="card">
-
-          <div class="card-icon">🎯</div>
-
-          <h3>La Regla de Oro: Orden LÍMITE</h3>
-
-          <p>Nunca compres «A Mercado». En ambos motores usamos órdenes Límite para que tú definas el precio exacto de entrada.</p>
-
-          <ul class="card-list">
-
-            <li><strong>Cero Deslizamiento:</strong> Eliminas el sobrecosto por volatilidad súbita (slippage).</li>
-
-            <li><strong>Paciencia Táctica:</strong> La orden espera tranquilamente en el libro de ofertas.</li>
-
-            <li><strong>Ejecución Pasiva:</strong> Se ejecuta automáticamente aunque estés descansando.</li>
-
-            <li><strong>Margen Seguro:</strong> Compras con descuento frente a la euforia de compradores novatos.</li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-
-
-      <div class="steps-container">
-
-        <h3 style="text-align: center; margin-bottom: 24px; font-size: 21px;">Paso a Paso Universal de Inversión</h3>
-
-
-
-        <div class="step-item">
-
-          <div class="step-num">1</div>
-
-          <div class="step-content">
-
-            <h4>Fondeo Seguro por SPEI</h4>
-
-            <p>Transfiere el capital que decidas desde tu banca móvil a tu CLABE interbancaria personalizada en Bitso o Banco Actinver. El dinero está a tu propio nombre.</p>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="step-item">
-
-          <div class="step-num">2</div>
-
-          <div class="step-content">
-
-            <h4>Búsqueda del Instrumento Estratégico</h4>
-
-            <p>Escribe la clave de pizarra indicada: <code>FIBRAMQ12</code> para rentas de Nearshoring, <code>IVVPESO</code> para el S&P 500, o <code>BTC/USD</code> en Bitso Alpha.</p>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="step-item">
-
-          <div class="step-num">3</div>
-
-          <div class="step-content">
-
-            <h4>Captura de Precio Límite y Confirmación</h4>
-
-            <p>Selecciona tipo de orden Límite, digita el precio objetivo con descuento sugerido por el modelo algorítmico y confirma con tu firma digital o huella.</p>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="step-item">
-
-          <div class="step-num">4</div>
-
-          <div class="step-content">
-
-            <h4>Reactivación de Rentas e Interés Compuesto</h4>
-
-            <p>Cada renta trimestral depositada en efectivo se reinvierte para comprar más títulos o satoshis baratos, multiplicando tu patrimonio con matemática pura.</p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- SECTION 2: UNIVERSO BURSATIL (ETF vs ACCION vs FIBRA) -->
-
-    <section id="activos" class="page-section">
-
-      <div class="section-header">
-
-        <span class="section-tag">Capítulo 2 • Asignación Patrimonial</span>
-
-        <h2>La Gran Distinción del Universo Bursátil</h2>
-
-        <p>Comprende exactamente en qué estás invirtiendo antes de comprometer un solo peso.</p>
-
-      </div>
-
-
-
-      <div class="grid-3">
-
-        <!-- Card 1: ETF -->
-
-        <div class="card" style="border-top: 4px solid #38bdf8;">
-
-          <div class="card-icon">🧺</div>
-
-          <h3>ETF (Canasta Diversificada)</h3>
-
-          <p><strong>La Analogía:</strong> Vas al supermercado y en lugar de comprar una sola manzana, compras una canasta sellada con 500 frutas surtidas. Si una manzana sale agria, tienes otras 499 frescas.</p>
-
-          <ul class="card-list">
-
-            <li><strong>Misión:</strong> Bolsillo Core (70% del patrimonio a 10 años).</li>
-
-            <li><strong>Ejemplos:</strong> <code>IVVPESO</code> (S&P 500 en pesos), <code>QQQM</code> (Nasdaq 100), <code>VOO</code> (S&P 500 dolarizado).</li>
-
-            <li><strong>Comisión:</strong> De 0.03% a 0.15% anual en ETFs internacionales sin cobertura, y 0.49% anual en ETF con cobertura MXN (IVVPESO).</li>
-
-            <li><strong>Diversificación:</strong> Diluye el riesgo de quiebra de una empresa individual al estar respaldado por 500 emisores globales.</li>
-
-          </ul>
-
-        </div>
-
-
-
-        <!-- Card 2: Acción Individual -->
-
-        <div class="card" style="border-top: 4px solid #f59e0b;">
-
-          <div class="card-icon">🏢</div>
-
-          <h3>Acción Individual (1 Empresa)</h3>
-
-          <p><strong>La Analogía:</strong> Compras un solo árbol frutal de una marca específica. Si la cosecha es récord ganas mucho; si le cae plaga, tus ganancias caen directamente.</p>
-
-          <ul class="card-list">
-
-            <li><strong>Misión:</strong> Bolsillo Satélite (30% para Swing Trading).</li>
-
-            <li><strong>Ejemplos:</strong> <code>CEMEX CPO</code>, <code>GFINBUR O</code> (Inbursa), <code>AMX B</code> (América Móvil / Telcel).</li>
-
-            <li><strong>Objetivo:</strong> Cazar ofertas en sobreventa y tomar ganancias (+50% o +60%).</li>
-
-            <li><strong>Riesgo:</strong> Mayor volatilidad; requiere disciplina táctica.</li>
-
-          </ul>
-
-        </div>
-
-
-
-        <!-- Card 3: FIBRA -->
-
-        <div class="card" style="border-top: 4px solid #10b981;">
-
-          <div class="card-icon">🏬</div>
-
-          <h3>FIBRA (Bienes Raíces de Renta)</h3>
-
-          <p><strong>La Analogía:</strong> Te asocias con miles de personas para comprar naves industriales de Nearshoring, bodegas de Amazon y cobrar rentas cada 3 meses.</p>
-
-          <ul class="card-list">
-
-            <li><strong>Misión:</strong> Máquina generadora de flujo de caja continuo.</li>
-
-            <li><strong>Ejemplos:</strong> <code>FIBRAMQ12</code> (Macquarie), <code>FUNO11</code> (Fibra Uno), <code>FMTY14</code> (Fibra Monterrey).</li>
-
-            <li><strong>Flujo Histórico de Referencia:</strong> Rendimiento por distribución típicamente entre 7% y 9% anual en efectivo (variable según ocupación y contratos del fideicomiso; no garantizado).</li>
-
-            <li><strong>Tratamiento Fiscal Mixto:</strong> Las distribuciones se dividen en Resultado Fiscal (con retención del 30%) y Reembolso de Capital (exento de retención hasta agotar costo fiscal).</li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- SECTION 3: EVALUADOR DE ACTIVOS EN VIVO -->
-
-    <section id="evaluador" class="page-section">
-
-      <div class="section-header">
-
-        <span class="section-tag">Capítulo 3 • Catálogo Didáctico de Activos</span>
-
-        <div class="live-feed-badge" style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.25); color: #38bdf8; margin-top: 8px;">
-
-          <span class="pulse-dot" style="background: #38bdf8;"></span> Simulador Educativo de Referencia • Modelo Antieuforia RSI (14D)
-
-        </div>
-
-        <h2>Simulador Didáctico de Activos Patrimoniales</h2>
-
-        <p>Consulta fichas técnicas y rangos de referencia para FIBRAs, ETFs y Acciones antes de colocar una orden en Bursanet o Bitso.</p>
-
-        <p style="font-size: 12px; color: #94a3b8; margin-top: 6px; max-width: 780px; margin-left: auto; margin-right: auto;">
-
-          <em>Nota de transparencia metodológica: Las fichas mostradas en este portal web son modelos didácticos con métricas y cierres de referencia. Para análisis algorítmico dinámico conectado a cotizaciones en tiempo real, consulta directamente a tu Copiloto en Telegram.</em>
-
+        <h2 class="module-transition-title">⚖️ Doble Finalidad, Simulación y Construcción Patrimonial</h2>
+        <p class="module-transition-desc">
+          Descubre el poder de la dualidad: acumulación sistemática de Satoshis vs. cosecha de rentas pasivas en FIBRAs inmobiliarias, respaldado por la calculadora tri-modal con interés geométrico exacto y el universo de activos.
         </p>
-
       </div>
+    </div>
 
 
-
-      <div class="evaluator-box">
-
-        <div class="eval-search-bar">
-
-          <input type="text" id="tickerInput" class="eval-input" placeholder="Ingresa clave didáctica (ej. FIBRAMQ12, FMTY14, IVVPESO, QQQM, CEMEX, VOO)" value="FIBRAMQ12" onkeyup="if(event.key==='Enter') runEvaluation()">
-
-          <button class="eval-btn" onclick="runEvaluation()">Consultar Ficha Técnica</button>
-
-        </div>
-
-
-
-        <div class="quick-chips">
-
-            <span>Consultas didácticas rápidas:</span>
-
-            <button type="button" class="chip" onclick="quickEval('FMTY14')">FMTY14 (Fibra Mty)</button>
-
-            <button type="button" class="chip" onclick="quickEval('FIBRAMQ12')">FIBRAMQ12 (Macquarie)</button>
-
-            <button type="button" class="chip" onclick="quickEval('IVVPESO')">IVVPESO (S&P 500 Pesos)</button>
-
-            <button type="button" class="chip" onclick="quickEval('VOO')">VOO (S&P 500 USD)</button>
-
-            <button type="button" class="chip" onclick="quickEval('SCHD')">SCHD (Dividendos)</button>
-
-            <button type="button" class="chip" onclick="quickEval('CEMEX')">CEMEX (CPO)</button>
-
-            <button type="button" class="chip" onclick="quickEval('QQQM')">QQQM (Nasdaq)</button>
-
-            <button type="button" class="chip" onclick="quickEval('SMH')">SMH (Semiconductores)</button>
-
-            <button type="button" class="chip" onclick="quickEval('WALMEX')">WALMEX (Consumo)</button>
-
-          </div>
-
-
-
-        <div id="evalResultCard" class="eval-result-card">
-
-          <div class="eval-header">
-
-            <div class="eval-title">
-
-              <h4 id="resSymbol">FIBRAMQ12</h4>
-
-              <p id="resName">Fibra Macquarie &bull; Logística y Nearshoring Industrial</p>
-
-            </div>
-
-            <div class="eval-score" style="text-align: right;">
-
-              <span id="resScore" style="font-size: 14px; font-weight: 700; color: #38bdf8;">Core Renta y Flujo Industrial</span>
-
-              <br><small style="font-size: 10px; color: #94a3b8;">Perfil Metodológico</small>
-
-            </div>
-
-          </div>
-
-
-
-          <div id="resVerdictBanner" class="verdict-banner verdict-green">
-
-            🟢 <strong>ACTIVO CORE INSTITUCIONAL:</strong> Naves industriales con 97%+ de ocupación y contratos dolarizados vinculados al comercio con EE.UU. Margen de seguridad favorable.
-
-          </div>
-
-
-
-          <div class="eval-grid">
-
-            <div class="eval-stat">
-
-              <div class="eval-stat-label">Clasificación</div>
-
-              <div class="eval-stat-val" id="resClass">FIBRA Industrial (Nearshoring)</div>
-
-            </div>
-
-            <div class="eval-stat">
-
-              <div class="eval-stat-label">Asignación Modelo (Referencia)</div>
-
-              <div class="eval-stat-val" id="resPocket">🏛️ CORE RENTAS (70%)</div>
-
-            </div>
-
-            <div class="eval-stat">
-
-              <div class="eval-stat-label">Rendimiento Estimado</div>
-
-              <div class="eval-stat-val" id="resYield">~8.5% Anual (Renta Trimestral)</div>
-
-            </div>
-
-            <div class="eval-stat">
-
-              <div class="eval-stat-label">Costo Gestión (TER)</div>
-
-              <div class="eval-stat-val" id="resTer">Sin TER de Fondo (Gastos inmobiliarios y fiduciarios internos auditados en BMV)</div>
-
-            </div>
-
-            <div class="eval-stat">
-
-              <div class="eval-stat-label">Oscilador RSI (14D)</div>
-
-              <div class="eval-stat-val" id="resRsi">52.4 / 100 (Zona Neutral Saludable)</div>
-
-              <div class="rsi-bar-container">
-
-                <div id="resRsiBar" class="rsi-bar-fill" style="width: 52.4%; background: #10b981;"></div>
-
-              </div>
-
-            </div>
-
-            <div class="eval-stat">
-
-              <div class="eval-stat-label">Soporte Técnico de Referencia</div>
-
-              <div class="eval-stat-val" id="resLimit" style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">$43.35 MXN</div>
-
-            </div>
-
-            <div class="eval-stat" style="grid-column: 1 / -1; background: rgba(56, 189, 248, 0.05); border-left: 2px solid #38bdf8;">
-
-              <div class="eval-stat-label">Corte Estadístico y Temporalidad</div>
-
-              <div class="eval-stat-val" id="resAsOfDate" style="font-size: 12px; color: #38bdf8;">Noviembre 2026 (Corte Didáctico de Referencia)</div>
-
-            </div>
-
-            <div class="eval-stat" style="grid-column: 1 / -1; background: rgba(255, 255, 255, 0.02); border-left: 2px solid #94a3b8;">
-
-              <div class="eval-stat-label">Metodología y Fuente Analítica</div>
-
-              <div class="eval-stat-val" id="resMethodology" style="font-size: 11.5px; color: #cbd5e1; font-weight: normal; line-height: 1.4;">RSI Wilder (14D) diario en BMV/SIC. Criterio analítico demostrativo; cotizaciones vivas mediante /evaluar en Telegram.</div>
-
-            </div>
-
-          </div>
-
-
-
-          <div id="resActionBox" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); border-radius: 8px; padding: 14px 18px; font-size: 13px; line-height: 1.55;">
-
-            🎯 <strong>Caso de Estudio Didáctico (Bursanet):</strong> Cumple criterios técnicos del modelo formativo para ilustrar una orden tipo <strong>LÍMITE</strong> en soporte de referencia ($43.35 MXN) con vigencia de 1 a 5 días para proteger el margen de seguridad.
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    
-    <!-- SECTION 3.5: DOBLE FINALIDAD ESTRATÉGICA DE BITCOIN (ACUMULACIÓN VS COSECHA FIAT FIBRAS) -->
-    <section id="dualidad-btc" class="page-section" style="padding: 60px 0; border-top: 1px solid rgba(168, 85, 247, 0.2); border-bottom: 1px solid rgba(168, 85, 247, 0.2); background: radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.08) 0%, rgba(15, 23, 42, 0.4) 70%);">
+<section id="dualidad-btc" class="page-section" style="padding: 60px 0; border-top: 1px solid rgba(168, 85, 247, 0.2); border-bottom: 1px solid rgba(168, 85, 247, 0.2); background: radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.08) 0%, rgba(15, 23, 42, 0.4) 70%);">
       <div class="section-header" style="text-align: center; margin-bottom: 45px;">
         <span class="section-tag" style="background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Capítulo 3.5 • Filosofía Algorítmica Dual</span>
         <h2 style="font-size: 2.2rem; font-weight: 800; margin: 15px 0 10px; color: #ffffff; letter-spacing: -0.02em;">La Doble Finalidad Estratégica de Bitcoin</h2>
@@ -4771,7 +4471,7 @@
 
     </section>
 
-    <script>
+<script>
       function switchDualityTab(tab) {
         var card1 = document.getElementById('cardModo1');
         var card2 = document.getElementById('cardModo2');
@@ -4823,10 +4523,7 @@
       }
     </script>
 
-
-    <!-- SECTION 4: SIMULADOR PATRIMONIAL TRI-MODAL (ACTINVER / BTC / HIBRIDO) -->
-
-    <section id="calculadora" class="page-section">
+<section id="calculadora" class="page-section">
 
       <div class="section-header">
 
@@ -5440,165 +5137,278 @@
 
     </section>
 
-
-
-    
-
-
-
-    <!-- SECTION 5: BIBLIOTECA DE DESCARGAS -->
-
-    <section id="descargas" class="page-section">
-
-      <span id="biblioteca" style="display: block; position: relative; top: -85px; visibility: hidden;"></span>
+<section id="activos" class="page-section">
 
       <div class="section-header">
 
-        <span class="section-tag">Capítulo 5 • Material Descargable</span>
+        <span class="section-tag">Capítulo 2 • Asignación Patrimonial</span>
 
-        <h2>Biblioteca de Recursos de Educación Financiera</h2>
+        <h2>La Gran Distinción del Universo Bursátil</h2>
 
-        <p>Descarga libremente los manuales pedagógicos y guías prácticas paso a paso para familias, jóvenes y principiantes.</p>
+        <p>Comprende exactamente en qué estás invirtiendo antes de comprometer un solo peso.</p>
 
       </div>
 
 
 
-      <div class="download-grid">
+      <div class="grid-3">
 
-        <div class="doc-item">
+        <!-- Card 1: ETF -->
 
-          <div>
+        <div class="card" style="border-top: 4px solid #38bdf8;">
 
-            <span class="doc-badge">GUÍA OFICIAL 2026</span>
+          <div class="card-icon">🧺</div>
 
-            <h4>Guía Práctica de Compra: Bitso y Bursanet</h4>
+          <h3>ETF (Canasta Diversificada)</h3>
 
-            <p>Manual visual paso a paso para colocar órdenes Límite Maker, distinguir ETFs, Acciones y FIBRAs, y evitar comisiones bancarias caras.</p>
+          <p><strong>La Analogía:</strong> Vas al supermercado y en lugar de comprar una sola manzana, compras una canasta sellada con 500 frutas surtidas. Si una manzana sale agria, tienes otras 499 frescas.</p>
 
-          </div>
+          <ul class="card-list">
 
-          <a href="./GUIA_PASO_A_PASO_COMPRA_BITSO_Y_ACTINVER.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (794 KB)</a>
+            <li><strong>Misión:</strong> Bolsillo Core (70% del patrimonio a 10 años).</li>
 
-        </div>
+            <li><strong>Ejemplos:</strong> <code>IVVPESO</code> (S&P 500 en pesos), <code>QQQM</code> (Nasdaq 100), <code>VOO</code> (S&P 500 dolarizado).</li>
 
+            <li><strong>Comisión:</strong> De 0.03% a 0.15% anual en ETFs internacionales sin cobertura, y 0.49% anual en ETF con cobertura MXN (IVVPESO).</li>
 
+            <li><strong>Diversificación:</strong> Diluye el riesgo de quiebra de una empresa individual al estar respaldado por 500 emisores globales.</li>
 
-        <div class="doc-item">
-
-          <div>
-
-            <span class="doc-badge">FORMATO DIDÁCTICO</span>
-
-            <h4>Manual de Primera Vez por Edades</h4>
-
-            <p>Adaptación pedagógica para Primaria, Secundaria, Preparatoria y Escuela para Padres. Cómo sembrar patrimonio desde temprana edad.</p>
-
-          </div>
-
-          <a href="./MANUAL_DE_PRIMERA_VEZ_POR_EDADES.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (650 KB)</a>
+          </ul>
 
         </div>
 
 
 
-        <div class="doc-item">
+        <!-- Card 2: Acción Individual -->
 
-          <div>
+        <div class="card" style="border-top: 4px solid #f59e0b;">
 
-            <span class="doc-badge">TALLER INSTITUCIONAL</span>
+          <div class="card-icon">🏢</div>
 
-            <h4>Taller de Finanzas: Preparatoria y Adultos</h4>
+          <h3>Acción Individual (1 Empresa)</h3>
 
-            <p>Material de capacitación patrimonial para Consejos Técnicos Escolares (CTE), Escuela para Padres e inclusión financiera real.</p>
+          <p><strong>La Analogía:</strong> Compras un solo árbol frutal de una marca específica. Si la cosecha es récord ganas mucho; si le cae plaga, tus ganancias caen directamente.</p>
 
-          </div>
+          <ul class="card-list">
 
-          <a href="./TALLER_FINANZAS_PREPA_ADULTOS_CTE_PADRES.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (520 KB)</a>
+            <li><strong>Misión:</strong> Bolsillo Satélite (30% para Swing Trading).</li>
+
+            <li><strong>Ejemplos:</strong> <code>CEMEX CPO</code>, <code>GFINBUR O</code> (Inbursa), <code>AMX B</code> (América Móvil / Telcel).</li>
+
+            <li><strong>Objetivo:</strong> Cazar ofertas en sobreventa y tomar ganancias (+50% o +60%).</li>
+
+            <li><strong>Riesgo:</strong> Mayor volatilidad; requiere disciplina táctica.</li>
+
+          </ul>
+
+        </div>
+
+
+
+        <!-- Card 3: FIBRA -->
+
+        <div class="card" style="border-top: 4px solid #10b981;">
+
+          <div class="card-icon">🏬</div>
+
+          <h3>FIBRA (Bienes Raíces de Renta)</h3>
+
+          <p><strong>La Analogía:</strong> Te asocias con miles de personas para comprar naves industriales de Nearshoring, bodegas de Amazon y cobrar rentas cada 3 meses.</p>
+
+          <ul class="card-list">
+
+            <li><strong>Misión:</strong> Máquina generadora de flujo de caja continuo.</li>
+
+            <li><strong>Ejemplos:</strong> <code>FIBRAMQ12</code> (Macquarie), <code>FUNO11</code> (Fibra Uno), <code>FMTY14</code> (Fibra Monterrey).</li>
+
+            <li><strong>Flujo Histórico de Referencia:</strong> Rendimiento por distribución típicamente entre 7% y 9% anual en efectivo (variable según ocupación y contratos del fideicomiso; no garantizado).</li>
+
+            <li><strong>Tratamiento Fiscal Mixto:</strong> Las distribuciones se dividen en Resultado Fiscal (con retención del 30%) y Reembolso de Capital (exento de retención hasta agotar costo fiscal).</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+<section id="evaluador" class="page-section">
+
+      <div class="section-header">
+
+        <span class="section-tag">Capítulo 3 • Catálogo Didáctico de Activos</span>
+
+        <div class="live-feed-badge" style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.25); color: #38bdf8; margin-top: 8px;">
+
+          <span class="pulse-dot" style="background: #38bdf8;"></span> Simulador Educativo de Referencia • Modelo Antieuforia RSI (14D)
+
+        </div>
+
+        <h2>Simulador Didáctico de Activos Patrimoniales</h2>
+
+        <p>Consulta fichas técnicas y rangos de referencia para FIBRAs, ETFs y Acciones antes de colocar una orden en Bursanet o Bitso.</p>
+
+        <p style="font-size: 12px; color: #94a3b8; margin-top: 6px; max-width: 780px; margin-left: auto; margin-right: auto;">
+
+          <em>Nota de transparencia metodológica: Las fichas mostradas en este portal web son modelos didácticos con métricas y cierres de referencia. Para análisis algorítmico dinámico conectado a cotizaciones en tiempo real, consulta directamente a tu Copiloto en Telegram.</em>
+
+        </p>
+
+      </div>
+
+
+
+      <div class="evaluator-box">
+
+        <div class="eval-search-bar">
+
+          <input type="text" id="tickerInput" class="eval-input" placeholder="Ingresa clave didáctica (ej. FIBRAMQ12, FMTY14, IVVPESO, QQQM, CEMEX, VOO)" value="FIBRAMQ12" onkeyup="if(event.key==='Enter') runEvaluation()">
+
+          <button class="eval-btn" onclick="runEvaluation()">Consultar Ficha Técnica</button>
 
         </div>
 
 
 
-        <div class="doc-item">
+        <div class="quick-chips">
 
-          <div>
+            <span>Consultas didácticas rápidas:</span>
 
-            <span class="doc-badge">INFOGRAFÍA UNIVERSAL</span>
+            <button type="button" class="chip" onclick="quickEval('FMTY14')">FMTY14 (Fibra Mty)</button>
 
-            <h4>Ficha Infográfica: Bitcoin Para Todos</h4>
+            <button type="button" class="chip" onclick="quickEval('FIBRAMQ12')">FIBRAMQ12 (Macquarie)</button>
 
-            <p>Explicación técnica y económica de los 21 millones de monedas finitas, emisión inmutable y tesis de valor frente a la inflación fiduciaria.</p>
+            <button type="button" class="chip" onclick="quickEval('IVVPESO')">IVVPESO (S&P 500 Pesos)</button>
 
-          </div>
+            <button type="button" class="chip" onclick="quickEval('VOO')">VOO (S&P 500 USD)</button>
 
-          <a href="./FICHA_INFOGRAFICA_BITCOIN_PARA_TODOS.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (410 KB)</a>
+            <button type="button" class="chip" onclick="quickEval('SCHD')">SCHD (Dividendos)</button>
 
-        </div>
+            <button type="button" class="chip" onclick="quickEval('CEMEX')">CEMEX (CPO)</button>
 
-        <div class="doc-item">
+            <button type="button" class="chip" onclick="quickEval('QQQM')">QQQM (Nasdaq)</button>
 
-          <div>
+            <button type="button" class="chip" onclick="quickEval('SMH')">SMH (Semiconductores)</button>
 
-            <span class="doc-badge">COMANDOS CHATBOT</span>
-
-            <h4>Chuleta Rápida de Comandos del Copiloto</h4>
-
-            <p>Guía de referencia rápida con todos los comandos de Telegram (/estado, /precio, /evaluar, /lote, /volver_a_10) y ejemplos de uso.</p>
+            <button type="button" class="chip" onclick="quickEval('WALMEX')">WALMEX (Consumo)</button>
 
           </div>
 
-          <div style="display:flex; gap:8px; flex-wrap:wrap;"><button type="button" onclick="openModalComandos()" class="btn-download" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #10b981; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 600;">📱 Ver Chuleta</button><a href="#guia-bot" class="btn-download" style="background: rgba(192, 132, 252, 0.2); border: 1px solid #c084fc; color: #c084fc; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">🤖 Guía de Usuario</a></div>
 
-        </div>
 
-        <div class="doc-item" style="border-left: 3px solid #38bdf8;">
+        <div id="evalResultCard" class="eval-result-card">
 
-          <div>
+          <div class="eval-header">
 
-            <span class="doc-badge" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8;">🎬 VIDEO EDUCATIVO (NIÑOS)</span>
+            <div class="eval-title">
 
-            <h4>Video Explicativo: Niños y Niñas (Aprende Jugando)</h4>
+              <h4 id="resSymbol">FIBRAMQ12</h4>
 
-            <p>Video animado Full HD (1080p). Explicación didáctica sobre el dinero, la alcancía frente a la inflación, satoshis y cómo el robot copiloto cuida los ahorros familiares.</p>
+              <p id="resName">Fibra Macquarie &bull; Logística y Nearshoring Industrial</p>
 
-          </div>
+            </div>
 
-          <div style="display:flex; gap:8px; flex-wrap:wrap;"><button type="button" onclick="playHeroVideo('ninos')" class="btn-download" style="background:#0284c7; color:#fff; border:none; cursor:pointer; font-weight:700;">▶️ Reproducir en Pantalla</button><a href="./video_explicativo_ninos.mp4" download="video_explicativo_ninos.mp4" class="btn-download" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #38bdf8;">⬇️ Descargar MP4 (8.4 MB)</a></div>
+            <div class="eval-score" style="text-align: right;">
 
-        </div>
+              <span id="resScore" style="font-size: 14px; font-weight: 700; color: #38bdf8;">Core Renta y Flujo Industrial</span>
 
-        <div class="doc-item" style="border-left: 3px solid #818cf8;">
+              <br><small style="font-size: 10px; color: #94a3b8;">Perfil Metodológico</small>
 
-          <div>
-
-            <span class="doc-badge" style="background: rgba(129, 140, 248, 0.2); color: #818cf8;">🎬 VIDEO ESTRATEGIA (ADULTOS)</span>
-
-            <h4>Video Explicativo: Jóvenes y Adultos (Estrategia y Uso del Bot)</h4>
-
-            <p>Video conceptual Full HD (1080p). Arquitectura de acumulación híbrida (Bitso + Bursanet), eliminación de comisiones bancarias del 2.5%, simulación de ventas y verificación con capturas en Telegram.</p>
+            </div>
 
           </div>
 
-          <a href="./video_explicativo_adultos.mp4" download="video_explicativo_adultos.mp4" class="btn-download" style="background: rgba(129, 140, 248, 0.2); border: 1px solid #818cf8; color: #818cf8;">🎬 Descargar Video MP4 (1.8 MB · 1080p Full HD)</a>
 
-        </div>
 
-        <div class="doc-item" style="border-left: 3px solid #c084fc;">
+          <div id="resVerdictBanner" class="verdict-banner verdict-green">
 
-          <div>
-
-            <span class="doc-badge" style="background: rgba(192, 132, 252, 0.2); color: #c084fc;">🎬 TUTORIAL OFICIAL (COPILOTO)</span>
-
-            <h4>Video Tutorial: Tu Primer Día con el Copiloto en Telegram</h4>
-
-            <p>Video demostrativo Full HD (1080p). Recorrido visual paso a paso: bienvenida segura, hablarle en español cotidiano sin comandos, subir captura de Bitso/Bursanet y recibir alertas automáticas de ganancia.</p>
+            🟢 <strong>ACTIVO CORE INSTITUCIONAL:</strong> Naves industriales con 97%+ de ocupación y contratos dolarizados vinculados al comercio con EE.UU. Margen de seguridad favorable.
 
           </div>
 
-          <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <button type="button" onclick="playHeroVideo('bot')" class="btn-download" style="background:#7c3aed; color:#fff; border:none; cursor:pointer; font-weight:700;">▶️ Reproducir en Pantalla</button>
-            <a href="./video_tutorial_copiloto.mp4" download="video_tutorial_copiloto.mp4" class="btn-download" style="background: rgba(192, 132, 252, 0.2); border: 1px solid #c084fc; color: #c084fc;">⬇️ Descargar MP4 (4.4 MB)</a>
+
+
+          <div class="eval-grid">
+
+            <div class="eval-stat">
+
+              <div class="eval-stat-label">Clasificación</div>
+
+              <div class="eval-stat-val" id="resClass">FIBRA Industrial (Nearshoring)</div>
+
+            </div>
+
+            <div class="eval-stat">
+
+              <div class="eval-stat-label">Asignación Modelo (Referencia)</div>
+
+              <div class="eval-stat-val" id="resPocket">🏛️ CORE RENTAS (70%)</div>
+
+            </div>
+
+            <div class="eval-stat">
+
+              <div class="eval-stat-label">Rendimiento Estimado</div>
+
+              <div class="eval-stat-val" id="resYield">~8.5% Anual (Renta Trimestral)</div>
+
+            </div>
+
+            <div class="eval-stat">
+
+              <div class="eval-stat-label">Costo Gestión (TER)</div>
+
+              <div class="eval-stat-val" id="resTer">Sin TER de Fondo (Gastos inmobiliarios y fiduciarios internos auditados en BMV)</div>
+
+            </div>
+
+            <div class="eval-stat">
+
+              <div class="eval-stat-label">Oscilador RSI (14D)</div>
+
+              <div class="eval-stat-val" id="resRsi">52.4 / 100 (Zona Neutral Saludable)</div>
+
+              <div class="rsi-bar-container">
+
+                <div id="resRsiBar" class="rsi-bar-fill" style="width: 52.4%; background: #10b981;"></div>
+
+              </div>
+
+            </div>
+
+            <div class="eval-stat">
+
+              <div class="eval-stat-label">Soporte Técnico de Referencia</div>
+
+              <div class="eval-stat-val" id="resLimit" style="color: #38bdf8; font-family: 'JetBrains Mono', monospace;">$43.35 MXN</div>
+
+            </div>
+
+            <div class="eval-stat" style="grid-column: 1 / -1; background: rgba(56, 189, 248, 0.05); border-left: 2px solid #38bdf8;">
+
+              <div class="eval-stat-label">Corte Estadístico y Temporalidad</div>
+
+              <div class="eval-stat-val" id="resAsOfDate" style="font-size: 12px; color: #38bdf8;">Noviembre 2026 (Corte Didáctico de Referencia)</div>
+
+            </div>
+
+            <div class="eval-stat" style="grid-column: 1 / -1; background: rgba(255, 255, 255, 0.02); border-left: 2px solid #94a3b8;">
+
+              <div class="eval-stat-label">Metodología y Fuente Analítica</div>
+
+              <div class="eval-stat-val" id="resMethodology" style="font-size: 11.5px; color: #cbd5e1; font-weight: normal; line-height: 1.4;">RSI Wilder (14D) diario en BMV/SIC. Criterio analítico demostrativo; cotizaciones vivas mediante /evaluar en Telegram.</div>
+
+            </div>
+
+          </div>
+
+
+
+          <div id="resActionBox" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); border-radius: 8px; padding: 14px 18px; font-size: 13px; line-height: 1.55;">
+
+            🎯 <strong>Caso de Estudio Didáctico (Bursanet):</strong> Cumple criterios técnicos del modelo formativo para ilustrar una orden tipo <strong>LÍMITE</strong> en soporte de referencia ($43.35 MXN) con vigencia de 1 a 5 días para proteger el margen de seguridad.
+
           </div>
 
         </div>
@@ -5608,24 +5418,109 @@
     </section>
 
 
+    <!-- ============================================================== -->
+    <!-- CAPÍTULO 3: EDUCACIÓN & GUÍAS                                  -->
+    <!-- ============================================================== -->
+    <div class="module-transition-header" id="modulo-3">
+      <div class="module-transition-card" style="border-left-color: #10b981;">
+        <div class="module-pill-tag" style="border-color: rgba(16, 185, 129, 0.4); color: #34d399; background: rgba(16, 185, 129, 0.12);">
+          <span>CAPÍTULO 3 &bull; EDUCACIÓN & GUÍAS</span>
+        </div>
+        <h2 class="module-transition-title">📚 Guías de Adquisición, Glosario Cotidiano y Casos Prácticos</h2>
+        <p class="module-transition-desc">
+          Instrucciones visuales paso a paso para abrir y fondear tus cuentas en casas de bolsa e instituciones reguladas (Bitso y Bursanet), con un glosario sin tecnicismos y casos de estudio familiares.
+        </p>
+      </div>
+    </div>
 
-    <!-- SECTION 6: COMUNIDAD Y RESEÑAS VERIFICADAS -->
 
-    <section id="resenas" class="page-section">
-
-      <span id="casos" style="position: absolute; top: -80px;"></span>
+<section id="guias" class="page-section">
 
       <div class="section-header">
 
-        <span class="section-tag">Capítulo 6 • Ejercicios Hipotéticos de Educación Financiera</span>
+        <span class="section-tag">Capítulo 1 • Operativa Práctica</span>
 
-        <h2>Ejercicios Hipotéticos: Aplicación Práctica de la Estrategia</h2>
+        <h2>Guías Universales de Adquisición</h2>
 
-        <p>Escenarios formativos y arquetipos de aprendizaje diseñados para ilustrar con números transparentes el impacto de reducir comisiones y aplicar reglas de largo plazo.</p>
+        <p>Aprende el método exacto para fondear por SPEI, colocar órdenes límite y blindar tu dinero frente a cobros ocultos.</p>
 
-        <div style="margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.25); padding: 5px 14px; border-radius: 20px; font-size: 13px; color: #60a5fa; font-weight: 700;">
+      </div>
 
-          📖 Ejercicios Didácticos &bull; Escenarios Ficticios de Aprendizaje &bull; Resultados No Garantizados
+
+
+      <div class="grid-3">
+
+        <div class="card">
+
+          <div class="card-icon">🪙</div>
+
+          <h3>Motor Cripto (Bitso Alpha)</h3>
+
+          <p>Acumula Satoshis (fracciones de Bitcoin) para proteger tu poder de compra de la inflación sin pagar comisiones bancarias abusivas.</p>
+
+          <ul class="card-list">
+
+            <li><strong>Fondeo SPEI:</strong> Transferencia instantánea desde cualquier banco a tu CLABE propia.</li>
+
+            <li><strong>Orden LÍMITE (Maker):</strong> Comisión reducida de libro (0.60% base Maker en Bitso Alpha para cuentas iniciales frente al 2.0%-2.5% de spread en compra simple; se reduce progresivamente hasta 0.10% según volumen).</li>
+
+            <li><strong>Ahorro Máximo:</strong> Ahorro del 70% al 76% en comisiones iniciales (0.60% Maker en Bitso Alpha vs 2.0%-2.5% de spread en compra simple; superior al 90% en volúmenes altos).</li>
+
+            <li><strong>Custodia Regulada:</strong> Fondeo en pesos mexicanos mediante institución fintech autorizada en México (IFPE) y custodia de activos digitales bajo tus propias credenciales en plataforma internacional auditada. El bot tiene cero custodia de claves o dinero.</li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <div class="card-icon">🏬</div>
+
+          <h3>Motor Bursátil (Actinver / Bursanet)</h3>
+
+          <p>Conviértete en copropietario de parques industriales de Nearshoring y de las 500 mayores empresas de Estados Unidos.</p>
+
+          <ul class="card-list">
+
+            <li><strong>Mercado Regulado:</strong> Acceso directo a la BMV y al mercado internacional SIC.</li>
+
+            <li><strong>Flujo de Efectivo:</strong> Cobro de rentas trimestrales depositadas en efectivo a tu cuenta.</li>
+
+            <li><strong>Comisiones Transparentes:</strong> Corretaje de solo 0.25% + IVA por operación en Bursanet (apenas $2.90 pesos por cada $1,000 invertidos) y comisiones de gestión mínimas (< 0.15% anual en ETFs globales; 0.49% en IVVPESO con cobertura).</li>
+
+            <li><strong>Inversión Accesible desde ~$115 MXN:</strong> No necesitas $10,000 MXN para comprar 1 título de VOO; con IVVPESO o FIBRAs inviertes desde $115 MXN con la misma diversificación.</li>
+
+            <li><strong>Tratamiento Fiscal (LISR):</strong> 10% de ISR definitivo únicamente sobre ganancias en acciones/ETFs al vender (Art. 129 LISR), y rentas de FIBRAs con esquema fiscal preferencial.</li>
+
+            <li><strong>Dividendos de EE.UU. (W-8BEN vs IVVPESO):</strong> En ETFs extranjeros directos del SIC (VOO/QQQM), los dividendos tienen una retención en EE.UU. del 10% (con formato W-8BEN en Bursanet) más 10% de ISR en México. En cambio, IVVPESO reinvierte sus dividendos internamente sin requerir trámite de formato W-8BEN.</li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <div class="card-icon">🎯</div>
+
+          <h3>La Regla de Oro: Orden LÍMITE</h3>
+
+          <p>Nunca compres «A Mercado». En ambos motores usamos órdenes Límite para que tú definas el precio exacto de entrada.</p>
+
+          <ul class="card-list">
+
+            <li><strong>Cero Deslizamiento:</strong> Eliminas el sobrecosto por volatilidad súbita (slippage).</li>
+
+            <li><strong>Paciencia Táctica:</strong> La orden espera tranquilamente en el libro de ofertas.</li>
+
+            <li><strong>Ejecución Pasiva:</strong> Se ejecuta automáticamente aunque estés descansando.</li>
+
+            <li><strong>Margen Seguro:</strong> Compras con descuento frente a la euforia de compradores novatos.</li>
+
+          </ul>
 
         </div>
 
@@ -5633,217 +5528,79 @@
 
 
 
-      <!-- Cuadro de Transparencia Pedagógica LFPC Art. 32 / LMV Art. 225 -->
+      <div class="steps-container">
 
-      <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; font-size: 13px; color: #cbd5e1; line-height: 1.6;">
+        <h3 style="text-align: center; margin-bottom: 24px; font-size: 21px;">Paso a Paso Universal de Inversión</h3>
 
-        ℹ️ <strong>Nota de Transparencia Pedagógica (LFPC Art. 32 / LMV Art. 225):</strong> Los siguientes ejercicios son escenarios ficticios y modelos analíticos creados exclusivamente con fines de divulgación y educación financiera. No representan testimonios de clientes reales, experiencias de personas identificadas, operaciones efectivamente ejecutadas ni rendimientos garantizados. Su único objetivo es enseñar a comparar costos, entender la diversificación y reconocer los riesgos de cada instrumento.
 
-      </div>
 
+        <div class="step-item">
 
+          <div class="step-num">1</div>
 
-      <div class="reviews-container">
+          <div class="step-content">
 
-        
+            <h4>Fondeo Seguro por SPEI</h4>
 
-        <!-- Grid de Ejercicios Didácticos -->
-
-        <div class="reviews-grid" id="reviewsGrid" style="grid-column: 1 / -1;">
-
-          
-
-          <!-- Ejercicio 1 -->
-
-          <div class="review-card" style="border-top: 3px solid #38bdf8;">
-
-            <div>
-
-              <div class="review-user-row">
-
-                <div class="review-author">
-
-                  <h5>Ejercicio 1: Comparación entre Fondos Bancarios, FIBRAs y ETFs</h5>
-
-                  <span style="color: #38bdf8;">Perfil de Estudio: Reducción documentada de costos de administración</span>
-
-                </div>
-
-              </div>
-
-              <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 10px 0;">
-
-                <p><strong>Situación Planteada:</strong> Se analiza el impacto de las comisiones de administración en fondos de renta variable distribuidos por la banca múltiple tradicional en México (Series B/Retail con gastos de gestión documentados históricamente en prospectos de la CNBV entre 1.80% y 2.50% anual), frente a una estrategia de inversión directa en casa de bolsa regulada (Bursanet, corretaje 0.25% + IVA) combinando FIBRAs inmobiliarias (FIBRAMQ12) y ETFs indexados (IVVPESO con gasto de gestión de 0.49%).</p>
-
-                <p><strong>Aprendizaje Clave:</strong> Reducir costos de intermediación retiene una mayor fracción del rendimiento bruto a largo plazo. No obstante, sustituir instrumentos bancarios de deuda o pagarés por activos bursátiles e inmobiliarios implica asumir mayor volatilidad y riesgo de mercado; una reducción de comisiones no garantiza por sí misma un rendimiento neto positivo si el mercado subyacente retrocede.</p>
-
-                <p style="font-size: 11.5px; color: #94a3b8; margin-top: 6px;"><em>Variables del modelo: Comisiones de prospectos CNBV, corretaje Bursanet (0.25% + IVA), liquidez y horizonte de inversión.</em></p>
-
-              </div>
-
-            </div>
-
-            <div class="review-verified" style="color: #60a5fa;">
-
-              🏛️ Escenario de Aprendizaje &bull; Comparativa de Costos
-
-            </div>
-
-          </div>
-
-
-
-          <!-- Ejercicio 2 -->
-
-          <div class="review-card" style="border-top: 3px solid #10b981;">
-
-            <div>
-
-              <div class="review-user-row">
-
-                <div class="review-author">
-
-                  <h5>Ejercicio 2: Ahorro e Inversión Familiar por Indexación Pasiva</h5>
-
-                  <span style="color: #10b981;">Perfil de Estudio: Plan familiar de acumulación de largo plazo</span>
-
-                </div>
-
-              </div>
-
-              <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 10px 0;">
-
-                <p><strong>Situación Planteada:</strong> Una familia evalúa realizar aportaciones mensuales constantes hacia instrumentos que replican el índice S&P 500, comparando alternativas con cobertura cambiaria peso/dólar (IVVPESO de BlackRock, con precio de referencia oficial reportado al 20 de noviembre de 2026 de $139.53 MXN por título) frente a alternativas globales en dólares en el SIC (VOO, títulos de ~$10,000 MXN sin cobertura cambiaria).</p>
-
-                <p><strong>Aprendizaje Clave:</strong> La indexación pasiva reduce significativamente el riesgo no sistemático (el impacto de la quiebra de una compañía individual al diluirse entre 500 emisoras), pero no elimina el riesgo sistemático de mercado (caídas generalizadas del índice durante recesiones globales).</p>
-
-                <p style="font-size: 11.5px; color: #94a3b8; margin-top: 6px;"><em>Variables del modelo: Precio oficial BlackRock IVVPESO, horizonte temporal, efecto de la inflación y riesgo macroeconómico.</em></p>
-
-              </div>
-
-            </div>
-
-            <div class="review-verified" style="color: #10b981;">
-
-              📚 Escenario de Aprendizaje &bull; Portafolio Intergeneracional
-
-            </div>
-
-          </div>
-
-
-
-          <!-- Ejercicio 3 -->
-
-          <div class="review-card" style="border-top: 3px solid #f59e0b;">
-
-            <div>
-
-              <div class="review-user-row">
-
-                <div class="review-author">
-
-                  <h5>Ejercicio 3: Eficiencia Operativa con Órdenes Límite Maker</h5>
-
-                  <span style="color: #f59e0b;">Perfil de Estudio: Adquisición de reservas digitales con control de costos</span>
-
-                </div>
-
-              </div>
-
-              <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 10px 0;">
-
-                <p><strong>Situación Planteada:</strong> Se analiza una operación didáctica de $10,000 MXN en el libro BTC/MXN de Bitso. Se compara colocar una orden LÍMITE que provee liquidez al libro (tarifa Maker de 0.50% a 0.60% = $50 a $60 MXN de comisión explícita) frente a compras rápidas de conversión simple en aplicación móvil, donde el diferencial entre oferta y demanda (spread de mercado) y el deslizamiento (slippage) suelen representar un costo implícito total de 1.50% a 2.50% ($150 a $250 MXN).</p>
-
-                <p><strong>Aprendizaje Clave:</strong> Las órdenes límite permiten fijar el precio máximo de adquisición y acceder a tarifas Maker más económicas, pero su ejecución está condicionada a que el mercado alcance el nivel fijado y exista liquidez de contraparte. Si se requiere ejecución inmediata a mercado, se incurre en tarifa Taker (0.65% a 0.78%).</p>
-
-                <p style="font-size: 11.5px; color: #94a3b8; margin-top: 6px;"><em>Variables del modelo: Tarifas oficiales de Bitso (Maker 0.50-0.60% / Taker 0.65-0.78%), spread implícito y liquidez.</em></p>
-
-              </div>
-
-            </div>
-
-            <div class="review-verified" style="color: #f59e0b;">
-
-              ⚙️ Escenario de Aprendizaje &bull; Comisiones Maker vs Taker
-
-            </div>
-
-          </div>
-
-
-
-          <!-- Ejercicio 4 -->
-
-          <div class="review-card" style="border-top: 3px solid #a855f7;">
-
-            <div>
-
-              <div class="review-user-row">
-
-                <div class="review-author">
-
-                  <h5>Ejercicio 4: Titularidad Contractual, Custodia por Intermediarios Regulados y Responsabilidades</h5>
-
-                  <span style="color: #a855f7;">Perfil de Estudio: Distinción entre titularidad de cuenta y custodia institucional</span>
-
-                </div>
-
-              </div>
-
-              <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 10px 0;">
-
-                <p><strong>Situación Planteada:</strong> Se examina la arquitectura de seguridad patrimonial donde <strong>Patrimonio Inteligente no capta, no intermedia y no custodia fondos</strong>. El usuario mantiene la titularidad contractual directa de sus cuentas en intermediarios supervisados: <em>Actinver Casa de Bolsa / Bursanet</em> (custodia de valores regulada por la CNBV e Indeval bajo la LMV) y <em>Bitso</em> (custodia de criptoactivos bajo su entidad autorizada). El copiloto actúa únicamente como asistente matemático informativo.</p>
-
-                <p><strong>Aprendizaje Clave:</strong> La titularidad de la cuenta a nombre propio acredita los derechos de propiedad y situación fiscal frente al SAT y las autoridades, pero los fondos permanecen bajo la custodia institucional del intermediario contratado, sujeto a sus términos y riesgos de contraparte. Para lograr autocustodia plena en criptoactivos, se requeriría transferir los satoshis a una billetera fría (cold wallet) bajo control de claves privadas del propio usuario.</p>
-
-                <p style="font-size: 11.5px; color: #94a3b8; margin-top: 6px;"><em>Variables del modelo: Contrato de intermediación bursátil, custodia en Indeval/Bitso y deslinde de custodia en software educativo.</em></p>
-
-              </div>
-
-            </div>
-
-            <div class="review-verified" style="color: #a855f7;">
-
-              🛡️ Escenario de Aprendizaje &bull; Marco de Seguridad Jurídica
-
-            </div>
-
-          </div>
-
-
-
-        </div>
-
-
-
-        <!-- Buzón Didáctico Formativo -->
-
-        <div class="review-form-card" style="margin-top: 24px;">
-
-          <h4>💬 Mesa de Estudio y Consultas Pedagógicas</h4>
-
-          <p>¿Tienes dudas sobre cómo calcular las comisiones de tu fondo bancario actual o cómo estructurar una orden Límite en tu casa de bolsa? Escríbenos para incorporar nuevos ejercicios didácticos en futuros módulos formativos.</p>
-
-          <div style="margin-top: 14px; font-size: 12.5px; color: var(--text-muted); line-height: 1.6;">
-
-            <strong>Transparencia Legal:</strong> Este portal no capta fondos, no ofrece rendimientos garantizados ni presta servicios de asesoría financiera individualizada. Toda simulación y ejercicio responde a fines estrictamente de educación y divulgación conforme al Artículo 225 de la Ley del Mercado de Valores y el Artículo 32 de la Ley Federal de Protección al Consumidor.
+            <p>Transfiere el capital que decidas desde tu banca móvil a tu CLABE interbancaria personalizada en Bitso o Banco Actinver. El dinero está a tu propio nombre.</p>
 
           </div>
 
         </div>
 
 
+
+        <div class="step-item">
+
+          <div class="step-num">2</div>
+
+          <div class="step-content">
+
+            <h4>Búsqueda del Instrumento Estratégico</h4>
+
+            <p>Escribe la clave de pizarra indicada: <code>FIBRAMQ12</code> para rentas de Nearshoring, <code>IVVPESO</code> para el S&P 500, o <code>BTC/USD</code> en Bitso Alpha.</p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="step-item">
+
+          <div class="step-num">3</div>
+
+          <div class="step-content">
+
+            <h4>Captura de Precio Límite y Confirmación</h4>
+
+            <p>Selecciona tipo de orden Límite, digita el precio objetivo con descuento sugerido por el modelo algorítmico y confirma con tu firma digital o huella.</p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="step-item">
+
+          <div class="step-num">4</div>
+
+          <div class="step-content">
+
+            <h4>Reactivación de Rentas e Interés Compuesto</h4>
+
+            <p>Cada renta trimestral depositada en efectivo se reinvierte para comprar más títulos o satoshis baratos, multiplicando tu patrimonio con matemática pura.</p>
+
+          </div>
+
+        </div>
 
       </div>
 
     </section>
 
-
-
-
-    <!-- SECTION 6.5: GLOSARIO FINANCIERO COTIDIANO -->
-    <section id="glosario" class="page-section">
+<section id="glosario" class="page-section">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Capítulo 7 • Glosario Ciudadano y Analogías Cotidianas</span>
@@ -6338,10 +6095,411 @@
       </div>
     </section>
 
+<section id="resenas" class="page-section">
 
-    <!-- SECTION 8: CUMPLIMIENTO REGULATORIO Y MARCO LEGAL -->
+      <span id="casos" style="position: absolute; top: -80px;"></span>
 
-    <section id="marco-legal" class="page-section">
+      <div class="section-header">
+
+        <span class="section-tag">Capítulo 6 • Ejercicios Hipotéticos de Educación Financiera</span>
+
+        <h2>Ejercicios Hipotéticos: Aplicación Práctica de la Estrategia</h2>
+
+        <p>Escenarios formativos y arquetipos de aprendizaje diseñados para ilustrar con números transparentes el impacto de reducir comisiones y aplicar reglas de largo plazo.</p>
+
+        <div style="margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.25); padding: 5px 14px; border-radius: 20px; font-size: 13px; color: #60a5fa; font-weight: 700;">
+
+          📖 Ejercicios Didácticos &bull; Escenarios Ficticios de Aprendizaje &bull; Resultados No Garantizados
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Cuadro de Transparencia Pedagógica LFPC Art. 32 / LMV Art. 225 -->
+
+      <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; font-size: 13px; color: #cbd5e1; line-height: 1.6;">
+
+        ℹ️ <strong>Nota de Transparencia Pedagógica (LFPC Art. 32 / LMV Art. 225):</strong> Los siguientes ejercicios son escenarios ficticios y modelos analíticos creados exclusivamente con fines de divulgación y educación financiera. No representan testimonios de clientes reales, experiencias de personas identificadas, operaciones efectivamente ejecutadas ni rendimientos garantizados. Su único objetivo es enseñar a comparar costos, entender la diversificación y reconocer los riesgos de cada instrumento.
+
+      </div>
+
+
+
+      <div class="reviews-container">
+
+        
+
+        <!-- Grid de Ejercicios Didácticos -->
+
+        <div class="reviews-grid" id="reviewsGrid" style="grid-column: 1 / -1;">
+
+          
+
+          <!-- Ejercicio 1 -->
+
+          <div class="review-card" style="border-top: 3px solid #38bdf8;">
+
+            <div>
+
+              <div class="review-user-row">
+
+                <div class="review-author">
+
+                  <h5>Ejercicio 1: Comparación entre Fondos Bancarios, FIBRAs y ETFs</h5>
+
+                  <span style="color: #38bdf8;">Perfil de Estudio: Reducción documentada de costos de administración</span>
+
+                </div>
+
+              </div>
+
+              <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 10px 0;">
+
+                <p><strong>Situación Planteada:</strong> Se analiza el impacto de las comisiones de administración en fondos de renta variable distribuidos por la banca múltiple tradicional en México (Series B/Retail con gastos de gestión documentados históricamente en prospectos de la CNBV entre 1.80% y 2.50% anual), frente a una estrategia de inversión directa en casa de bolsa regulada (Bursanet, corretaje 0.25% + IVA) combinando FIBRAs inmobiliarias (FIBRAMQ12) y ETFs indexados (IVVPESO con gasto de gestión de 0.49%).</p>
+
+                <p><strong>Aprendizaje Clave:</strong> Reducir costos de intermediación retiene una mayor fracción del rendimiento bruto a largo plazo. No obstante, sustituir instrumentos bancarios de deuda o pagarés por activos bursátiles e inmobiliarios implica asumir mayor volatilidad y riesgo de mercado; una reducción de comisiones no garantiza por sí misma un rendimiento neto positivo si el mercado subyacente retrocede.</p>
+
+                <p style="font-size: 11.5px; color: #94a3b8; margin-top: 6px;"><em>Variables del modelo: Comisiones de prospectos CNBV, corretaje Bursanet (0.25% + IVA), liquidez y horizonte de inversión.</em></p>
+
+              </div>
+
+            </div>
+
+            <div class="review-verified" style="color: #60a5fa;">
+
+              🏛️ Escenario de Aprendizaje &bull; Comparativa de Costos
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Ejercicio 2 -->
+
+          <div class="review-card" style="border-top: 3px solid #10b981;">
+
+            <div>
+
+              <div class="review-user-row">
+
+                <div class="review-author">
+
+                  <h5>Ejercicio 2: Ahorro e Inversión Familiar por Indexación Pasiva</h5>
+
+                  <span style="color: #10b981;">Perfil de Estudio: Plan familiar de acumulación de largo plazo</span>
+
+                </div>
+
+              </div>
+
+              <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 10px 0;">
+
+                <p><strong>Situación Planteada:</strong> Una familia evalúa realizar aportaciones mensuales constantes hacia instrumentos que replican el índice S&P 500, comparando alternativas con cobertura cambiaria peso/dólar (IVVPESO de BlackRock, con precio de referencia oficial reportado al 20 de noviembre de 2026 de $139.53 MXN por título) frente a alternativas globales en dólares en el SIC (VOO, títulos de ~$10,000 MXN sin cobertura cambiaria).</p>
+
+                <p><strong>Aprendizaje Clave:</strong> La indexación pasiva reduce significativamente el riesgo no sistemático (el impacto de la quiebra de una compañía individual al diluirse entre 500 emisoras), pero no elimina el riesgo sistemático de mercado (caídas generalizadas del índice durante recesiones globales).</p>
+
+                <p style="font-size: 11.5px; color: #94a3b8; margin-top: 6px;"><em>Variables del modelo: Precio oficial BlackRock IVVPESO, horizonte temporal, efecto de la inflación y riesgo macroeconómico.</em></p>
+
+              </div>
+
+            </div>
+
+            <div class="review-verified" style="color: #10b981;">
+
+              📚 Escenario de Aprendizaje &bull; Portafolio Intergeneracional
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Ejercicio 3 -->
+
+          <div class="review-card" style="border-top: 3px solid #f59e0b;">
+
+            <div>
+
+              <div class="review-user-row">
+
+                <div class="review-author">
+
+                  <h5>Ejercicio 3: Eficiencia Operativa con Órdenes Límite Maker</h5>
+
+                  <span style="color: #f59e0b;">Perfil de Estudio: Adquisición de reservas digitales con control de costos</span>
+
+                </div>
+
+              </div>
+
+              <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 10px 0;">
+
+                <p><strong>Situación Planteada:</strong> Se analiza una operación didáctica de $10,000 MXN en el libro BTC/MXN de Bitso. Se compara colocar una orden LÍMITE que provee liquidez al libro (tarifa Maker de 0.50% a 0.60% = $50 a $60 MXN de comisión explícita) frente a compras rápidas de conversión simple en aplicación móvil, donde el diferencial entre oferta y demanda (spread de mercado) y el deslizamiento (slippage) suelen representar un costo implícito total de 1.50% a 2.50% ($150 a $250 MXN).</p>
+
+                <p><strong>Aprendizaje Clave:</strong> Las órdenes límite permiten fijar el precio máximo de adquisición y acceder a tarifas Maker más económicas, pero su ejecución está condicionada a que el mercado alcance el nivel fijado y exista liquidez de contraparte. Si se requiere ejecución inmediata a mercado, se incurre en tarifa Taker (0.65% a 0.78%).</p>
+
+                <p style="font-size: 11.5px; color: #94a3b8; margin-top: 6px;"><em>Variables del modelo: Tarifas oficiales de Bitso (Maker 0.50-0.60% / Taker 0.65-0.78%), spread implícito y liquidez.</em></p>
+
+              </div>
+
+            </div>
+
+            <div class="review-verified" style="color: #f59e0b;">
+
+              ⚙️ Escenario de Aprendizaje &bull; Comisiones Maker vs Taker
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Ejercicio 4 -->
+
+          <div class="review-card" style="border-top: 3px solid #a855f7;">
+
+            <div>
+
+              <div class="review-user-row">
+
+                <div class="review-author">
+
+                  <h5>Ejercicio 4: Titularidad Contractual, Custodia por Intermediarios Regulados y Responsabilidades</h5>
+
+                  <span style="color: #a855f7;">Perfil de Estudio: Distinción entre titularidad de cuenta y custodia institucional</span>
+
+                </div>
+
+              </div>
+
+              <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 10px 0;">
+
+                <p><strong>Situación Planteada:</strong> Se examina la arquitectura de seguridad patrimonial donde <strong>Patrimonio Inteligente no capta, no intermedia y no custodia fondos</strong>. El usuario mantiene la titularidad contractual directa de sus cuentas en intermediarios supervisados: <em>Actinver Casa de Bolsa / Bursanet</em> (custodia de valores regulada por la CNBV e Indeval bajo la LMV) y <em>Bitso</em> (custodia de criptoactivos bajo su entidad autorizada). El copiloto actúa únicamente como asistente matemático informativo.</p>
+
+                <p><strong>Aprendizaje Clave:</strong> La titularidad de la cuenta a nombre propio acredita los derechos de propiedad y situación fiscal frente al SAT y las autoridades, pero los fondos permanecen bajo la custodia institucional del intermediario contratado, sujeto a sus términos y riesgos de contraparte. Para lograr autocustodia plena en criptoactivos, se requeriría transferir los satoshis a una billetera fría (cold wallet) bajo control de claves privadas del propio usuario.</p>
+
+                <p style="font-size: 11.5px; color: #94a3b8; margin-top: 6px;"><em>Variables del modelo: Contrato de intermediación bursátil, custodia en Indeval/Bitso y deslinde de custodia en software educativo.</em></p>
+
+              </div>
+
+            </div>
+
+            <div class="review-verified" style="color: #a855f7;">
+
+              🛡️ Escenario de Aprendizaje &bull; Marco de Seguridad Jurídica
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+
+
+        <!-- Buzón Didáctico Formativo -->
+
+        <div class="review-form-card" style="margin-top: 24px;">
+
+          <h4>💬 Mesa de Estudio y Consultas Pedagógicas</h4>
+
+          <p>¿Tienes dudas sobre cómo calcular las comisiones de tu fondo bancario actual o cómo estructurar una orden Límite en tu casa de bolsa? Escríbenos para incorporar nuevos ejercicios didácticos en futuros módulos formativos.</p>
+
+          <div style="margin-top: 14px; font-size: 12.5px; color: var(--text-muted); line-height: 1.6;">
+
+            <strong>Transparencia Legal:</strong> Este portal no capta fondos, no ofrece rendimientos garantizados ni presta servicios de asesoría financiera individualizada. Toda simulación y ejercicio responde a fines estrictamente de educación y divulgación conforme al Artículo 225 de la Ley del Mercado de Valores y el Artículo 32 de la Ley Federal de Protección al Consumidor.
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================== -->
+    <!-- CAPÍTULO 4: LEGAL & RECURSOS                                   -->
+    <!-- ============================================================== -->
+    <div class="module-transition-header" id="modulo-4">
+      <div class="module-transition-card" style="border-left-color: #ec4899;">
+        <div class="module-pill-tag" style="border-color: rgba(236, 72, 153, 0.4); color: #f472b6; background: rgba(236, 72, 153, 0.12);">
+          <span>CAPÍTULO 4 &bull; LEGAL & RECURSOS</span>
+        </div>
+        <h2 class="module-transition-title">🏛️ Marco Legal, Registro INDAUTOR y Biblioteca Descargable</h2>
+        <p class="module-transition-desc">
+          Transparencia y certeza institucional: descarga directa de todos los manuales e infografías en formato PDF, registro oficial de derechos de autor, secreto industrial y deslinde regulatorio LMV/Fintech.
+        </p>
+      </div>
+    </div>
+
+
+<section id="descargas" class="page-section">
+
+      <span id="biblioteca" style="display: block; position: relative; top: -85px; visibility: hidden;"></span>
+
+      <div class="section-header">
+
+        <span class="section-tag">Capítulo 5 • Material Descargable</span>
+
+        <h2>Biblioteca de Recursos de Educación Financiera</h2>
+
+        <p>Descarga libremente los manuales pedagógicos y guías prácticas paso a paso para familias, jóvenes y principiantes.</p>
+
+      </div>
+
+
+
+      <div class="download-grid">
+
+        <div class="doc-item">
+
+          <div>
+
+            <span class="doc-badge">GUÍA OFICIAL 2026</span>
+
+            <h4>Guía Práctica de Compra: Bitso y Bursanet</h4>
+
+            <p>Manual visual paso a paso para colocar órdenes Límite Maker, distinguir ETFs, Acciones y FIBRAs, y evitar comisiones bancarias caras.</p>
+
+          </div>
+
+          <a href="./GUIA_PASO_A_PASO_COMPRA_BITSO_Y_ACTINVER.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (794 KB)</a>
+
+        </div>
+
+
+
+        <div class="doc-item">
+
+          <div>
+
+            <span class="doc-badge">FORMATO DIDÁCTICO</span>
+
+            <h4>Manual de Primera Vez por Edades</h4>
+
+            <p>Adaptación pedagógica para Primaria, Secundaria, Preparatoria y Escuela para Padres. Cómo sembrar patrimonio desde temprana edad.</p>
+
+          </div>
+
+          <a href="./MANUAL_DE_PRIMERA_VEZ_POR_EDADES.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (650 KB)</a>
+
+        </div>
+
+
+
+        <div class="doc-item">
+
+          <div>
+
+            <span class="doc-badge">TALLER INSTITUCIONAL</span>
+
+            <h4>Taller de Finanzas: Preparatoria y Adultos</h4>
+
+            <p>Material de capacitación patrimonial para Consejos Técnicos Escolares (CTE), Escuela para Padres e inclusión financiera real.</p>
+
+          </div>
+
+          <a href="./TALLER_FINANZAS_PREPA_ADULTOS_CTE_PADRES.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (520 KB)</a>
+
+        </div>
+
+
+
+        <div class="doc-item">
+
+          <div>
+
+            <span class="doc-badge">INFOGRAFÍA UNIVERSAL</span>
+
+            <h4>Ficha Infográfica: Bitcoin Para Todos</h4>
+
+            <p>Explicación técnica y económica de los 21 millones de monedas finitas, emisión inmutable y tesis de valor frente a la inflación fiduciaria.</p>
+
+          </div>
+
+          <a href="./FICHA_INFOGRAFICA_BITCOIN_PARA_TODOS.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">📄 Descargar PDF (410 KB)</a>
+
+        </div>
+
+        <div class="doc-item">
+
+          <div>
+
+            <span class="doc-badge">COMANDOS CHATBOT</span>
+
+            <h4>Chuleta Rápida de Comandos del Copiloto</h4>
+
+            <p>Guía de referencia rápida con todos los comandos de Telegram (/estado, /precio, /evaluar, /lote, /volver_a_10) y ejemplos de uso.</p>
+
+          </div>
+
+          <div style="display:flex; gap:8px; flex-wrap:wrap;"><button type="button" onclick="openModalComandos()" class="btn-download" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #10b981; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 600;">📱 Ver Chuleta</button><a href="#guia-bot" class="btn-download" style="background: rgba(192, 132, 252, 0.2); border: 1px solid #c084fc; color: #c084fc; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">🤖 Guía de Usuario</a></div>
+
+        </div>
+
+        <div class="doc-item" style="border-left: 3px solid #38bdf8;">
+
+          <div>
+
+            <span class="doc-badge" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8;">🎬 VIDEO EDUCATIVO (NIÑOS)</span>
+
+            <h4>Video Explicativo: Niños y Niñas (Aprende Jugando)</h4>
+
+            <p>Video animado Full HD (1080p). Explicación didáctica sobre el dinero, la alcancía frente a la inflación, satoshis y cómo el robot copiloto cuida los ahorros familiares.</p>
+
+          </div>
+
+          <div style="display:flex; gap:8px; flex-wrap:wrap;"><button type="button" onclick="playHeroVideo('ninos')" class="btn-download" style="background:#0284c7; color:#fff; border:none; cursor:pointer; font-weight:700;">▶️ Reproducir en Pantalla</button><a href="./video_explicativo_ninos.mp4" download="video_explicativo_ninos.mp4" class="btn-download" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #38bdf8;">⬇️ Descargar MP4 (8.4 MB)</a></div>
+
+        </div>
+
+        <div class="doc-item" style="border-left: 3px solid #818cf8;">
+
+          <div>
+
+            <span class="doc-badge" style="background: rgba(129, 140, 248, 0.2); color: #818cf8;">🎬 VIDEO ESTRATEGIA (ADULTOS)</span>
+
+            <h4>Video Explicativo: Jóvenes y Adultos (Estrategia y Uso del Bot)</h4>
+
+            <p>Video conceptual Full HD (1080p). Arquitectura de acumulación híbrida (Bitso + Bursanet), eliminación de comisiones bancarias del 2.5%, simulación de ventas y verificación con capturas en Telegram.</p>
+
+          </div>
+
+          <a href="./video_explicativo_adultos.mp4" download="video_explicativo_adultos.mp4" class="btn-download" style="background: rgba(129, 140, 248, 0.2); border: 1px solid #818cf8; color: #818cf8;">🎬 Descargar Video MP4 (1.8 MB · 1080p Full HD)</a>
+
+        </div>
+
+        <div class="doc-item" style="border-left: 3px solid #c084fc;">
+
+          <div>
+
+            <span class="doc-badge" style="background: rgba(192, 132, 252, 0.2); color: #c084fc;">🎬 TUTORIAL OFICIAL (COPILOTO)</span>
+
+            <h4>Video Tutorial: Tu Primer Día con el Copiloto en Telegram</h4>
+
+            <p>Video demostrativo Full HD (1080p). Recorrido visual paso a paso: bienvenida segura, hablarle en español cotidiano sin comandos, subir captura de Bitso/Bursanet y recibir alertas automáticas de ganancia.</p>
+
+          </div>
+
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button type="button" onclick="playHeroVideo('bot')" class="btn-download" style="background:#7c3aed; color:#fff; border:none; cursor:pointer; font-weight:700;">▶️ Reproducir en Pantalla</button>
+            <a href="./video_tutorial_copiloto.mp4" download="video_tutorial_copiloto.mp4" class="btn-download" style="background: rgba(192, 132, 252, 0.2); border: 1px solid #c084fc; color: #c084fc;">⬇️ Descargar MP4 (4.4 MB)</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+<section id="marco-legal" class="page-section">
 
       <div class="section-header" style="margin-bottom: 24px;">
 
@@ -6664,45 +6822,97 @@
     });
 
     // SCROLLSPY & ACTIVE LINK HIGHLIGHTING
-    function highlightActiveNav() {
-      var sections = document.querySelectorAll('.page-section');
-      var allNavLinks = document.querySelectorAll('.dropdown-item, .mobile-drawer-link');
-      var dropdownParents = document.querySelectorAll('.nav-dropdown');
-      var scrollPos = window.scrollY + 140;
+    // ==============================================================
+    // SCROLLSPY Y BARRA DE PROGRESO DE LECTURA MEJORADA
+    // ==============================================================
+    var sectionToModuleMap = {
+      'modulo-1': 'pasos',
+      'videos': 'pasos',
+      'guia-bot': 'pasos',
+      'confianza': 'pasos',
+
+      'modulo-2': 'estrategia',
+      'dualidad-btc': 'estrategia',
+      'calculadora': 'estrategia',
+      'activos': 'estrategia',
+      'evaluador': 'estrategia',
+
+      'modulo-3': 'educacion',
+      'guias': 'educacion',
+      'glosario': 'educacion',
+      'resenas': 'educacion',
+
+      'modulo-4': 'legal',
+      'descargas': 'legal',
+      'marco-legal': 'legal'
+    };
+
+    function updateScrollProgressAndNav() {
+      // 1. Barra de progreso de lectura horizontal
+      var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      var progressBar = document.getElementById('scrollProgressBar');
+      if (progressBar) {
+        progressBar.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+        progressBar.setAttribute('aria-valuenow', Math.round(scrolled));
+      }
+
+      // 2. Detección de sección activa bajo el sticky navbar
+      var trackedElements = document.querySelectorAll('.module-transition-header, .page-section[id]');
       var activeId = null;
+      var activeModule = null;
+      var scrollPos = window.scrollY + 180;
 
-      sections.forEach(function(section) {
-        var top = section.offsetTop;
-        var height = section.offsetHeight;
-        var id = section.getAttribute('id');
-        if (scrollPos >= top && scrollPos < top + height) {
-          activeId = id;
-        }
-      });
-
-      if (activeId) {
-        allNavLinks.forEach(function(link) {
-          var href = link.getAttribute('href');
-          if (href === '#' + activeId || ((activeId === 'descargas' || activeId === 'videos') && href === '#videos')) {
-            link.classList.add('active');
-            var parentDropdown = link.closest('.nav-dropdown');
-            if (parentDropdown) {
-              parentDropdown.classList.add('active');
+      // Si está casi al final de la página, activar último módulo
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+        activeId = 'marco-legal';
+        activeModule = 'legal';
+      } else {
+        trackedElements.forEach(function(el) {
+          var top = el.offsetTop;
+          var height = el.offsetHeight;
+          var id = el.getAttribute('id');
+          if (scrollPos >= top && scrollPos < top + height) {
+            activeId = id;
+            if (sectionToModuleMap[id]) {
+              activeModule = sectionToModuleMap[id];
             }
-          } else {
-            link.classList.remove('active');
-          }
-        });
-
-        dropdownParents.forEach(function(dp) {
-          if (!dp.querySelector('.dropdown-item.active')) {
-            dp.classList.remove('active');
           }
         });
       }
+
+      // Fallback si está arriba en los primeros pasos
+      if (!activeModule && window.scrollY < 1200) {
+        activeModule = 'pasos';
+      }
+
+      // 3. Iluminar botón del menú superior correspondiente al módulo actual
+      var dropdownParents = document.querySelectorAll('.nav-dropdown');
+      dropdownParents.forEach(function(dp) {
+        var dpModule = dp.getAttribute('data-dropdown');
+        if (dpModule === activeModule) {
+          dp.classList.add('active');
+        } else {
+          dp.classList.remove('active');
+        }
+      });
+
+      // 4. Iluminar enlace específico dentro del dropdown y drawer móvil
+      var allNavLinks = document.querySelectorAll('.dropdown-item, .mobile-drawer-link');
+      allNavLinks.forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href === '#' + activeId || ((activeId === 'descargas' || activeId === 'videos') && href === '#videos')) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
     }
 
-    window.addEventListener('scroll', highlightActiveNav, { passive: true });
+    window.addEventListener('scroll', updateScrollProgressAndNav, { passive: true });
+    window.addEventListener('DOMContentLoaded', updateScrollProgressAndNav);
+    window.addEventListener('load', updateScrollProgressAndNav);
     window.addEventListener('DOMContentLoaded', highlightActiveNav);
 
 
