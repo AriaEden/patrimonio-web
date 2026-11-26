@@ -9071,23 +9071,39 @@
         <button class="aria-mute-btn" id="aria-mute-btn" title="Silenciar voz">🔊</button>
       </div>
 
-      <!-- Preguntas Frecuentes Rápidas -->
-      <div class="aria-quick-title">Preguntas Frecuentes de Alumnos y Padres:</div>
+      <!-- Preguntas Frecuentes Categorizadas -->
+      <div class="aria-quick-title" style="margin-top:2px; color:#38bdf8;">🎓 Fundamentos & Educación Patrimonial:</div>
       <div class="aria-pills-grid">
+        <button class="aria-pill" data-q="que_es_el_dinero">
+          <span>🪙</span> <b>¿Qué es el dinero y por qué pierde valor?</b>
+        </button>
+        <button class="aria-pill" data-q="que_es_bitcoin_seguridad">
+          <span>⚡</span> <b>¿Qué es Bitcoin y por qué es tan seguro?</b>
+        </button>
+        <button class="aria-pill" data-q="que_son_fibras">
+          <span>🏢</span> <b>¿Qué son las FIBRAs y su ventaja fiscal (SAT)?</b>
+        </button>
+        <button class="aria-pill" data-q="retiro_jubilacion">
+          <span>👵</span> <b>¿Por qué sirve para mi retiro si no tengo pensión?</b>
+        </button>
+      </div>
+
+      <div class="aria-quick-title" style="margin-top:12px; color:#a78bfa;">🚀 Plataforma, Módulos & Copiloto:</div>
+      <div class="aria-pills-grid">
+        <button class="aria-pill" data-q="guia_plataforma_web">
+          <span>🌐</span> <b>¿Cómo navegar esta web y qué contiene cada módulo?</b>
+        </button>
+        <button class="aria-pill" data-q="comandos_telegram">
+          <span>🤖</span> <b>¿Cuáles son los comandos del Copiloto en Telegram?</b>
+        </button>
         <button class="aria-pill" data-q="quien_es_aria">
-          <span>💡</span> <b>¿Quién es Aria y cómo me ayuda este Copiloto?</b>
+          <span>💡</span> <b>¿Quién es Aria y cómo opera el Copiloto?</b>
         </button>
         <button class="aria-pill" data-q="custodia_seguridad">
           <span>🛡️</span> <b>¿El bot tiene acceso a mi dinero o contraseñas?</b>
         </button>
         <button class="aria-pill" data-q="con_cuanto_empezar">
           <span>💵</span> <b>¿Con cuánto dinero puedo empezar a invertir?</b>
-        </button>
-        <button class="aria-pill" data-q="retiro_jubilacion">
-          <span>👵</span> <b>¿Por qué sirve para mi retiro si no tengo pensión?</b>
-        </button>
-        <button class="aria-pill" data-q="que_son_fibras">
-          <span>🏢</span> <b>¿Qué son las FIBRAs y por qué no cobran impuestos?</b>
         </button>
         <button class="aria-pill" data-q="prueba_gratuita">
           <span>🎟️</span> <b>¿Cómo solicito mi cortesía de prueba gratuita?</b>
@@ -9213,29 +9229,93 @@
 
       // 3. BASE DE CONOCIMIENTO DE PREGUNTAS FRECUENTES (FAQ)
       const FAQ_DATABASE = {
+        que_es_el_dinero: {
+          spoken: "El dinero es una herramienta para almacenar y transportar el tiempo y esfuerzo humano. A lo largo de la historia usamos oro porque era escaso. Hoy usamos dinero fiat emitido por gobiernos, pero al imprimirlo sin respaldo se genera inflación, lo que significa que tu esfuerzo pierde poder de compra si solo lo guardas en el banco o debajo del colchón.",
+          display: `🪙 <b>¿Qué es el Dinero y por qué pierde valor con la Inflación?</b><br><br>
+El dinero no es más que una <b>batería que almacena tu tiempo y trabajo</b> para intercambiarlo en el futuro.<br><br>
+• <b>La Evolución Histórica:</b> Trueque ➔ Metales preciosos y Oro (escasez física) ➔ Billetes con respaldo ➔ Dinero Fiat (decreto gubernamental sin respaldo).<br>
+• <b>El problema actual:</b> Los bancos centrales del mundo imprimen billones de billetes de la nada. Al haber más papel persiguiendo los mismos bienes, cada billete vale menos.<br>
+• <b>La Inflación es un impuesto silencioso:</b> Si guardas $10,000 pesos en el banco o en una alcancía, en 10 años ese mismo dinero te alcanzará para la mitad de las cosas.<br>
+• <b>La solución soberana:</b> Transformar papel inflacionario en activos productivos que nadie puede diluir: naves industriales que pagan rentas (FIBRAs) y activos de escasez matemática estricta (Bitcoin).`
+        },
+        que_es_bitcoin_seguridad: {
+          spoken: "Bitcoin es dinero digital soberano, global y matemáticamente escaso. Solo existirán veintiún millones de monedas para siempre y ningún gobierno o banco puede emitir más ni confiscarlo. Su seguridad proviene de la criptografía y una red distribuida de más de cien mil computadoras en todo el planeta que verifican cada transacción, siendo la red informática más segura e indestructible del mundo.",
+          display: `⚡ <b>¿Qué es Bitcoin y por qué es 100% seguro e incorruptible?</b><br><br>
+Bitcoin es la primera forma de <b>dinero digital verdaderamente escaso</b> creada por la humanidad.<br><br>
+• <b>Escasez Matemática Inmutable:</b> Solo existirán <b>21,000,000 de Bitcoins</b> en toda la historia. Nadie puede 'imprimir' más ni alterar su regla.<br>
+• <b>¿Por qué es tan seguro?</b> Utiliza criptografía militar SHA-256 respaldada por la red informática más poderosa del planeta. Para hackearla se requeriría más energía eléctrica de la que consumen países enteros juntos.<br>
+• <b>Cero Hackeos en más de 16 años:</b> Desde su bloque génesis en 2009, la red descentralizada de Bitcoin jamás ha sido vulnerada.<br>
+• <b>Soberanía e Inconfiscabilidad:</b> Nadie puede congelar tus satoshis, cerrar tu cuenta ni devaluar tu saldo por decreto político.<br>
+• <b>Estrategia del Copiloto:</b> Comprar en caídas con disciplina matemática mediante micro-lotes sin apalancamiento.`
+        },
+        guia_plataforma_web: {
+          spoken: "Nuestra plataforma web está organizada en cuatro módulos estratégicos: Primero, Primeros Pasos con videos y visión general; segundo, Estrategia y Herramientas con el portafolio híbrido en Bitso y Bursanet; tercero, Educación y Guías con calculadoras y conceptos de interés compuesto; y cuarto, Marco Legal con el artículo ciento ochenta y ocho de la ley del ISR y protección de propiedad intelectual.",
+          display: `🌐 <b>Estructura y Recorrido de la Plataforma Web:</b><br><br>
+El sitio está organizado en <b>4 Módulos Estratégicos</b> accesibles desde el menú superior:<br><br>
+• 🎬 <b>Módulo 1 · Primeros Pasos:</b> El despertar financiero, videos interactivos para niños y adultos, y la filosofía de inversión sin barreras.<br>
+• ⚖️ <b>Módulo 2 · Estrategia & Herramientas:</b> La arquitectura del Portafolio Híbrido 70/30 (Bursanet + Bitso), acumulación sin estrés y preservación de capital.<br>
+• 📚 <b>Módulo 3 · Educación & Guías:</b> Mitos y realidades de la bolsa, la magia del interés compuesto, calculadoras de retiro y la trampa de la inflación.<br>
+• 🏛️ <b>Módulo 4 · Legal & Recursos:</b> Ventajas fiscales ante el SAT (Art. 188 LISR exento), cero custodia, expediente de registro en INDAUTOR y bitácora criptográfica inmutable.<br><br>
+<i>Puedes tocar cualquier sección en el menú superior para trasladarte de inmediato.</i>`
+        },
+        comandos_telegram: {
+          spoken: "El copiloto en Telegram responde a comandos clave: barra precio para cotizaciones en vivo, barra comprar para el plan táctico de compra, barra simular guion bajo actinver para simular ventas y traspasos a fibras, barra simular guion bajo bitso para acumulación cripto, barra rebalanceo para optimizar activos, y barra cupos para revisar la disponibilidad de la cohorte.",
+          display: `🤖 <b>Comandos Oficiales del Copiloto en Telegram:</b><br><br>
+Puedes escribir o tocar estos comandos dentro del chat del bot:<br><br>
+• <code>/precio</code> : Cotización en vivo de Bitcoin (Bitso BTC/MXN) y estado de mercado.<br>
+• <code>/comprar</code> : Diagnóstico táctico en tiempo real con el plan exacto en pesos y satoshis.<br>
+• <code>/simular_actinver</code> : Simulación de liquidación de fondos caros y traspaso inteligente a FIBRAs (FIBRAMQ12) o S&P 500 (IVVPESO) con cálculo de ahorro en comisiones.<br>
+• <code>/simular_bitso</code> : Escenario numérico de compras programadas en Bitcoin.<br>
+• <code>/rebalanceo</code> : Propuesta cuantitativa para optimizar y equilibrar tu portafolio.<br>
+• <code>/cupos</code> : Estado del aforo de la cohorte y plazas disponibles (exclusivo administración).<br>
+• <code>/ok</code> : Confirmación de lectura ante avisos de alta volatilidad o cisnes negros.<br>
+• <b>Envío de Fotos:</b> Mándale captura de tu portafolio de Bursanet o Bitso y el bot auditará tus activos de inmediato.`
+        },
         quien_es_aria: {
           spoken: "Soy Aria, el avatar inteligente de Patrimonio Inteligente. Este copiloto vigila el mercado día y noche para avisarte por Telegram exactamente cuándo comprar o vender Bitcoin, FIBRAs y acciones del S&P 500 con rigor matemático, protegiendo tu dinero.",
-          display: "✨ <b>¿Quién es Aria y cómo te ayuda el Copiloto?</b><br><br>Soy la voz y guía de <b>Patrimonio Inteligente</b>. Este sistema actúa como un copiloto financiero autónomo que vigila el mercado día y noche.<br><br>• Te envía alertas a tu Telegram diciéndote cuándo comprar activos con descuento.<br>• Te avisa cuándo tomar utilidades.<br>• Te enseña a cobrar rentas pasivas sin que tengas que ser un experto."
+          display: `✨ <b>¿Quién es Aria y cómo te ayuda el Copiloto?</b><br><br>
+Soy la voz y guía de <b>Patrimonio Inteligente</b>. Este sistema actúa como un copiloto financiero autónomo que vigila el mercado día y noche.<br><br>
+• Te envía alertas a tu Telegram diciéndote cuándo comprar activos con descuento.<br>
+• Te avisa cuándo tomar utilidades.<br>
+• Te enseña a cobrar rentas pasivas sin que tengas que ser un experto.`
         },
         custodia_seguridad: {
           spoken: "Cero llaves privadas y cero custodia. Tú nunca le depositas dinero al bot ni al copiloto. Tus fondos permanecen en tus propias cuentas de Bitso y Bursanet. Nosotros solo leemos información pública y te enviamos alertas a ti.",
-          display: "🛡️ <b>Seguridad y Custodia: Cero Llaves Privadas</b><br><br>Aquí <b>nadie toca tu dinero</b>. Jamás te pediremos contraseñas bancarias, llaves privadas ni transferencias.<br><br>• Tus inversiones están 100% en tus cuentas personales reguladas (Bursanet / Bitso).<br>• El copiloto analiza datos matemáticos y te avisa a tu Telegram para que tú misma decidas con un clic."
+          display: `🛡️ <b>Seguridad y Custodia: Cero Llaves Privadas</b><br><br>
+Aquí <b>nadie toca tu dinero</b>. Jamás te pediremos contraseñas bancarias, llaves privadas ni transferencias.<br><br>
+• Tus inversiones están 100% en tus cuentas personales reguladas (Bursanet / Bitso).<br>
+• El copiloto analiza datos matemáticos y te avisa a tu Telegram para que tú misma decidas con un clic.`
         },
         con_cuanto_empezar: {
           spoken: "Puedes comenzar con solo doscientos pesos mexicanos o diez dólares. La filosofía es aprender paso a paso sin arriesgar el patrimonio familiar, aprovechando el interés compuesto.",
-          display: "💵 <b>¿Con cuánto dinero empezar?</b><br><br>¡Desde solo <b>$200 MXN</b> (o ~$10 USD)!<br><br>• 1 título de fibra inmobiliaria cuesta ~$44 pesos.<br>• Una fracción de Bitcoin cuesta desde $100 pesos.<br>• No necesitas ser millonario; la clave es la disciplina periódica y el interés compuesto."
+          display: `💵 <b>¿Con cuánto dinero empezar?</b><br><br>
+¡Desde solo <b>$200 MXN</b> (o ~$10 USD)!<br><br>
+• 1 título de fibra inmobiliaria cuesta ~$44 pesos.<br>
+• Una fracción de Bitcoin cuesta desde $100 pesos.<br>
+• No necesitas ser millonario; la clave es la disciplina periódica y el interés compuesto.`
         },
         retiro_jubilacion: {
           spoken: "A nuestra generación ya no le tocó la pensión tradicional. Si dejamos el dinero en una alcancía o en el banco, la inflación se lo come. Al comprar naves industriales que pagan rentas y las mejores empresas del mundo, construyes tu propio fondo de retiro digno de por vida.",
-          display: "👵 <b>Tu Retiro y Jubilación Soberana</b><br><br>Las Afores y pensiones tradicionales ya no son suficientes.<br><br>• Al invertir en FIBRAs (bodegas industriales) recibes rentas trimestrales pasivas de por vida.<br>• Al indexarte al S&P 500, eres socia de las 500 empresas más ricas de la tierra.<br>• Tu dinero no pierde valor ante la inflación."
+          display: `👵 <b>Tu Retiro y Jubilación Soberana</b><br><br>
+Las Afores y pensiones tradicionales ya no son suficientes.<br><br>
+• Al invertir en FIBRAs (bodegas industriales) recibes rentas trimestrales pasivas de por vida.<br>
+• Al indexarte al S&P 500, eres socia de las 500 empresas más ricas de la tierra.<br>
+• Tu dinero no pierde valor ante la inflación.`
         },
         que_son_fibras: {
           spoken: "Una FIBRA es un fideicomiso inmobiliario. Es como ser dueña de un pedazo de un parque de bodegas rentadas a empresas como Amazon o Mercado Libre. Te pagan renta cada tres meses y sus distribuciones son cien por ciento libres de impuestos.",
-          display: "🏢 <b>FIBRAs Inmobiliarias y Ventaja Fiscal</b><br><br>Las FIBRAs te hacen dueña de fracciones de naves industriales y edificios reales.<br><br>• <b>Cobras rentas:</b> Cada 3 meses recibes utilidades directamente en tu cuenta.<br>• <b>Cero Impuestos (SAT):</b> Conforme al artículo 188 de la Ley del ISR, gran parte de las rentas se pagan como Reembolso de Capital, exentas al 100% de retención fiscal."
+          display: `🏢 <b>FIBRAs Inmobiliarias y Ventaja Fiscal</b><br><br>
+Las FIBRAs te hacen dueña de fracciones de naves industriales y edificios reales.<br><br>
+• <b>Cobras rentas:</b> Cada 3 meses recibes utilidades directamente en tu cuenta.<br>
+• <b>Cero Impuestos (SAT):</b> Conforme al artículo 188 de la Ley del ISR, gran parte de las rentas se pagan como Reembolso de Capital, exentas al 100% de retención fiscal.`
         },
         prueba_gratuita: {
           spoken: "Tenemos una cohorte piloto con cupos limitados. Para solicitar tu cortesía gratuita de prueba, abre el bot en Telegram, escribe diagonal start y la titular autorizará tu acceso para que comiences a recibir señales.",
-          display: '🎟️ <b>Cortesía Gratuita de Prueba</b><br><br>Operamos bajo <b>acceso por invitación</b> con aforo limitado a 100 lugares para garantizar atención personalizada.<br><br>1. Entra a Telegram: <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" style="color:#38bdf8; font-weight:700;">@dabel_btc_copiloto_bot</a><br>2. Presiona <b>Iniciar</b> o escribe <code>/start</code>.<br>3. La administración te activará tu período de cortesía gratuita para que recibas tus primeras alertas.'
+          display: `🎟️ <b>Cortesía Gratuita de Prueba</b><br><br>
+Operamos bajo <b>acceso por invitación</b> con aforo limitado a 100 lugares para garantizar atención personalizada.<br><br>
+1. Entra a Telegram: <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" style="color:#38bdf8; font-weight:700;">@dabel_btc_copiloto_bot</a><br>
+2. Presiona <b>Iniciar</b> o escribe <code>/start</code>.<br>
+3. La administración te activará tu período de cortesía gratuita para que recibas tus primeras alertas.`
         }
       };
 
@@ -9369,21 +9449,27 @@
 
       function handleUserInput(input) {
         input = input.toLowerCase();
-        let matchedKey = null;
+        let matchedKey = 'quien_es_aria';
 
-        if (input.includes('quien') || input.includes('quién') || input.includes('aria') || input.includes('que es')) {
-          matchedKey = 'quien_es_aria';
-        } else if (input.includes('seguridad') || input.includes('dinero') || input.includes('claves') || input.includes('contraseña') || input.includes('toca')) {
-          matchedKey = 'custodia_seguridad';
-        } else if (input.includes('cuanto') || input.includes('cuánto') || input.includes('empezar') || input.includes('minimo') || input.includes('mínimo') || input.includes('pesos')) {
-          matchedKey = 'con_cuanto_empezar';
-        } else if (input.includes('retiro') || input.includes('jubilacion') || input.includes('jubilación') || input.includes('pension') || input.includes('pensión') || input.includes('afore')) {
-          matchedKey = 'retiro_jubilacion';
-        } else if (input.includes('fibra') || input.includes('fibras') || input.includes('impuesto') || input.includes('sat')) {
+        if (input.includes('comando') || input.includes('comandos') || input.includes('barra') || input.includes('slash') || input.includes('instruccion') || input.includes('precio') || input.includes('comprar')) {
+          matchedKey = 'comandos_telegram';
+        } else if (input.includes('bitcoin') || input.includes('btc') || input.includes('satoshis') || input.includes('cripto') || input.includes('criptomoneda') || input.includes('bloque') || input.includes('blockchain')) {
+          matchedKey = 'que_es_bitcoin_seguridad';
+        } else if (input.includes('dinero') || input.includes('inflacion') || input.includes('inflación') || input.includes('imprimir') || input.includes('billete') || input.includes('fiat') || input.includes('trueque')) {
+          matchedKey = 'que_es_el_dinero';
+        } else if (input.includes('pagina') || input.includes('página') || input.includes('web') || input.includes('plataforma') || input.includes('modulo') || input.includes('módulo') || input.includes('seccion') || input.includes('sección') || input.includes('menu') || input.includes('menú') || input.includes('temas')) {
+          matchedKey = 'guia_plataforma_web';
+        } else if (input.includes('fibra') || input.includes('fibras') || input.includes('impuesto') || input.includes('impuestos') || input.includes('sat') || input.includes('bodega') || input.includes('reembolso')) {
           matchedKey = 'que_son_fibras';
-        } else if (input.includes('prueba') || input.includes('gratis') || input.includes('gratuita') || input.includes('cortesia') || input.includes('cortesía') || input.includes('entrar')) {
+        } else if (input.includes('retiro') || input.includes('jubilacion') || input.includes('jubilación') || input.includes('pension') || input.includes('pensión') || input.includes('afore') || input.includes('vejez') || input.includes('futuro')) {
+          matchedKey = 'retiro_jubilacion';
+        } else if (input.includes('cuanto') || input.includes('cuánto') || input.includes('empezar') || input.includes('minimo') || input.includes('mínimo') || input.includes('pesos') || input.includes('dolares') || input.includes('dólares')) {
+          matchedKey = 'con_cuanto_empezar';
+        } else if (input.includes('seguridad') || input.includes('claves') || input.includes('clave') || input.includes('contraseña') || input.includes('custodia') || input.includes('banco') || input.includes('robo') || input.includes('robar') || input.includes('toca')) {
+          matchedKey = 'custodia_seguridad';
+        } else if (input.includes('prueba') || input.includes('gratis') || input.includes('gratuita') || input.includes('cortesia') || input.includes('cortesía') || input.includes('entrar') || input.includes('cupo') || input.includes('cupos') || input.includes('registro')) {
           matchedKey = 'prueba_gratuita';
-        } else {
+        } else if (input.includes('quien') || input.includes('quién') || input.includes('aria') || input.includes('copiloto') || input.includes('ayuda') || input.includes('funciona')) {
           matchedKey = 'quien_es_aria';
         }
 
