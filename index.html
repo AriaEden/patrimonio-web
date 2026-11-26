@@ -9020,7 +9020,7 @@
     <div class="aria-orb-wrapper">
       <div class="aria-pulse-ring"></div>
       <div class="aria-pulse-ring"></div>
-      <div class="aria-orb-core"></div>
+      <div class="aria-orb-core" id="aria-orb"></div>
     </div>
   </div>
 
@@ -9196,7 +9196,6 @@
       function openPortal() {
         if (!portal) return;
         portal.style.display = 'flex';
-        portal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
       function closePortal() {
         if (!portal) return;
@@ -9206,6 +9205,10 @@
       }
 
       if (widget) widget.addEventListener('click', openPortal);
+      const orbEl = document.getElementById('aria-orb');
+      if (orbEl) orbEl.addEventListener('click', (e) => { e.stopPropagation(); openPortal(); });
+      const orbCore = document.querySelector('.aria-orb-core');
+      if (orbCore && orbCore !== orbEl) orbCore.addEventListener('click', (e) => { e.stopPropagation(); openPortal(); });
       if (closeBtn) closeBtn.addEventListener('click', closePortal);
 
       // 3. BASE DE CONOCIMIENTO DE PREGUNTAS FRECUENTES (FAQ)
@@ -9232,7 +9235,7 @@
         },
         prueba_gratuita: {
           spoken: "Tenemos una cohorte piloto con cupos limitados. Para solicitar tu cortesía gratuita de prueba, abre el bot en Telegram, escribe diagonal start y la titular autorizará tu acceso para que comiences a recibir señales.",
-          display: "🎟️ <b>Cortesía Gratuita de Prueba</b><br><br>Operamos bajo <b>acceso por invitación</b> con aforo limitado a 100 lugares para garantizar atención personalizada.<br><br>1. Entra a Telegram: <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" style="color:#38bdf8; font-weight:700;">@dabel_btc_copiloto_bot</a><br>2. Presiona <b>Iniciar</b> o escribe <code>/start</code>.<br>3. La administración te activará tu período de cortesía gratuita para que recibas tus primeras alertas."
+          display: '🎟️ <b>Cortesía Gratuita de Prueba</b><br><br>Operamos bajo <b>acceso por invitación</b> con aforo limitado a 100 lugares para garantizar atención personalizada.<br><br>1. Entra a Telegram: <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" style="color:#38bdf8; font-weight:700;">@dabel_btc_copiloto_bot</a><br>2. Presiona <b>Iniciar</b> o escribe <code>/start</code>.<br>3. La administración te activará tu período de cortesía gratuita para que recibas tus primeras alertas.'
         }
       };
 
