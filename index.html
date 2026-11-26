@@ -6913,7 +6913,7 @@
     window.addEventListener('scroll', updateScrollProgressAndNav, { passive: true });
     window.addEventListener('DOMContentLoaded', updateScrollProgressAndNav);
     window.addEventListener('load', updateScrollProgressAndNav);
-    window.addEventListener('DOMContentLoaded', highlightActiveNav);
+    var highlightActiveNav = updateScrollProgressAndNav;
 
 
 
