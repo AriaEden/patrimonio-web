@@ -8640,6 +8640,772 @@
 
   </script>
 
+
+  <!-- ========================================================================= -->
+  <!-- COMPONENTE ARIA: ORBE DE LUZ BIOLUMINISCENTE CON HAZ DE LUZ Y VOZ        -->
+  <!-- ========================================================================= -->
+
+  <style>
+    /* Estilos del Orbe Flotante Aria */
+    #aria-widget {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9998;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    #aria-widget:hover {
+      transform: scale(1.05);
+    }
+    #aria-widget:active {
+      transform: scale(0.97);
+    }
+
+    .aria-orb-wrapper {
+      position: relative;
+      width: 66px;
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .aria-orb-core {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #ffffff 0%, #38bdf8 30%, #818cf8 65%, #f59e0b 95%);
+      box-shadow: 
+        0 0 20px rgba(56, 189, 248, 0.8),
+        0 0 40px rgba(129, 140, 248, 0.5),
+        inset 0 0 15px rgba(255, 255, 255, 0.9);
+      animation: ariaBreathe 3.5s ease-in-out infinite alternate;
+      position: relative;
+      z-index: 2;
+    }
+
+    .aria-pulse-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1.5px solid rgba(56, 189, 248, 0.6);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+      animation: ariaPulse 2.8s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+      z-index: 1;
+    }
+    .aria-pulse-ring:nth-child(2) {
+      animation-delay: 1.2s;
+    }
+
+    .aria-label-pill {
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.2);
+      display: flex;
+      flex-direction: column;
+      pointer-events: auto;
+    }
+    .aria-label-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.3px;
+    }
+    .aria-label-sub {
+      font-size: 10px;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    /* Haz de Luz Canvas sobre el Scroll */
+    #aria-trail-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9997;
+    }
+
+    /* Modal / Portal Interactivo de Aria */
+    #aria-portal {
+      position: fixed;
+      bottom: 105px;
+      right: 28px;
+      width: min(460px, calc(100vw - 36px));
+      max-height: min(680px, calc(100vh - 125px));
+      background: radial-gradient(circle at 50% 10%, rgba(30, 41, 59, 0.98), rgba(11, 15, 25, 0.98));
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 24px;
+      box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.75),
+        0 0 35px rgba(56, 189, 248, 0.25);
+      display: none;
+      flex-direction: column;
+      z-index: 9999;
+      overflow: hidden;
+      animation: ariaModalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes ariaBreathe {
+      0% {
+        transform: scale(0.96);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.6), 0 0 30px rgba(129, 140, 248, 0.3);
+      }
+      100% {
+        transform: scale(1.06);
+        box-shadow: 0 0 28px rgba(56, 189, 248, 0.95), 0 0 55px rgba(245, 158, 11, 0.5);
+      }
+    }
+    @keyframes ariaPulse {
+      0% { transform: scale(0.85); opacity: 0.9; }
+      100% { transform: scale(1.7); opacity: 0; }
+    }
+    @keyframes ariaModalPop {
+      0% { opacity: 0; transform: translateY(20px) scale(0.92); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .aria-portal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(15, 23, 42, 0.6);
+    }
+    .aria-portal-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .aria-mini-orb {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff, #38bdf8, #818cf8);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+      animation: ariaBreathe 2.5s infinite alternate;
+    }
+    .aria-portal-close {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #94a3b8;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+    .aria-portal-close:hover {
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+    }
+
+    .aria-portal-body {
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+    }
+
+    /* Visualizador Central de Ondas Sonoras */
+    .aria-visualizer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 0 8px;
+    }
+    .aria-hero-orb {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #ffffff 0%, #38bdf8 35%, #818cf8 70%, #f59e0b 100%);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.8), 0 0 70px rgba(129, 140, 248, 0.4);
+      margin-bottom: 12px;
+      transition: transform 0.2s;
+    }
+    .aria-hero-orb.speaking {
+      animation: ariaVoiceTalk 0.8s ease-in-out infinite alternate;
+      box-shadow: 0 0 45px rgba(245, 158, 11, 0.9), 0 0 80px rgba(56, 189, 248, 0.6);
+    }
+    .aria-hero-orb.listening {
+      animation: ariaVoiceListen 1s ease-in-out infinite alternate;
+      box-shadow: 0 0 45px rgba(16, 185, 129, 0.9), 0 0 80px rgba(56, 189, 248, 0.6);
+    }
+    @keyframes ariaVoiceTalk {
+      0% { transform: scale(0.98); }
+      100% { transform: scale(1.14); }
+    }
+    @keyframes ariaVoiceListen {
+      0% { transform: scale(0.96); filter: hue-rotate(90deg); }
+      100% { transform: scale(1.12); filter: hue-rotate(90deg); }
+    }
+
+    .aria-waves {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 24px;
+    }
+    .aria-wave-bar {
+      width: 3px;
+      height: 6px;
+      background: #38bdf8;
+      border-radius: 9999px;
+      transition: height 0.15s ease;
+    }
+
+    .aria-status-badge {
+      font-size: 11px;
+      font-weight: 600;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Caja de Transcripción / Respuesta */
+    .aria-speech-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 14px 16px;
+      min-height: 80px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #f1f5f9;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    /* Botón de Voz / Micrófono */
+    .aria-voice-btn-row {
+      display: flex;
+      gap: 10px;
+    }
+    .aria-mic-btn {
+      flex: 1;
+      background: linear-gradient(135deg, #0284c7, #4f46e5);
+      border: none;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+      transition: all 0.2s;
+    }
+    .aria-mic-btn:hover {
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.6);
+      transform: translateY(-1px);
+    }
+    .aria-mic-btn.active {
+      background: linear-gradient(135deg, #059669, #10b981);
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.7);
+      animation: ariaBreathe 1s infinite alternate;
+    }
+
+    .aria-mute-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      width: 44px;
+      border-radius: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    /* Cápsulas de Preguntas Frecuentes Rápidas */
+    .aria-quick-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #94a3b8;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    .aria-pills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .aria-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      font-size: 12px;
+      padding: 9px 12px;
+      border-radius: 12px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .aria-pill:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      transform: translateX(3px);
+    }
+
+    .aria-portal-footer {
+      padding: 12px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(10, 15, 25, 0.7);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .aria-bot-link {
+      color: #38bdf8;
+      font-size: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .aria-bot-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <!-- Canvas del Haz de Luz que sigue el desplazamiento -->
+  <canvas id="aria-trail-canvas"></canvas>
+
+  <!-- Widget Flotante de Aria -->
+  <div id="aria-widget" role="button" aria-label="Abrir asistente de voz Aria" title="✨ Toca para hablar o escuchar con Aria">
+    <div class="aria-label-pill">
+      <span class="aria-label-title">✨ Aria <span style="font-size:9px; background:rgba(56,189,248,0.25); color:#38bdf8; padding:1px 6px; border-radius:4px;">VOZ</span></span>
+      <span class="aria-label-sub">Toca para conversar</span>
+    </div>
+    <div class="aria-orb-wrapper">
+      <div class="aria-pulse-ring"></div>
+      <div class="aria-pulse-ring"></div>
+      <div class="aria-orb-core"></div>
+    </div>
+  </div>
+
+  <!-- Modal / Portal Interactivo de Voz de Aria -->
+  <div id="aria-portal" role="dialog" aria-modal="true" aria-labelledby="aria-title">
+    <div class="aria-portal-header">
+      <div class="aria-portal-title">
+        <div class="aria-mini-orb"></div>
+        <div>
+          <div id="aria-title" style="font-size:14px; font-weight:700; color:#f8fafc;">Aria · Copiloto de Voz</div>
+          <div style="font-size:10px; color:#94a3b8;">Inteligencia y Educación Patrimonial</div>
+        </div>
+      </div>
+      <button class="aria-portal-close" id="aria-close-btn" aria-label="Cerrar">&times;</button>
+    </div>
+
+    <div class="aria-portal-body">
+      <!-- Visualizador y Ondas -->
+      <div class="aria-visualizer-container">
+        <div class="aria-hero-orb" id="aria-hero-orb"></div>
+        <div class="aria-status-badge" id="aria-status-badge">
+          <span style="width:6px; height:6px; background:#38bdf8; border-radius:50%; display:inline-block;"></span>
+          <span id="aria-status-text">Lista para responder tus dudas</span>
+        </div>
+        <div class="aria-waves" id="aria-waves">
+          <div class="aria-wave-bar"></div>
+          <div class="aria-wave-bar"></div>
+          <div class="aria-wave-bar"></div>
+          <div class="aria-wave-bar"></div>
+          <div class="aria-wave-bar"></div>
+          <div class="aria-wave-bar"></div>
+          <div class="aria-wave-bar"></div>
+        </div>
+      </div>
+
+      <!-- Cuadro de Texto / Transcripción -->
+      <div class="aria-speech-box" id="aria-speech-box">
+        ¡Hola! Soy <b>Aria</b>, tu guía de voz en Patrimonio Inteligente. 🌟<br><br>
+        Puedo responder de viva voz tus dudas sobre tu retiro, cómo invertir tus primeros $200 pesos en FIBRAs o Bitcoin sin intermediarios, y cómo opera el Copiloto.<br><br>
+        <b>Presiona el micrófono abajo o toca una de las preguntas preparadas.</b>
+      </div>
+
+      <!-- Controles de Voz -->
+      <div class="aria-voice-btn-row">
+        <button class="aria-mic-btn" id="aria-mic-btn">
+          <span>🎙️</span> <span id="aria-mic-btn-text">Presiona y habla ahora</span>
+        </button>
+        <button class="aria-mute-btn" id="aria-mute-btn" title="Silenciar voz">🔊</button>
+      </div>
+
+      <!-- Preguntas Frecuentes Rápidas -->
+      <div class="aria-quick-title">Preguntas Frecuentes de Alumnos y Padres:</div>
+      <div class="aria-pills-grid">
+        <button class="aria-pill" data-q="quien_es_aria">
+          <span>💡</span> <b>¿Quién es Aria y cómo me ayuda este Copiloto?</b>
+        </button>
+        <button class="aria-pill" data-q="custodia_seguridad">
+          <span>🛡️</span> <b>¿El bot tiene acceso a mi dinero o contraseñas?</b>
+        </button>
+        <button class="aria-pill" data-q="con_cuanto_empezar">
+          <span>💵</span> <b>¿Con cuánto dinero puedo empezar a invertir?</b>
+        </button>
+        <button class="aria-pill" data-q="retiro_jubilacion">
+          <span>👵</span> <b>¿Por qué sirve para mi retiro si no tengo pensión?</b>
+        </button>
+        <button class="aria-pill" data-q="que_son_fibras">
+          <span>🏢</span> <b>¿Qué son las FIBRAs y por qué no cobran impuestos?</b>
+        </button>
+        <button class="aria-pill" data-q="prueba_gratuita">
+          <span>🎟️</span> <b>¿Cómo solicito mi cortesía de prueba gratuita?</b>
+        </button>
+      </div>
+    </div>
+
+    <div class="aria-portal-footer">
+      <span style="font-size:10px; color:#64748b;">Tecnología Soberana 24/7</span>
+      <a class="aria-bot-link" href="https://t.me/dabel_btc_copiloto_bot" target="_blank" rel="noopener">
+        <span>💬 Abrir Bot en Telegram</span> ↗
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // MOTOR DE COMPORTAMIENTO DE ARIA (HAZ DE LUZ + VOZ INTERACTIVA + FAQ)
+    // =========================================================================
+    (function initAriaEngine() {
+      // 1. HAZ DE LUZ EN SCROLL (CANVAS PARTICLES)
+      const canvas = document.getElementById('aria-trail-canvas');
+      const ctx = canvas ? canvas.getContext('2d') : null;
+      let particles = [];
+      let lastScrollY = window.scrollY;
+      let scrollVel = 0;
+
+      function resizeCanvas() {
+        if (!canvas) return;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      // Emitir haz de luz en scroll
+      window.addEventListener('scroll', () => {
+        const currentY = window.scrollY;
+        scrollVel = Math.abs(currentY - lastScrollY);
+        lastScrollY = currentY;
+
+        const widget = document.getElementById('aria-widget');
+        if (!widget || scrollVel < 2) return;
+        const rect = widget.getBoundingClientRect();
+        const originX = rect.left + rect.width / 2;
+        const originY = rect.top + rect.height / 2;
+
+        const spawnCount = Math.min(6, Math.floor(scrollVel / 4) + 1);
+        for (let i = 0; i < spawnCount; i++) {
+          particles.push({
+            x: originX + (Math.random() - 0.5) * 20,
+            y: originY + (Math.random() - 0.5) * 20,
+            vx: (Math.random() - 0.5) * 1.5,
+            vy: -Math.random() * 2.5 - 0.5,
+            radius: Math.random() * 3.5 + 1.5,
+            alpha: 0.85,
+            color: Math.random() > 0.4 ? 'rgba(56, 189, 248, ' : (Math.random() > 0.5 ? 'rgba(245, 158, 11, ' : 'rgba(129, 140, 248, ')
+          });
+        }
+      }, { passive: true });
+
+      function animateParticles() {
+        if (ctx && canvas) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            p.alpha -= 0.02;
+            p.radius *= 0.98;
+
+            if (p.alpha <= 0 || p.radius < 0.5) {
+              particles.splice(i, 1);
+              continue;
+            }
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = p.color + p.alpha + ')';
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = '#38bdf8';
+            ctx.fill();
+          }
+        }
+        requestAnimationFrame(animateParticles);
+      }
+      requestAnimationFrame(animateParticles);
+
+      // 2. MODAL Y CONTROL DE ESTADO DE ARIA
+      const widget = document.getElementById('aria-widget');
+      const portal = document.getElementById('aria-portal');
+      const closeBtn = document.getElementById('aria-close-btn');
+      const micBtn = document.getElementById('aria-mic-btn');
+      const micBtnText = document.getElementById('aria-mic-btn-text');
+      const muteBtn = document.getElementById('aria-mute-btn');
+      const speechBox = document.getElementById('aria-speech-box');
+      const statusBadge = document.getElementById('aria-status-badge');
+      const statusText = document.getElementById('aria-status-text');
+      const heroOrb = document.getElementById('aria-hero-orb');
+      const waveBars = document.querySelectorAll('.aria-wave-bar');
+
+      let isMuted = false;
+      let isListening = false;
+      let waveAnimInterval = null;
+
+      function openPortal() {
+        if (!portal) return;
+        portal.style.display = 'flex';
+        portal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      function closePortal() {
+        if (!portal) return;
+        portal.style.display = 'none';
+        stopSpeaking();
+        stopListening();
+      }
+
+      if (widget) widget.addEventListener('click', openPortal);
+      if (closeBtn) closeBtn.addEventListener('click', closePortal);
+
+      // 3. BASE DE CONOCIMIENTO DE PREGUNTAS FRECUENTES (FAQ)
+      const FAQ_DATABASE = {
+        quien_es_aria: {
+          spoken: "Soy Aria, el avatar inteligente de Patrimonio Inteligente. Este copiloto vigila el mercado día y noche para avisarte por Telegram exactamente cuándo comprar o vender Bitcoin, FIBRAs y acciones del S&P 500 con rigor matemático, protegiendo tu dinero.",
+          display: "✨ <b>¿Quién es Aria y cómo te ayuda el Copiloto?</b><br><br>Soy la voz y guía de <b>Patrimonio Inteligente</b>. Este sistema actúa como un copiloto financiero autónomo que vigila el mercado día y noche.<br><br>• Te envía alertas a tu Telegram diciéndote cuándo comprar activos con descuento.<br>• Te avisa cuándo tomar utilidades.<br>• Te enseña a cobrar rentas pasivas sin que tengas que ser un experto."
+        },
+        custodia_seguridad: {
+          spoken: "Cero llaves privadas y cero custodia. Tú nunca le depositas dinero al bot ni al copiloto. Tus fondos permanecen en tus propias cuentas de Bitso y Bursanet. Nosotros solo leemos información pública y te enviamos alertas a ti.",
+          display: "🛡️ <b>Seguridad y Custodia: Cero Llaves Privadas</b><br><br>Aquí <b>nadie toca tu dinero</b>. Jamás te pediremos contraseñas bancarias, llaves privadas ni transferencias.<br><br>• Tus inversiones están 100% en tus cuentas personales reguladas (Bursanet / Bitso).<br>• El copiloto analiza datos matemáticos y te avisa a tu Telegram para que tú misma decidas con un clic."
+        },
+        con_cuanto_empezar: {
+          spoken: "Puedes comenzar con solo doscientos pesos mexicanos o diez dólares. La filosofía es aprender paso a paso sin arriesgar el patrimonio familiar, aprovechando el interés compuesto.",
+          display: "💵 <b>¿Con cuánto dinero empezar?</b><br><br>¡Desde solo <b>$200 MXN</b> (o ~$10 USD)!<br><br>• 1 título de fibra inmobiliaria cuesta ~$44 pesos.<br>• Una fracción de Bitcoin cuesta desde $100 pesos.<br>• No necesitas ser millonario; la clave es la disciplina periódica y el interés compuesto."
+        },
+        retiro_jubilacion: {
+          spoken: "A nuestra generación ya no le tocó la pensión tradicional. Si dejamos el dinero en una alcancía o en el banco, la inflación se lo come. Al comprar naves industriales que pagan rentas y las mejores empresas del mundo, construyes tu propio fondo de retiro digno de por vida.",
+          display: "👵 <b>Tu Retiro y Jubilación Soberana</b><br><br>Las Afores y pensiones tradicionales ya no son suficientes.<br><br>• Al invertir en FIBRAs (bodegas industriales) recibes rentas trimestrales pasivas de por vida.<br>• Al indexarte al S&P 500, eres socia de las 500 empresas más ricas de la tierra.<br>• Tu dinero no pierde valor ante la inflación."
+        },
+        que_son_fibras: {
+          spoken: "Una FIBRA es un fideicomiso inmobiliario. Es como ser dueña de un pedazo de un parque de bodegas rentadas a empresas como Amazon o Mercado Libre. Te pagan renta cada tres meses y sus distribuciones son cien por ciento libres de impuestos.",
+          display: "🏢 <b>FIBRAs Inmobiliarias y Ventaja Fiscal</b><br><br>Las FIBRAs te hacen dueña de fracciones de naves industriales y edificios reales.<br><br>• <b>Cobras rentas:</b> Cada 3 meses recibes utilidades directamente en tu cuenta.<br>• <b>Cero Impuestos (SAT):</b> Conforme al artículo 188 de la Ley del ISR, gran parte de las rentas se pagan como Reembolso de Capital, exentas al 100% de retención fiscal."
+        },
+        prueba_gratuita: {
+          spoken: "Tenemos una cohorte piloto con cupos limitados. Para solicitar tu cortesía gratuita de prueba, abre el bot en Telegram, escribe diagonal start y la titular autorizará tu acceso para que comiences a recibir señales.",
+          display: "🎟️ <b>Cortesía Gratuita de Prueba</b><br><br>Operamos bajo <b>acceso por invitación</b> con aforo limitado a 100 lugares para garantizar atención personalizada.<br><br>1. Entra a Telegram: <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" style="color:#38bdf8; font-weight:700;">@dabel_btc_copiloto_bot</a><br>2. Presiona <b>Iniciar</b> o escribe <code>/start</code>.<br>3. La administración te activará tu período de cortesía gratuita para que recibas tus primeras alertas."
+        }
+      };
+
+      // 4. SÍNTESIS DE VOZ (TEXT-TO-SPEECH)
+      function speakText(text) {
+        if (isMuted || !('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'es-MX';
+        utterance.rate = 1.0;
+        utterance.pitch = 1.05;
+
+        const voices = window.speechSynthesis.getVoices();
+        const preferred = voices.find(v => (v.lang.includes('es-MX') || v.lang.includes('es_MX') || v.lang.includes('es-US')) && !v.name.includes('Google'));
+        if (preferred) utterance.voice = preferred;
+
+        utterance.onstart = () => {
+          if (heroOrb) heroOrb.classList.add('speaking');
+          if (statusText) statusText.textContent = 'Aria está hablando...';
+          startWaveAnimation();
+        };
+
+        utterance.onend = utterance.onerror = () => {
+          if (heroOrb) heroOrb.classList.remove('speaking');
+          if (statusText) statusText.textContent = 'Lista para responder tus dudas';
+          stopWaveAnimation();
+        };
+
+        window.speechSynthesis.speak(utterance);
+      }
+
+      function stopSpeaking() {
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+        }
+        if (heroOrb) heroOrb.classList.remove('speaking');
+        stopWaveAnimation();
+      }
+
+      function startWaveAnimation() {
+        stopWaveAnimation();
+        waveAnimInterval = setInterval(() => {
+          waveBars.forEach(bar => {
+            bar.style.height = (Math.random() * 18 + 4) + 'px';
+          });
+        }, 120);
+      }
+      function stopWaveAnimation() {
+        if (waveAnimInterval) clearInterval(waveAnimInterval);
+        waveAnimInterval = null;
+        waveBars.forEach(bar => { bar.style.height = '6px'; });
+      }
+
+      // Toggle Mute
+      if (muteBtn) {
+        muteBtn.addEventListener('click', () => {
+          isMuted = !isMuted;
+          muteBtn.textContent = isMuted ? '🔇' : '🔊';
+          muteBtn.title = isMuted ? 'Voz silenciada' : 'Voz activa';
+          if (isMuted) stopSpeaking();
+        });
+      }
+
+      // 5. RECONOCIMIENTO DE VOZ (SPEECH-TO-TEXT / MICRÓFONO)
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      let recognition = null;
+
+      if (SpeechRecognition) {
+        recognition = new SpeechRecognition();
+        recognition.lang = 'es-MX';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        recognition.onstart = () => {
+          isListening = true;
+          if (heroOrb) heroOrb.classList.add('listening');
+          if (micBtn) micBtn.classList.add('active');
+          if (micBtnText) micBtnText.textContent = 'Te estoy escuchando...';
+          if (statusText) statusText.textContent = 'Escuchando tu voz...';
+          startWaveAnimation();
+        };
+
+        recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript.toLowerCase();
+          handleUserInput(transcript);
+        };
+
+        recognition.onerror = (event) => {
+          console.warn('Aviso reconocimiento voz:', event.error);
+          stopListening();
+          if (statusText) statusText.textContent = 'No logré escucharte bien. Prueba de nuevo.';
+        };
+
+        recognition.onend = () => {
+          stopListening();
+        };
+      }
+
+      function startListening() {
+        if (!recognition) {
+          alert('Tu navegador no soporta entrada de voz directa. Puedes tocar las preguntas sugeridas.');
+          return;
+        }
+        stopSpeaking();
+        try {
+          recognition.start();
+        } catch (e) {
+          console.warn(e);
+        }
+      }
+
+      function stopListening() {
+        isListening = false;
+        if (recognition) {
+          try { recognition.stop(); } catch(e){}
+        }
+        if (heroOrb) heroOrb.classList.remove('listening');
+        if (micBtn) micBtn.classList.remove('active');
+        if (micBtnText) micBtnText.textContent = 'Presiona y habla ahora';
+        if (statusText) statusText.textContent = 'Lista para responder tus dudas';
+        stopWaveAnimation();
+      }
+
+      if (micBtn) {
+        micBtn.addEventListener('click', () => {
+          if (isListening) stopListening();
+          else startListening();
+        });
+      }
+
+      function handleUserInput(input) {
+        input = input.toLowerCase();
+        let matchedKey = null;
+
+        if (input.includes('quien') || input.includes('quién') || input.includes('aria') || input.includes('que es')) {
+          matchedKey = 'quien_es_aria';
+        } else if (input.includes('seguridad') || input.includes('dinero') || input.includes('claves') || input.includes('contraseña') || input.includes('toca')) {
+          matchedKey = 'custodia_seguridad';
+        } else if (input.includes('cuanto') || input.includes('cuánto') || input.includes('empezar') || input.includes('minimo') || input.includes('mínimo') || input.includes('pesos')) {
+          matchedKey = 'con_cuanto_empezar';
+        } else if (input.includes('retiro') || input.includes('jubilacion') || input.includes('jubilación') || input.includes('pension') || input.includes('pensión') || input.includes('afore')) {
+          matchedKey = 'retiro_jubilacion';
+        } else if (input.includes('fibra') || input.includes('fibras') || input.includes('impuesto') || input.includes('sat')) {
+          matchedKey = 'que_son_fibras';
+        } else if (input.includes('prueba') || input.includes('gratis') || input.includes('gratuita') || input.includes('cortesia') || input.includes('cortesía') || input.includes('entrar')) {
+          matchedKey = 'prueba_gratuita';
+        } else {
+          matchedKey = 'quien_es_aria';
+        }
+
+        respondWithFAQ(matchedKey);
+      }
+
+      function respondWithFAQ(key) {
+        const item = FAQ_DATABASE[key] || FAQ_DATABASE['quien_es_aria'];
+        if (speechBox) {
+          speechBox.innerHTML = item.display;
+          speechBox.scrollTop = 0;
+        }
+        speakText(item.spoken);
+      }
+
+      document.querySelectorAll('.aria-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          const qKey = pill.getAttribute('data-q');
+          respondWithFAQ(qKey);
+        });
+      });
+
+    })();
+  </script>
+
 </body>
 
 </html>
