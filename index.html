@@ -5615,14 +5615,14 @@
           </div>
 
           <div class="glossary-filter-pills" id="glossaryPills">
-            <button class="glossary-pill active" onclick="setGlossaryCategory('all', this)">Todos (19)</button>
+            <button class="glossary-pill active" onclick="setGlossaryCategory('all', this)">Todos (21)</button>
             <button class="glossary-pill" onclick="setGlossaryCategory('trading', this)">📈 Trading y Estrategia</button>
             <button class="glossary-pill" onclick="setGlossaryCategory('bolsa', this)">🏢 Bolsa y FIBRAs</button>
             <button class="glossary-pill" onclick="setGlossaryCategory('patrimonio', this)">🛡️ Patrimonio y Retiro</button>
             <button class="glossary-pill" onclick="setGlossaryCategory('cripto', this)">₿ Cripto y Bitcoin</button>
           </div>
 
-          <div class="glossary-count-bar" id="glossaryCountBar">Mostrando 19 conceptos financieros con ejemplos de la vida real</div>
+          <div class="glossary-count-bar" id="glossaryCountBar">Mostrando 21 conceptos financieros con ejemplos de la vida real</div>
         </div>
 
         <div class="glossary-grid" id="glossaryGrid">
@@ -6086,6 +6086,54 @@
             </div>
           </div>
 
+          <!-- 20. Stop-Loss y Stop-Limit -->
+          <div class="glossary-card" data-category="trading" data-keywords="stop loss stop limit orden limite freno arnes extintor caidas proteccion riesgo bitso bursanet">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Stop-Loss y Stop-Limit</h3>
+                <span class="glossary-cat-badge cat-trading">Trading y Estrategia</span>
+              </div>
+              <span class="glossary-alias">"El arnés de seguridad y el extintor de tu patrimonio"</span>
+              <p class="glossary-definition">
+                <strong>Stop-Loss</strong> es la regla de protección que decide cuánto toleras perder antes de retirarte. La orden <strong>Stop-Limit</strong> es la herramienta que lo ejecuta con dos precios: un precio <em>Stop</em> (la alarma que despierta la orden) y un precio <em>Límite</em> (el precio mínimo exacto al que aceptas vender), evitando que caídas repentinas de noche te hagan perder tu dinero.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">🧗 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>El arnés del escalador o el seguro de tu coche:</strong> Si vas subiendo una pared de roca y resbalas, no caes hasta el fondo del precipicio; el arnés te detiene en el último gancho seguro. Y como el seguro del auto: no lo contratas deseando chocar, pero te da la tranquilidad de manejar de noche en carretera sabiendo que tu familia está protegida ante cualquier imprevisto.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> El bot te indica cuándo colocar un freno de seguridad y te ayuda a evitar el error de poner stops apretados que se coman tu dinero en simples mechazos temporales.</div>
+            </div>
+          </div>
+
+          <!-- 21. Escudo de Ganancias -->
+          <div class="glossary-card" data-category="trading" data-keywords="escudo ganancias trailing stop break even asegurar plusvalia proteger dinero blindaje">
+            <div>
+              <div class="glossary-card-header">
+                <h3 class="glossary-term-title">Escudo de Ganancias (Trailing Stop)</h3>
+                <span class="glossary-cat-badge cat-trading">Trading y Estrategia</span>
+              </div>
+              <span class="glossary-alias">"El candado para que una ganancia jamás se convierta en pérdida"</span>
+              <p class="glossary-definition">
+                Es la técnica de mover tu orden de protección (Stop-Limit) hacia arriba conforme el precio de tu activo sube. Una vez que tu inversión supera el +3% de ganancia, colocas el freno por encima de tu precio de compra original, asegurando que si el mercado se desploma de madrugada, saldrás con ganancia neta garantizada en la bolsa.
+              </p>
+              <div class="glossary-example-box">
+                <div class="glossary-example-label">👛 Ejemplo de la vida diaria:</div>
+                <p class="glossary-example-text">
+                  <strong>Guardar la venta en la bolsa interior:</strong> Si fuiste a vender mercancía al tianguis con $500 pesos y a las 2 de la tarde ya tienes $800 en la mano, tomas tus $500 originales y $150 de ganancia y los guardas en la bolsa secreta de tu chamarra. Pase lo que pase con el clima en la tarde, ya ganaste dinero y regresas a casa con la cena asegurada.
+                </p>
+              </div>
+            </div>
+            <div class="glossary-copilot-box">
+              <span>🤖</span>
+              <div><strong>En nuestro copiloto:</strong> El comando <code>/escudo</code> te da los precios exactos de Stop y Límite para congelar tus ganancias en Bitso y dormir con riesgo cero absoluto.</div>
+            </div>
+          </div>
+
         <div id="glossaryEmpty" style="display: none; text-align: center; padding: 48px 20px; background: rgba(15, 23, 42, 0.5); border: 1px dashed var(--border-color); border-radius: var(--radius-lg); margin-top: 24px;">
           <p style="font-size: 32px; margin-bottom: 8px;">🔍</p>
           <h4 style="font-size: 18px; color: var(--text-main); margin-bottom: 6px;">No se encontraron términos para tu búsqueda</h4>
@@ -6441,6 +6489,25 @@
           </div>
 
           <div style="display:flex; gap:8px; flex-wrap:wrap;"><button type="button" onclick="openModalComandos()" class="btn-download" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #10b981; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 600;">📱 Ver Chuleta</button><a href="#guia-bot" class="btn-download" style="background: rgba(192, 132, 252, 0.2); border: 1px solid #c084fc; color: #c084fc; text-decoration: none; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">🤖 Guía de Usuario</a></div>
+
+        </div>
+
+        <div class="doc-item" style="border-left: 3px solid #10b981;">
+
+          <div>
+
+            <span class="doc-badge" style="background: rgba(16, 185, 129, 0.2); color: #10b981;">INFOGRAFÍA & BLINDAJE</span>
+
+            <h4>Guía Técnica: Escudo de Ganancias y Stop-Limit</h4>
+
+            <p>Infografía explicativa con peras y manzanas: la analogía del arnés de escalada, cómo blindar tu dinero en Bitso/Bursanet y asegurar ganancias mientras duermes.</p>
+
+          </div>
+
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button type="button" onclick="openModalEscudo()" class="btn-download" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #10b981; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 600;">🛡️ Ver Guía en Pantalla</button>
+            <a href="#glosario" class="btn-download" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #38bdf8; text-decoration: none; font-size: 13px; font-weight: 600;">📖 Ver en Glosario</a>
+          </div>
 
         </div>
 
@@ -8244,6 +8311,10 @@
 
           <p style="margin:4px 0;"><code>/escalar_ahora</code> &bull; Escalar directamente tu lote a $100 USD / $2,000 MXN.</p>
 
+          <p style="margin:4px 0;"><code>/orden</code> &bull; ⏳ Estatus de orden colocada en Bitso Alpha y distancia al precio en vivo.</p>
+
+          <p style="margin:4px 0;"><code>/escudo</code> (o <code>/stop</code>) &bull; 🛡️ Escudo de Ganancias: Stop-Limit para blindar utilidades con cero pérdidas.</p>
+
           <p style="margin:4px 0;"><code>/capital &lt;monto&gt;</code> &bull; 💼 Plan maestro de capital personalizado (ej. <code>/capital 50000</code>); calcula lotes y FIBRAs.</p>
 
           <p style="margin:4px 0;"><code>/normativa</code> (o <code>/reformas</code>) &bull; 🏛️ Bitácora de referencias legales y fiscales analizadas (LMV, Ley Fintech, LISR y LFPDPPP).</p>
@@ -8284,9 +8355,69 @@
 
   </div>
 
+  <!-- MODAL DIDÁCTICO: ESCUDO DE GANANCIAS Y STOP-LIMIT -->
+  <div id="modalEscudo" style="display:none; position:fixed; z-index:99999; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); align-items:center; justify-content:center; padding:16px; box-sizing:border-box;">
+    <div style="background:#0f172a; border:1px solid #10b981; border-radius:16px; max-width:720px; width:100%; max-height:90vh; overflow-y:auto; padding:28px; box-sizing:border-box; color:#f8fafc; font-family:inherit; box-shadow:0 20px 50px rgba(16,185,129,0.25);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px;">
+        <div>
+          <span style="display:inline-block; font-size:11px; font-weight:700; color:#10b981; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); padding:4px 10px; border-radius:12px; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;">Blindaje & Gestión de Riesgo</span>
+          <h3 style="margin:0; font-size:20px; color:#fff; display:flex; align-items:center; gap:8px;">🛡️ Guía del Escudo de Ganancias y Stop-Limit</h3>
+        </div>
+        <button onclick="closeModalEscudo()" style="background:transparent; border:none; color:#94a3b8; font-size:24px; cursor:pointer; line-height:1;">&times;</button>
+      </div>
 
+      <p style="font-size:14px; color:#94a3b8; margin:0 0 20px 0; line-height:1.6;">Aprende cómo blindar tu patrimonio para que una inversión ganadora jamás se convierta en pérdida, y cómo dormir con paz mental mientras tus activos trabajan por ti.</p>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px;">
+          <h4 style="margin:0 0 8px 0; color:#38bdf8; font-size:15px; display:flex; align-items:center; gap:6px;">🧗 1. El Arnés del Escalador (Stop-Loss vs Stop-Limit)</h4>
+          <p style="font-size:13px; color:#cbd5e1; margin:0 0 8px 0; line-height:1.5;"><strong>Stop-Loss es la estrategia:</strong> Tu decisión previa de cuánto toleras que baje un activo antes de retirarte.<br><strong>Stop-Limit es la herramienta:</strong> Una orden en Bitso o Bursanet con dos candados:</p>
+          <ul style="font-size:12.5px; color:#94a3b8; margin:0; padding-left:20px; line-height:1.6;">
+            <li><strong>Precio Stop (La Alarma):</strong> Despierta a la orden solo si el precio cae a ese nivel.</li>
+            <li><strong>Precio Límite:</strong> Garantiza el precio mínimo exacto al que aceptas recibir (sin resbalones ni ventas a remate).</li>
+          </ul>
+        </div>
+
+        <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.25); border-radius:12px; padding:16px;">
+          <h4 style="margin:0 0 8px 0; color:#10b981; font-size:15px; display:flex; align-items:center; gap:6px;">🔒 2. El Escudo de Ganancias (Trailing Stop / Break-Even)</h4>
+          <p style="font-size:13px; color:#cbd5e1; margin:0 0 8px 0; line-height:1.5;">Cuando tu inversión supera el <strong>+3% de ganancia</strong>, colocas el Stop-Limit <strong>por encima de lo que te costó comprar</strong>:</p>
+          <div style="background:#0b1120; border-radius:8px; padding:12px; font-size:12px; color:#94a3b8; line-height:1.6;">
+            • <strong>Si el mercado sigue subiendo:</strong> Esperas tranquilamente tu venta en la cima para tomar utilidades máximas.<br>
+            • <strong>Si hay un desplome nocturno:</strong> La orden se activa automáticamente y sales con <strong>ganancia neta asegurada</strong>, eliminando cualquier posibilidad de pérdida.
+          </div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px;">
+          <h4 style="margin:0 0 8px 0; color:#f59e0b; font-size:15px; display:flex; align-items:center; gap:6px;">🌡️ 3. El Termómetro del RSI (La Analogía del Corredor)</h4>
+          <p style="font-size:13px; color:#cbd5e1; margin:0 0 8px 0; line-height:1.5;">Mide si el mercado está cansado o con energía (escala de 0 a 100):</p>
+          <ul style="font-size:12.5px; color:#94a3b8; margin:0; padding-left:20px; line-height:1.6;">
+            <li><strong>Sobrecompra (RSI &ge; 70):</strong> Los compradores se agotaron por euforia; resorte al límite. <em>¡Momento de vender!</em></li>
+            <li><strong>Sobreventa (RSI &le; 30):</strong> Pánico colectivo infundado; resorte comprimido. <em>¡Momento de comprar barato!</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <span style="font-size:12px; color:#64748b;">Comando en Telegram: <code>/escudo</code></span>
+        <div style="display:flex; gap:8px;">
+          <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" rel="noopener noreferrer" style="display:inline-block; background:#10b981; color:#fff; padding:9px 18px; border-radius:8px; text-decoration:none; font-weight:600; font-size:13px;">Probar en Telegram ↗</a>
+          <button onclick="closeModalEscudo()" style="background:rgba(255,255,255,0.1); color:#fff; border:none; padding:9px 16px; border-radius:8px; cursor:pointer; font-size:13px;">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
+
+    function openModalEscudo() {
+      var m = document.getElementById('modalEscudo');
+      if (m) m.style.display = 'flex';
+    }
+
+    function closeModalEscudo() {
+      var m = document.getElementById('modalEscudo');
+      if (m) m.style.display = 'none';
+    }
 
     function openModalComandos() {
 
@@ -9086,10 +9217,19 @@
         <button class="aria-pill" data-q="retiro_jubilacion">
           <span>👵</span> <b>¿Por qué sirve para mi retiro si no tengo pensión?</b>
         </button>
+        <button class="aria-pill" data-q="que_es_stop_limit_y_stop_loss">
+          <span>🛡️</span> <b>¿Qué es el Stop-Limit y el Stop-Loss?</b>
+        </button>
+        <button class="aria-pill" data-q="que_es_rsi_termometro">
+          <span>🌡️</span> <b>¿Qué es el RSI y el termómetro de mercado?</b>
+        </button>
       </div>
 
       <div class="aria-quick-title" style="margin-top:12px; color:#a78bfa;">🚀 Plataforma, Módulos & Copiloto:</div>
       <div class="aria-pills-grid">
+        <button class="aria-pill" data-q="que_es_escudo_ganancias" style="border-color:rgba(16,185,129,0.35); background:rgba(16,185,129,0.08);">
+          <span>🔒</span> <b>¿Cómo funciona el Escudo de Ganancias?</b>
+        </button>
         <button class="aria-pill" data-q="como_funciona_patrimonio_y_bot" style="border-color:rgba(56,189,248,0.35); background:rgba(56,189,248,0.08);">
           <span>🧠</span> <b>¿Cómo funciona Patrimonio Inteligente y el Bot?</b>
         </button>
@@ -9376,6 +9516,33 @@ Operamos bajo <b>acceso por invitación</b> con aforo limitado a 100 lugares par
 1. Entra a Telegram: <a href="https://t.me/dabel_btc_copiloto_bot" target="_blank" style="color:#38bdf8; font-weight:700;">@dabel_btc_copiloto_bot</a><br>
 2. Presiona <b>Iniciar</b> o escribe <code>/start</code>.<br>
 3. La administración te activará tu período de cortesía gratuita para que recibas tus primeras alertas.`
+        },
+        que_es_stop_limit_y_stop_loss: {
+          spoken: "El Stop-Loss es tu cinturón de seguridad: es el límite máximo que permites que baje una inversión para no perder dinero. La orden Stop-Limit es la herramienta técnica para ejecutarlo. Funciona como un seguro: tiene un precio de alarma llamado Stop que despierta a la orden, y un precio límite que asegura que jamás te vendan por debajo de lo que tú autorizaste. Además, usamos el Escudo de Ganancias: cuando tu inversión ya subió y vas ganando, movemos el Stop-Limit hacia arriba para asegurar tu rendimiento y dormir tranquila sin riesgo de pérdidas.",
+          display: `🛡️ <b>¿Qué es el Stop-Limit y el Stop-Loss? (El Arnés de Seguridad)</b><br><br>
+Entender la diferencia entre ambos es la clave para <b>invertir con paz mental absoluta</b>:<br><br>
+• 🧗 <b>Stop-Loss (La Estrategia):</b> Es tu regla de gestión de riesgo: <i>«Hasta aquí permito que baje el precio antes de salirme para no perder»</i>. Es tu límite de dolor.<br>
+• ⚙️ <b>Stop-Limit (La Herramienta en Bitso/Bursanet):</b> Es una orden con dos precios:<br>
+&nbsp;&nbsp;1. <b>Precio Stop (La Alarma):</b> Está dormida y solo despierta si el mercado cae a ese nivel.<br>
+&nbsp;&nbsp;2. <b>Precio Límite:</b> Garantiza el precio mínimo exacto al que aceptas vender (sin remates en pánico).<br>
+• ⚠️ <b>Regla de Oro en Compras Pequeñas ($200 MXN):</b> Nunca colocamos Stop-Loss apretados por debajo de la compra en montos pequeños, porque los 'mechazos' momentáneos te sacan en pérdidas. Solo usamos el <b>Escudo de Ganancias</b> cuando ya estamos en terreno positivo para amarrar la victoria.`
+        },
+        que_es_rsi_termometro: {
+          spoken: "El RSI o Índice de Fuerza Relativa es el termómetro del mercado. Mide si un activo subió demasiado rápido y la gente está comprando por emoción, lo que llamamos sobrecompra por encima de setenta, o si cayó con pánico y los vendedores se agotaron, lo que llamamos sobreventa por debajo de treinta. Nuestro copiloto usa el RSI para comprar con descuento cuando todos tienen miedo y avisarte cuándo tomar ganancias cuando el mercado está eufórico.",
+          display: `🌡️ <b>¿Qué es el RSI y cómo mide la fatiga del mercado?</b><br><br>
+El <b>Índice de Fuerza Relativa (RSI)</b> funciona como el <b>velocímetro y el cansancio de un corredor</b> (escala de 0 a 100):<br><br>
+• 🔴 <b>Sobrecompra (RSI ≥ 70) — Fiebre de compradores:</b> El precio subió muy rápido por euforia. El resorte está estirado al límite. El copiloto te avisa que es <b>momento de vender y tomar utilidades</b>.<br>
+• 🟢 <b>Sobreventa (RSI ≤ 30) — Remate por pánico:</b> Ventas masivas por miedo. El resorte está comprimido al suelo. Es el <b>momento óptimo para acumular títulos o satoshis con descuento</b>.<br>
+• ⏱️ <b>Velas de 4 Horas:</b> Usamos temporalidades de 4H para filtrar el ruido diario y obtener señales matemáticas de alta certidumbre.`
+        },
+        que_es_escudo_ganancias: {
+          spoken: "El Escudo de Ganancias es una recomendación técnica que activa el copiloto cuando tu inversión ya acumula ganancias. Te sugiere colocar una orden Stop-Limit por encima de tu precio de compra original. De esta forma, si el mercado sigue subiendo, sigues ganando; pero si el precio se desploma mientras duermes, la orden se vende automáticamente con ganancia asegurada en tu bolsillo, eliminando cualquier posibilidad de terminar en pérdidas.",
+          display: `🔒 <b>¿Cómo funciona el Escudo de Ganancias (Trailing Stop)?</b><br><br>
+Es el candado para que <b>una operación ganadora jamás se convierta en una pérdida</b>:<br><br>
+• 📈 <b>Activación al superar +3% de ganancia:</b> Cuando tus satoshis o títulos suben de precio, el copiloto te sugiere colocar una orden Stop-Limit <b>por encima de tu precio de compra original</b>.<br>
+• 👛 <b>La Analogía de la Bolsa Secreta:</b> Es como guardar tu capital original y una rebanada de ganancia en el bolsillo interior de tu chamarra: pase lo que pase con el clima en la tarde, ya ganaste dinero.<br>
+• 🌙 <b>Dormir sin estrés:</b> Si Bitcoin sube a tu meta de ciclo, vendes en la cima. Si se desploma de madrugada, el escudo se activa automáticamente y sales con ganancia neta en dólares.<br>
+• 💡 <b>En Telegram:</b> Escribe <code>/escudo</code> en cualquier momento para obtener los parámetros exactos.`
         }
       };
 
@@ -9552,6 +9719,12 @@ Operamos bajo <b>acceso por invitación</b> con aforo limitado a 100 lugares par
           matchedKey = 'como_funciona_patrimonio_y_bot';
         } else if (input.includes('comando') || input.includes('comandos') || input.includes('barra') || input.includes('slash') || input.includes('instruccion') || input.includes('precio') || input.includes('comprar')) {
           matchedKey = 'comandos_telegram';
+        } else if (input.includes('stop') || input.includes('stop limit') || input.includes('stop-limit') || input.includes('stop loss') || input.includes('stop-loss') || input.includes('freno') || input.includes('arnes') || input.includes('arnés')) {
+          matchedKey = 'que_es_stop_limit_y_stop_loss';
+        } else if (input.includes('rsi') || input.includes('termometro') || input.includes('termómetro') || input.includes('sobrecompra') || input.includes('sobreventa') || input.includes('fuerza relativa') || input.includes('resorte')) {
+          matchedKey = 'que_es_rsi_termometro';
+        } else if (input.includes('escudo') || input.includes('blindaje') || input.includes('proteger ganancia') || input.includes('proteger ganancias') || input.includes('asegurar') || input.includes('trailing') || input.includes('ganancias')) {
+          matchedKey = 'que_es_escudo_ganancias';
         } else if (input.includes('bitcoin') || input.includes('btc') || input.includes('satoshis') || input.includes('cripto') || input.includes('criptomoneda') || input.includes('bloque') || input.includes('blockchain')) {
           matchedKey = 'que_es_bitcoin_seguridad';
         } else if (input.includes('dinero') || input.includes('inflacion') || input.includes('inflación') || input.includes('imprimir') || input.includes('billete') || input.includes('fiat') || input.includes('trueque')) {
